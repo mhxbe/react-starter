@@ -1,0 +1,46 @@
+/* eslint-disable unicorn/prevent-abbreviations */
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+
+export default {
+  entry: './src/index.js',
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
+  output: {
+    path: __dirname + '/dist',
+    publicPath: './',
+    filename: '[name].js',
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      hash: true,
+      title: 'My App', // todo: read from config
+      favicon: 'src/images/favicon.ico',
+      openGraph: {
+        url: 'http://my-app.com',
+        type: 'article',
+        title: 'My App',
+        description: 'This is My App.',
+        image: 'my-app.png',
+      },
+    }),
+  ],
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  },
+};
