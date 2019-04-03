@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Name = styled.h1`
+  color: royalblue;
+`;
 
 const App = ({ name, luckyNumber }) => {
   return (
     <main>
-      Hello {name} {luckyNumber}
+      Hello <Name>{name}</Name> {luckyNumber}
     </main>
   );
 };
