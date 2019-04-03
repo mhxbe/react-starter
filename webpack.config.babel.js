@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
-export default {
+export default (env, argv) => ({
   entry: './src/index.js',
   module: {
     rules: [
@@ -12,6 +12,10 @@ export default {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
@@ -19,7 +23,7 @@ export default {
   },
   output: {
     path: __dirname + '/dist',
-    publicPath: './',
+    publicPath: argv.mode === 'development' ? '/' : './',
     filename: '[name].js',
   },
   plugins: [
@@ -43,4 +47,4 @@ export default {
     contentBase: './dist',
     hot: true,
   },
-};
+});
