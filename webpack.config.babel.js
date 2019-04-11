@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prevent-abbreviations */
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';

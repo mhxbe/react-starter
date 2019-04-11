@@ -29,6 +29,16 @@
     "import/order": "error",
     "import/newline-after-import": "error",
     "react/no-unused-prop-types": "error",
-    "react/require-default-props": "error"
+    "react/require-default-props": "error",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "whitelist": {
+          "env": true,
+          "devServer": true,
+          "props": true
+        }
+      }
+    ]
   }
 }
