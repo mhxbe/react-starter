@@ -1,5 +1,4 @@
 module.exports = config => {
-  const isDevelopmentBuild = config.env() === 'development';
   return {
     presets: ['@babel/preset-env', '@babel/preset-react'],
     plugins: [
@@ -8,7 +7,7 @@ module.exports = config => {
         'babel-plugin-styled-components',
         {
           pure: true, // dead code elimination
-          displayName: isDevelopmentBuild, // Only show displayName on development builds
+          displayName: config.env('development'),
         },
       ],
     ],
