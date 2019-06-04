@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config ./webpack.config.babel.js --mode development --open",
     "build": "NODE_ENV=production webpack --mode production",
-    "lint": "lint-staged",
-    "husky": "husky"
+    "bundle-analyzer": "open dist/report.html"
   },
   "keywords": [
     "react",
@@ -43,6 +42,7 @@
     "react-hot-loader": "4.9.0",
     "style-loader": "0.23.1",
     "webpack": "4.33.0",
+    "webpack-bundle-analyzer": "3.3.2",
     "webpack-cli": "3.3.2",
     "webpack-dev-server": "3.5.1"
   },

@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export default (env, argv) => ({
   entry: './src/index.js',
@@ -40,6 +41,10 @@ export default (env, argv) => ({
         description: 'This is My App.',
         image: 'my-app.png',
       },
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
     }),
   ],
   devServer: {
