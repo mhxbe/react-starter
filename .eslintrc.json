@@ -26,7 +26,6 @@
   "rules": {
     "import/order": "error",
     "import/newline-after-import": "error",
-    "react/no-unused-prop-types": "error",
-    "react/require-default-props": "error"
+    "react/no-unused-prop-types": "error"
   }
 }

@@ -12,16 +12,12 @@ const Main = styled.main`
   height: 100%;
 `;
 
-const App = ({ name, luckyNumber }) => {
+const App = ({ name, luckyNumber = 13 }) => {
   return (
     <Main>
       Hello <Name>{name}</Name> {luckyNumber}
     </Main>
   );
-};
-
-App.defaultProps = {
-  luckyNumber: 13,
 };
 
 App.propTypes = {
