@@ -20,10 +20,6 @@ const App = ({ name, luckyNumber = 13 }) => {
   );
 };
 
-App.defaultProps = {
-  luckyNumber: 13,
-};
-
 App.propTypes = {
   name: PropTypes.string.isRequired,
   luckyNumber: PropTypes.number,
