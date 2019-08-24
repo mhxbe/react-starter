@@ -56,7 +56,7 @@ export default (env, argv) => {
     },
     output: {
       path: __dirname + '/dist',
-      publicPath: './',
+      publicPath: argv.mode === 'development' ? '/' : './',
       filename: '[name].js',
     },
     optimization: {
