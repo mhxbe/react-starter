@@ -41,7 +41,7 @@ export default (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.js$/,
           exclude: /node_modules/,
           use: ['babel-loader'],
         },
@@ -52,7 +52,7 @@ export default (env, argv) => {
       ],
     },
     resolve: {
-      extensions: ['*', '.js', '.jsx'],
+      extensions: ['.js'],
     },
     output: {
       path: __dirname + '/dist',
