@@ -16,6 +16,7 @@ module.exports = function(config) {
         },
       ],
       '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-optional-chaining',
     ],
   };
 };
