@@ -12,4 +12,6 @@ ReactDOM.render(
   document.querySelector('#root')
 );
 
-module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
+}
