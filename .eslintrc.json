@@ -16,29 +16,17 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "plugin:unicorn/recommended",
     "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/react",
     "eslint:recommended"
   ],
-  "plugins": ["react", "react-hooks", "unicorn", "prettier"],
+  "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
-    "unicorn/filename-case": "off",
     "import/order": "error",
     "import/newline-after-import": "error",
     "react/no-unused-prop-types": "error",
-    "react/require-default-props": "error",
-    "unicorn/prevent-abbreviations": [
-      "error",
-      {
-        "whitelist": {
-          "env": true,
-          "devServer": true,
-          "props": true
-        }
-      }
-    ]
+    "react/require-default-props": "error"
   }
 }
