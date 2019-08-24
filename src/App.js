@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { css } from '@emotion/core';
 
-const Name = styled.h1`
-  color: rebeccapurple;
-`;
-
-const Main = styled.main`
-  background-color: mediumaquamarine;
+const mainStyle = css`
+  background-color: turquoise;
   padding: 24px;
   height: 100%;
 `;
 
-const App = ({ name, luckyNumber }) => {
+const h1Style = css`
+  color: rebeccapurple;
+`;
+
+const App = ({ name, luckyNumber = 13 }) => {
   return (
-    <Main>
-      Hello <Name>{name}</Name> {luckyNumber}
-    </Main>
+    <main css={mainStyle}>
+      Hello <h1 css={h1Style}>{name}</h1> {luckyNumber}
+    </main>
   );
 };
 

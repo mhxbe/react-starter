@@ -27,9 +27,10 @@
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.5.5",
+    "@emotion/babel-preset-css-prop": "10.0.14",
     "babel-eslint": "10.0.2",
     "babel-loader": "8.0.6",
-    "babel-plugin-styled-components": "1.10.6",
+    "babel-plugin-emotion": "10.0.16",
     "clean-webpack-plugin": "3.0.0",
     "css-loader": "3.2.0",
     "eslint": "6.2.2",
@@ -50,10 +51,10 @@
     "webpack-dev-server": "3.8.0"
   },
   "dependencies": {
+    "@emotion/core": "10.0.16",
     "prop-types": "15.7.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "react-router-dom": "5.0.1",
-    "styled-components": "4.3.2"
+    "react-router-dom": "5.0.1"
   }
 }
