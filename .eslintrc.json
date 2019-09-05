@@ -27,5 +27,10 @@
     "import/order": "error",
     "import/newline-after-import": "error",
     "react/no-unused-prop-types": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
