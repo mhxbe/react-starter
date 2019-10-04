@@ -25,6 +25,7 @@
     "@babel/core": "7.6.2",
     "@babel/plugin-proposal-class-properties": "7.5.5",
     "@babel/plugin-proposal-optional-chaining": "7.6.0",
+    "@babel/plugin-transform-runtime": "7.6.2",
     "@babel/preset-env": "7.6.2",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.6.2",
@@ -52,7 +53,6 @@
     "webpack-dev-server": "3.8.2"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "7.6.2",
     "@emotion/core": "10.0.20",
     "prop-types": "15.7.2",
     "react": "16.10.2",
