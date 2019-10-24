@@ -18,10 +18,6 @@ function getPlugins(mode) {
         image: 'my-app.png',
       },
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
-    }),
   ];
 
   if (mode === 'development') {
@@ -29,7 +25,13 @@ function getPlugins(mode) {
   }
 
   if (mode === 'production') {
-    plugins = plugins.concat([new CleanWebpackPlugin()]);
+    plugins = plugins.concat([
+      new CleanWebpackPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false,
+      }),
+    ]);
   }
 
   return plugins;
@@ -68,7 +70,15 @@ export default (env, argv) => {
     devtool: argv.mode === 'development' ? 'inline-source-map' : 'source-map',
     devServer: {
       contentBase: './dist',
+      compress: true,
       hot: true,
+      open: true,
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
+      useLocalIp: true,
+      host: '0.0.0.0',
     },
   };
 };
