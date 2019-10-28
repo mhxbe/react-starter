@@ -12,17 +12,16 @@ const h1Style = css`
   color: rebeccapurple;
 `;
 
-const App = ({ name, luckyNumber = 13 }) => {
+const App = ({ name }) => {
   return (
     <main css={mainStyle}>
-      Hello <h1 css={h1Style}>{name}</h1> {luckyNumber}
+      Hello <h1 css={h1Style}>{name}</h1>
     </main>
   );
 };
 
 App.propTypes = {
   name: PropTypes.string.isRequired,
-  luckyNumber: PropTypes.number,
 };
 
 export default App;
