@@ -57,9 +57,8 @@ export default (env, argv) => {
       extensions: ['.js'],
     },
     output: {
-      path: __dirname + '/dist',
-      publicPath: argv.mode === 'development' ? '/' : './',
-      filename: '[name].js',
+      path: __dirname + '/dist/',
+      filename: '[name]-[hash].js',
     },
     optimization: {
       splitChunks: {
@@ -69,7 +68,7 @@ export default (env, argv) => {
     plugins: getPlugins(argv.mode),
     devtool: argv.mode === 'development' ? 'inline-source-map' : 'source-map',
     devServer: {
-      contentBase: './dist',
+      contentBase: './dist/',
       compress: true,
       hot: true,
       open: true,
