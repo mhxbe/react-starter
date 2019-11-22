@@ -1,6 +1,6 @@
 # React Starter
 
-This is a personal, opiniated React Starter project.
+This is an opiniated starterkit for quickly bootstrapping [React](https://reactjs.org/) projects.
 
 ## Structure
 
@@ -10,13 +10,11 @@ This folder houses our app files and logic.
 
 ### dist/
 
-This folder outputs a production-optimized build of our app. It's generated from [src/index.js](src/index.js).
+This folder outputs a production-optimized **static build** of our app. It's generated from [src/index.js](src/index.js).
 
 ### node_modules/
 
 This folder contains all of the app's dependencies which are defined in [package.json](package.json)'s `dependencies` & `devDependencies` fields.
-
----
 
 ## Configurations
 
@@ -34,7 +32,7 @@ This folder contains all of the app's dependencies which are defined in [package
 
 [lint-staged](https://github.com/okonet/lint-staged) runs linters on git staged files. It's configure in [.lintstagedrc.json](.lintstagedrc.json).
 
-[EditorConfig](.https://editorconfig.org/)
+[EditorConfig](https://editorconfig.org/)
 helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. It is configured in [.editorconfig](.editorconfig).
 
 ### Pre-commit hooks
@@ -49,6 +47,6 @@ The combination of `husky`, `prettier` & `lint-staged` makes sure that commits a
 
 [.gitignore](.gitignore) file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.
 
-### Dependency Management
+### Dependency management
 
 [Renovate](https://renovate.whitesourcesoftware.com/) facilitates automated dependency updates. Make sure to [configure renovate for your project](https://github.com/apps/renovate) if you want to use it. The local project configuration can be found in [.renovaterc.json](.renovaterc.json).
