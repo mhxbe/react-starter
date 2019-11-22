@@ -18,13 +18,13 @@ This folder contains all of the app's dependencies which are defined in [package
 
 ## Configurations
 
-### Webpack ([webpack.config.babel.js](webpack.config.babel.js))
+### webpack ([webpack.config.babel.js](webpack.config.babel.js))
 
-@todo: add documentation
+[webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
 
 ### Babel ([babel.config.js](babel.config.js))
 
-@todo: add documentation
+[Babel](https://babeljs.io/) is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
 
 ### Linting
 
