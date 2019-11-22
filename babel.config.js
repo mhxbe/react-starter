@@ -6,18 +6,17 @@ module.exports = function(config) {
       '@emotion/babel-preset-css-prop',
     ],
     plugins: [
+      '@babel/plugin-proposal-optional-chaining',
+      '@babel/plugin-transform-runtime',
       [
         'emotion',
         {
-          sourceMap: true,
           autoLabel: config.env('development'),
-          labelFormat: '[dirname]_[filename]_[local]',
           cssPropOptimization: true,
+          labelFormat: '[dirname]_[filename]_[local]',
+          sourceMap: true,
         },
       ],
-      '@babel/plugin-proposal-class-properties',
-      '@babel/plugin-proposal-optional-chaining',
-      '@babel/plugin-transform-runtime',
     ],
   };
 };
