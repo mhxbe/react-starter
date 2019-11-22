@@ -1,6 +1,6 @@
 # React Starter
 
-This is an opiniated starterkit for quickly bootstrapping [React](https://reactjs.org/) projects.
+This is an opinionated starter-kit for quickly bootstrapping [React](https://reactjs.org/) projects.
 
 ## Structure
 

@@ -1,7 +1,7 @@
 {
   "name": "react-starter",
   "version": "1.0.0",
-  "description": "React Starter",
+  "description": "An opinionated starter-kit for quickly bootstrapping React projects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,9 +11,7 @@
   },
   "keywords": [
     "react",
-    "reactjs",
-    "starter",
-    "starterkit"
+    "starter-kit"
   ],
   "author": "Mike Henderyckx",
   "license": "ISC",
