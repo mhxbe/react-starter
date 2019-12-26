@@ -1,4 +1,14 @@
 {
   "extends": ["config:base"],
-  "schedule": "every weekend"
+  "schedule": "every weekend",
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "updateTypes": ["major"],
+      "labels": ["UPDATE-MAJOR"]
+    }
+  ]
 }
