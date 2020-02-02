@@ -8,7 +8,7 @@ function getPlugins(mode) {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       hash: true,
-      title: 'My App', // todo: read from config
+      title: 'My App',
       favicon: './src/images/favicon.ico',
       openGraph: {
         url: 'http://my-app.com',
