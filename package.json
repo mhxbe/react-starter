@@ -14,7 +14,7 @@
     "starter-kit"
   ],
   "author": "Mike Henderyckx",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/mhxbe/react-starter.git"
