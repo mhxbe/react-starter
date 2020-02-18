@@ -6,7 +6,6 @@ module.exports = function(config) {
       '@emotion/babel-preset-css-prop',
     ],
     plugins: [
-      '@babel/plugin-proposal-optional-chaining',
       '@babel/plugin-transform-runtime',
       [
         'emotion',
