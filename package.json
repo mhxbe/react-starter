@@ -29,7 +29,7 @@
     "@emotion/babel-preset-css-prop": "10.0.27",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.0.6",
-    "babel-plugin-emotion": "10.0.27",
+    "babel-plugin-emotion": "10.0.28",
     "clean-webpack-plugin": "3.0.0",
     "css-loader": "3.4.2",
     "eslint": "6.8.0",
@@ -50,7 +50,7 @@
     "webpack-dev-server": "3.10.3"
   },
   "dependencies": {
-    "@emotion/core": "10.0.27",
+    "@emotion/core": "10.0.28",
     "prop-types": "15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0"
