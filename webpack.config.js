@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 function getPlugins(mode) {
   let plugins = [
@@ -37,15 +37,28 @@ function getPlugins(mode) {
   return plugins;
 }
 
-export default (env, argv) => {
+module.exports = (env, argv) => {
   return {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
+    // externals: {
+    //   react: 'React',
+    //   'react-dom': 'ReactDOM',
+    // },
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: [
+            {
+              loader: 'ts-loader',
+            },
+          ],
+        },
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          loader: 'source-map-loader',
         },
         {
           test: /\.css$/,
@@ -54,7 +67,7 @@ export default (env, argv) => {
       ],
     },
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js', '.ts', '.tsx'],
     },
     output: {
       path: __dirname + '/dist/',
@@ -70,7 +83,7 @@ export default (env, argv) => {
     devServer: {
       contentBase: './dist/',
       compress: true,
-      hot: true,
+      hot: false,
       open: true,
       overlay: {
         errors: true,
