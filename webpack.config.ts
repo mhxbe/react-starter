@@ -1,9 +1,9 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-function getPlugins(mode) {
+function getPlugins(mode: any) {
   let plugins = [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -37,7 +37,9 @@ function getPlugins(mode) {
   return plugins;
 }
 
-module.exports = (env, argv) => {
+export default (env: any, argv: any) => {
+  console.log('EVN', env);
+  console.log('ARGV', argv);
   return {
     entry: './src/index.tsx',
     // externals: {

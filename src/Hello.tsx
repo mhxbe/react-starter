@@ -4,7 +4,7 @@ interface HelloProps {
   name: string;
 }
 
-var object = {
+const object = {
   dog: { name: 'Lilly' },
 };
 
