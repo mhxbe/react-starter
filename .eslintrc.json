@@ -1,7 +1,7 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2020,
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true,
@@ -20,17 +20,25 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/react",
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
   ],
-  "plugins": ["react", "react-hooks", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
   "rules": {
     "import/order": "error",
     "import/newline-after-import": "error",
-    "react/no-unused-prop-types": "error"
+    "react/prop-types": 0
   },
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
     }
   }
 }
