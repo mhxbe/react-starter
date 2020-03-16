@@ -10,10 +10,10 @@ const Title = styled.h1`
   color: indigo;
 `;
 
-const App = ({ name }: any) => {
+const App: React.FC = () => {
   return (
     <Main>
-      <Title>Hello {name}</Title>
+      <Title>Hello Mikeeeh</Title>
       <Hello name="Lilly" />
     </Main>
   );

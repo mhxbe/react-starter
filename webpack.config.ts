@@ -3,8 +3,16 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-function getPlugins(mode: any) {
-  let plugins = [
+type pluginType =
+  | HtmlWebpackPlugin
+  | webpack.HotModuleReplacementPlugin
+  | CleanWebpackPlugin
+  | BundleAnalyzerPlugin;
+
+function getPlugins(mode: string): pluginType[] {
+  let plugins: pluginType[] = [];
+
+  plugins = plugins.concat([
     new HtmlWebpackPlugin({
       template: './src/index.html',
       hash: true,
@@ -18,7 +26,7 @@ function getPlugins(mode: any) {
         image: 'my-app.png',
       },
     }),
-  ];
+  ]);
 
   if (mode === 'development') {
     plugins = plugins.concat([new webpack.HotModuleReplacementPlugin()]);
@@ -37,15 +45,12 @@ function getPlugins(mode: any) {
   return plugins;
 }
 
-export default (env: any, argv: any) => {
-  console.log('EVN', env);
-  console.log('ARGV', argv);
+type envType = string | undefined;
+type argvType = { mode: string };
+
+export default function(env: envType, argv: argvType): object {
   return {
     entry: './src/index.tsx',
-    // externals: {
-    //   react: 'React',
-    //   'react-dom': 'ReactDOM',
-    // },
     module: {
       rules: [
         {
@@ -95,4 +100,4 @@ export default (env: any, argv: any) => {
       host: '0.0.0.0',
     },
   };
-};
+}

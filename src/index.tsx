@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
 import './reset.css';
+import App from './App';
 
-ReactDOM.render(<App name="Mike" />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector('#root'));
 
 if (module.hot) {
   module.hot.accept();
