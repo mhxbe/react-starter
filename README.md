@@ -1,6 +1,6 @@
 # React Starter
 
-This is an opinionated starter-kit for quickly bootstrapping [React](https://reactjs.org/) projects.
+This is an opinionated starter-kit for quickly bootstrapping [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
 ## Structure
 
@@ -10,7 +10,7 @@ This folder houses our app files and logic.
 
 ### dist/
 
-This folder outputs a production-optimized **static build** of our app. It's generated from [src/index.js](src/index.js).
+This folder outputs a production-optimized **static build** of our app. It's generated from [src/index.tsx](src/index.tsx).
 
 ### node_modules/
 
@@ -18,13 +18,13 @@ This folder contains all of the app's dependencies which are defined in [package
 
 ## Configurations
 
-### webpack ([webpack.config.babel.js](webpack.config.babel.js))
+### webpack ([webpack.config.ts](webpack.config.ts))
 
 [webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
 
-### Babel ([babel.config.js](babel.config.js))
+### TypeScript ([tsconfig.json](tsconfig.json))
 
-[Babel](https://babeljs.io/) is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+[TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is a typed superset of JavaScript that compiles to a backwards compatible version of JavaScript in current and older browsers or environments.
 
 ### Linting
 
