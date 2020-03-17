@@ -90,7 +90,7 @@ export default function(env: envType, argv: argvType): object {
     devServer: {
       contentBase: './dist/',
       compress: true,
-      hot: false,
+      hot: true,
       open: true,
       overlay: {
         errors: true,
