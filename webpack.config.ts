@@ -1,10 +1,18 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-function getPlugins(mode) {
-  let plugins = [
+type pluginType =
+  | HtmlWebpackPlugin
+  | webpack.HotModuleReplacementPlugin
+  | CleanWebpackPlugin
+  | BundleAnalyzerPlugin;
+
+function getPlugins(mode: string): pluginType[] {
+  let plugins: pluginType[] = [];
+
+  plugins = plugins.concat([
     new HtmlWebpackPlugin({
       template: './src/index.html',
       hash: true,
@@ -18,7 +26,7 @@ function getPlugins(mode) {
         image: 'my-app.png',
       },
     }),
-  ];
+  ]);
 
   if (mode === 'development') {
     plugins = plugins.concat([new webpack.HotModuleReplacementPlugin()]);
@@ -37,15 +45,18 @@ function getPlugins(mode) {
   return plugins;
 }
 
-export default (env, argv) => {
+type envType = string | undefined;
+type argvType = { mode: string };
+
+export default function(env: envType, argv: argvType): object {
   return {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: ['ts-loader'],
         },
         {
           test: /\.css$/,
@@ -54,7 +65,7 @@ export default (env, argv) => {
       ],
     },
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js', '.ts', '.tsx'],
     },
     output: {
       path: __dirname + '/dist/',
@@ -80,4 +91,4 @@ export default (env, argv) => {
       host: '0.0.0.0',
     },
   };
-};
+}
