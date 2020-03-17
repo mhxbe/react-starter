@@ -56,16 +56,7 @@ export default function(env: envType, argv: argvType): object {
         {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          use: [
-            {
-              loader: 'ts-loader',
-            },
-          ],
-        },
-        {
-          enforce: 'pre',
-          test: /\.js$/,
-          loader: 'source-map-loader',
+          use: ['ts-loader'],
         },
         {
           test: /\.css$/,
