@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint-js": "eslint 'src/**'"
   },
   "keywords": [
     "react",
