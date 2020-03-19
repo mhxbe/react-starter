@@ -30,8 +30,6 @@ This folder contains all of the app's dependencies which are defined in [package
 
 [ESLint](http://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. It is configured in [.eslintrc.json](.eslintrc.json). Specific files & folders can be ignored by adding them to [.eslintignore](.eslintignore).
 
-[lint-staged](https://github.com/okonet/lint-staged) runs linters on git staged files. It's configure in [.lintstagedrc.json](.lintstagedrc.json).
-
 [EditorConfig](https://editorconfig.org/)
 helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. It is configured in [.editorconfig](.editorconfig).
 
@@ -41,7 +39,9 @@ helps maintain consistent coding styles for multiple developers working on the s
 
 [Prettier](https://prettier.io/) is an opinionated code formatter which is configured in [.prettierrc.json](.prettierrc.json). Specific files & folders can be ignored by adding them to [.prettierignore](.prettierignore).
 
-The combination of `husky`, `prettier` & `lint-staged` makes sure that commits are clean so our code-base stays consistent.
+[Pretty Quick](https://github.com/azz/pretty-quick) runs Prettier on your changed files when Git's `pre-commit` hook is triggered.
+
+The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits are clean so our code-base stays consistent.
 
 ### Git
 
