@@ -1,6 +1,6 @@
 # React Starter
 
-This is an opinionated starter-kit for quickly bootstrapping [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
+This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
 ## Structure
 
@@ -25,6 +25,10 @@ This folder contains all of the app's dependencies which are defined in [package
 ### TypeScript ([tsconfig.json](tsconfig.json))
 
 [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is a typed superset of JavaScript that compiles to a backwards compatible version of JavaScript in current and older browsers or environments.
+
+### Testing
+
+[Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.json](jest.config.json).
 
 ### Linting
 
