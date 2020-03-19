@@ -18,7 +18,7 @@ function getPlugins(mode: string): pluginType[] {
       hash: true,
       lang: 'en',
       title: 'My App',
-      favicon: './src/images/favicon.ico',
+      favicon: './src/favicon.ico',
       openGraph: {
         url: 'http://my-app.com',
         type: 'article',
