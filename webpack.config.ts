@@ -1,5 +1,6 @@
 import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
@@ -29,6 +30,10 @@ function getPlugins(mode: string): pluginType[] {
       themeColor: '#60dafb',
       noScriptText: 'This app works best with JavaScript enabled.',
     }),
+    new CopyWebpackPlugin([
+      { from: './src/images', to: 'images' },
+      { from: './src/manifest.webmanifest' },
+    ]),
   ]);
 
   if (mode === 'development') {

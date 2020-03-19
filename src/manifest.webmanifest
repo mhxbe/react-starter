@@ -1,0 +1,23 @@
+{
+  "lang": "en",
+  "name": "My App",
+  "short_name": "My App",
+  "start_url": ".",
+  "description": "This is My App.",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#60dafb",
+  "theme_color": "#60dafb",
+  "icons": [
+    {
+      "src": "./images/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./images/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
