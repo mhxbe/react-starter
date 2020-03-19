@@ -16,6 +16,7 @@ function getPlugins(mode: string): pluginType[] {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       hash: true,
+      lang: 'en',
       title: 'My App',
       favicon: './src/images/favicon.ico',
       openGraph: {
@@ -25,6 +26,8 @@ function getPlugins(mode: string): pluginType[] {
         description: 'This is My App.',
         image: 'my-app.png',
       },
+      themeColor: '#60dafb',
+      noScriptText: 'This app works best with JavaScript enabled.',
     }),
   ]);
 
