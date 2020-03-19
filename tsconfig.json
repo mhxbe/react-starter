@@ -7,7 +7,7 @@
     "target": "ES5",
     "jsx": "react",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["node", "webpack-env"]
+    "types": ["jest", "node", "webpack-env"]
   },
   "include": ["./src"],
   "exclude": ["node_modules", "dist"]
