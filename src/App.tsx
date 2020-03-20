@@ -1,17 +1,10 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
-
-const Main = styled.main`
-  background-color: midnightblue;
-  height: 100%;
-`;
-const Title = styled.h1`
-  color: springgreen;
-`;
+import { ResetCss, Main, Title } from './App.styles';
 
 const App: React.FC = () => {
   return (
     <Main>
+      <ResetCss />
       <Title>Mikeeeh</Title>
     </Main>
   );
