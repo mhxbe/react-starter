@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
+    "strict": true,
     "module": "commonjs",
     "target": "ES5",
     "jsx": "react",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": ["jest", "node", "webpack-env"]
   },
-  "include": ["./src"],
+  "include": ["src", "typings"],
   "exclude": ["node_modules", "dist"]
 }
