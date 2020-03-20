@@ -1,7 +1,7 @@
 {
   "name": "react-starter",
   "version": "1.0.0",
-  "description": "An opinionated starter-kit for quickly bootstrapping React projects written in TypeScript.",
+  "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
