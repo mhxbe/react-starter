@@ -1,12 +1,15 @@
 html {
   height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
-body,
+body {
+  height: inherit;
+  margin: 0;
+}
 #root {
   height: inherit;
-}
-html {
-  font-family: 'Courier New', Courier, monospace;
 }
 h1,
 h2,
@@ -24,13 +27,6 @@ h6 {
 ::before,
 ::after {
   box-sizing: border-box;
-}
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
 }
 ul {
   margin: 0;
