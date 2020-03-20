@@ -40,7 +40,7 @@ This folder contains all of the app's dependencies which are defined in [package
 
 [EditorConfig](https://editorconfig.org/) helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. It is configured in [.editorconfig](.editorconfig).
 
-[stylelint](https://stylelint.io/) is a tool that reports bad code in your CSS files. It helps to enforce the consistent code and prevents you from making errors in your stylesheets.. It is configured in [.stylelintrc.json](.stylelintrc.json). Specific files & folders can be ignored by adding them to [.stylelintignore](.stylelintignore).
+[stylelint](https://stylelint.io/) is a tool that reports bad code in your CSS files. It helps to enforce the consistent code and prevents you from making errors in your stylesheets. It is configured in [.stylelintrc.json](.stylelintrc.json). Specific files & folders can be ignored by adding them to [.stylelintignore](.stylelintignore).
 
 ### Pre-commit hooks
 
