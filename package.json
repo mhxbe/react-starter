@@ -7,7 +7,8 @@
     "test": "jest",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "lint-js": "eslint 'src/**'"
+    "lint:css": "stylelint './src/*.tsx'",
+    "lint:js": "eslint 'src/**'"
   },
   "keywords": [
     "react",
@@ -55,6 +56,9 @@
     "pretty-quick": "2.0.1",
     "react-hot-loader": "4.12.20",
     "style-loader": "1.1.3",
+    "stylelint": "13.2.1",
+    "stylelint-config-prettier": "8.0.1",
+    "stylelint-config-recommended": "3.0.0",
     "ts-jest": "25.2.1",
     "ts-loader": "6.2.1",
     "ts-node": "8.6.2",
