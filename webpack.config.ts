@@ -131,7 +131,7 @@ function getPlugins(mode: string): pluginType[] {
 type envType = string | undefined;
 type argvType = { mode: string };
 
-export default function(env: envType, argv: argvType): object {
+export default function (env: envType, argv: argvType): object {
   return {
     entry: './src/index.tsx',
     module: {
