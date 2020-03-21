@@ -2,8 +2,6 @@ node_modules/
 dist/
 src/images
 
-*.ico
-*.html
 *.ts
 *.md
 *.webmanifest
