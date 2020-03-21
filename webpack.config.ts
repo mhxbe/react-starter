@@ -15,7 +15,6 @@ const htmlWebpackPluginConfig = {
   template: require('html-webpack-template'),
   hash: true,
   title: 'My App',
-
   // html-webpack-template configuration
   appMountId: 'root',
   bodyHtmlSnippet:
@@ -118,10 +117,7 @@ function getPlugins(mode: string): pluginType[] {
   if (mode === 'production') {
     plugins = plugins.concat([
       new CleanWebpackPlugin(),
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        openAnalyzer: false,
-      }),
+      new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     ]);
   }
 
@@ -134,27 +130,10 @@ type argvType = { mode: string };
 export default function (env: envType, argv: argvType): object {
   return {
     entry: './src/index.tsx',
-    module: {
-      rules: [
-        {
-          test: /\.ts(x?)$/,
-          exclude: /node_modules/,
-          use: ['ts-loader'],
-        },
-      ],
-    },
-    resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
-    },
-    output: {
-      path: __dirname + '/dist/',
-      filename: '[name]-[contenthash].js',
-    },
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-      },
-    },
+    module: { rules: [{ test: /\.ts(x?)$/, use: ['ts-loader'] }] },
+    resolve: { extensions: ['.js', '.ts', '.tsx'] },
+    output: { path: __dirname + '/dist/', filename: '[name]-[contenthash].js' },
+    optimization: { splitChunks: { chunks: 'all' } },
     plugins: getPlugins(argv.mode),
     devtool: argv.mode === 'development' ? 'inline-source-map' : 'source-map',
     devServer: {
@@ -162,10 +141,7 @@ export default function (env: envType, argv: argvType): object {
       compress: true,
       hot: true,
       open: true,
-      overlay: {
-        errors: true,
-        warnings: true,
-      },
+      overlay: { errors: true, warnings: true },
       useLocalIp: true,
       host: '0.0.0.0',
     },
