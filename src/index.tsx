@@ -11,6 +11,6 @@ if (module.hot) {
 
 WebFont.load({
   google: {
-    families: ['Open+Sans:400,700,800&display=swap'],
+    families: ['Open+Sans:400,800&display=swap'],
   },
 });
