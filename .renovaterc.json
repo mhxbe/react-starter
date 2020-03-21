@@ -5,6 +5,7 @@
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
+      "requiredStatusChecks": null,
       "rangeStrategy": "bump"
     }
   ]
