@@ -4,6 +4,12 @@ import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
+enum WebpackMode {
+  development = 'development',
+  production = 'production',
+  none = 'none',
+}
+
 type pluginType =
   | HtmlWebpackPlugin
   | webpack.HotModuleReplacementPlugin
@@ -99,7 +105,7 @@ const htmlWebpackPluginConfig = {
   ],
 };
 
-function getPlugins(mode: string): pluginType[] {
+function getPlugins(mode: WebpackMode): pluginType[] {
   let plugins: pluginType[] = [];
 
   plugins = plugins.concat([
@@ -125,17 +131,21 @@ function getPlugins(mode: string): pluginType[] {
 }
 
 type envType = string | undefined;
-type argvType = { mode: string };
+type argvType = { mode: WebpackMode };
 
-export default function (env: envType, argv: argvType): object {
+export default function (env: envType, { mode }: argvType): object {
+  const isDevelopment = mode === 'development';
   return {
     entry: './src/index.tsx',
     module: { rules: [{ test: /\.ts(x?)$/, use: ['ts-loader'] }] },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
-    output: { path: __dirname + '/dist/', filename: '[name]-[contenthash].js' },
+    output: {
+      path: __dirname + '/dist/',
+      filename: isDevelopment ? '[name]-[hash].js' : '[name]-[contenthash].js',
+    },
     optimization: { splitChunks: { chunks: 'all' } },
-    plugins: getPlugins(argv.mode),
-    devtool: argv.mode === 'development' ? 'inline-source-map' : 'source-map',
+    plugins: getPlugins(mode),
+    devtool: isDevelopment ? 'inline-source-map' : 'source-map',
     devServer: {
       contentBase: './dist/',
       compress: true,
