@@ -16,100 +16,14 @@ type pluginType =
   | CleanWebpackPlugin
   | BundleAnalyzerPlugin;
 
-const htmlWebpackPluginConfig = {
-  inject: false,
-  template: require('html-webpack-template'),
-  hash: true,
-  title: 'My App',
-  // html-webpack-template configuration
-  appMountId: 'root',
-  bodyHtmlSnippet:
-    '<noscript>This app works best with JavaScript enabled.</noscript>',
-  meta: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
-    },
-    { name: 'application-name', content: 'Application Name' },
-    { name: 'description', content: 'This is My App.' },
-    { name: 'theme-color', content: '#60dafb' },
-    { name: 'robots', content: 'index,follow' },
-    {
-      name: 'apple-mobile-web-app-title',
-      content: 'App Title',
-    },
-    {
-      name: 'apple-mobile-web-app-status-bar-style',
-      content: 'black-translucent',
-    },
-    {
-      name: 'apple-mobile-web-app-capable',
-      content: 'yes',
-    },
-    {
-      property: 'og:url',
-      content: 'https://example.com/page.html',
-    },
-    {
-      property: 'og:type',
-      content: 'website',
-    },
-    {
-      property: 'og:title',
-      content: 'Content Title',
-    },
-    {
-      property: 'og:image',
-      content: 'https://example.com/image.jpg',
-    },
-    {
-      property: 'og:image:alt',
-      content: 'A description of what is in the image (not a caption)',
-    },
-    {
-      property: 'og:description',
-      content: 'Description Here',
-    },
-    {
-      property: 'og:site_name',
-      content: 'Site Name',
-    },
-    {
-      property: 'og:locale',
-      content: 'en_US',
-    },
-  ],
-  scripts: [],
-  links: [
-    {
-      rel: 'manifest',
-      href: './manifest.webmanifest',
-    },
-    {
-      rel: 'icon',
-      href: './images/icon-192x192.png',
-      sizes: '192x192',
-      type: 'image/png',
-    },
-    {
-      rel: 'apple-touch-icon',
-      href: './images/icon-192x192.png',
-      sizes: '192x192',
-      type: 'image/png',
-    },
-    {
-      rel: 'apple-touch-startup-image',
-      href: './images/icon-512x512.png',
-      type: 'image/png',
-    },
-  ],
-};
-
 function getPlugins(mode: WebpackMode): pluginType[] {
   let plugins: pluginType[] = [];
 
   plugins = plugins.concat([
-    new HtmlWebpackPlugin(htmlWebpackPluginConfig),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/template.html',
+    }),
     new CopyWebpackPlugin([
       { from: './src/images', to: 'images' },
       { from: './src/manifest.webmanifest' },
