@@ -7,8 +7,8 @@
     "test": "jest",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "lint:css": "stylelint 'src/**'",
-    "lint:js": "eslint 'src/**'"
+    "lint:css": "stylelint \"src/**\"",
+    "lint:js": "eslint \"src/**\""
   },
   "keywords": [
     "react",
@@ -26,7 +26,8 @@
     "@emotion/styled": "10.0.27",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "webfontloader": "1.6.28"
+    "webfontloader": "1.6.28",
+    "workbox-window": "5.1.2"
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "5.0.0",
@@ -40,6 +41,8 @@
     "@types/webpack-bundle-analyzer": "2.13.3",
     "@types/webpack-dev-server": "3.10.1",
     "@types/webpack-env": "1.15.1",
+    "@types/workbox-webpack-plugin": "5.0.0",
+    "@types/workbox-window": "4.3.3",
     "@typescript-eslint/eslint-plugin": "2.25.0",
     "@typescript-eslint/parser": "2.25.0",
     "clean-webpack-plugin": "3.0.0",
@@ -66,6 +69,7 @@
     "webpack": "4.42.1",
     "webpack-bundle-analyzer": "3.6.1",
     "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.10.3"
+    "webpack-dev-server": "3.10.3",
+    "workbox-webpack-plugin": "5.1.2"
   }
 }
