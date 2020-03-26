@@ -34,22 +34,32 @@ export const Main = styled.main`
   justify-content: center;
 `;
 
-export const Content = styled.p`
-  color: black;
-  font-size: 14px;
-  line-height: 1.75;
+export const Content = styled.section`
   margin: 0 auto;
-  margin-bottom: 6px;
-  max-width: 960px;
-  padding: 6px 12px 12px;
+  padding: 0 12px 0 12px;
 
   @media (min-width: 340px) {
-    padding: 12px 18px 18px;
-    font-size: 14px;
+    padding: 0 18px 0 18px;
   }
   @media (min-width: 400px) {
-    padding: 18px 24px 24px;
-    font-size: 16px;
+    padding: 0 36px 0 36px;
+    max-width: 800px;
+  }
+`;
+
+export const Paragraph = styled.p`
+  color: black;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 18px 0;
+
+  @media (min-width: 400px) {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
