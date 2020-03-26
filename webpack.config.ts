@@ -3,6 +3,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { InjectManifest } from 'workbox-webpack-plugin';
 
 enum WebpackMode {
   development = 'development',
@@ -37,6 +38,11 @@ function getPlugins(mode: WebpackMode): pluginType[] {
     plugins = plugins.concat([
       new CleanWebpackPlugin(),
       new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
+      new InjectManifest({
+        swSrc: './src/service-worker.js',
+        swDest: 'sw.js',
+        exclude: ['report.html'],
+      }),
     ]);
   }
 
