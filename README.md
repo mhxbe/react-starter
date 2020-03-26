@@ -18,7 +18,7 @@ This folder contains all of the app's dependencies which are defined in [package
 
 ## Progressive Web App (PWA)
 
-@todo: add documentation about PWA & Google Workbox
+[Progressive Web Apps (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) are supported through a **Service Worker** which is present in this starterkit. It's powered by [Google's Workbox](https://developers.google.com/web/tools/workbox) via its [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). The [`src/service-worker.js`](src/service-worker.js) will be enriched and copied to `dist/sw.js` by `workbox-webpack-plugin`'s `InjectManifest()` which can be found in [webpack.config.ts:41](webpack.config.ts#L41). The registration of the **Service Worker** happens in [src/index.tsx:13](src/index.tsx#L13).
 
 ## Configurations
 
