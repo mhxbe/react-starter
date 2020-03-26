@@ -21,8 +21,7 @@ function getPlugins(mode: WebpackMode): pluginType[] {
 
   plugins = plugins.concat([
     new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/template.html',
+      template: './src/index.html',
     }),
     new CopyWebpackPlugin([
       { from: './src/images', to: 'images' },
@@ -54,7 +53,7 @@ export default function (env: envType, { mode }: argvType): object {
     module: { rules: [{ test: /\.ts(x?)$/, use: ['ts-loader'] }] },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
     output: {
-      path: __dirname + '/dist/',
+      path: __dirname + '/dist',
       filename: isDevelopment ? '[name]-[hash].js' : '[name]-[contenthash].js',
     },
     optimization: { splitChunks: { chunks: 'all' } },
