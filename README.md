@@ -16,6 +16,10 @@ This folder outputs a production-optimized **static build** of our app. It's gen
 
 This folder contains all of the app's dependencies which are defined in [package.json](package.json)'s `dependencies` & `devDependencies` fields.
 
+## Progressive Web App (PWA)
+
+@todo: add documentation about PWA & Google Workbox
+
 ## Configurations
 
 ### webpack ([webpack.config.ts](webpack.config.ts))
@@ -56,6 +60,6 @@ The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits 
 
 [.gitignore](.gitignore) file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.
 
-### Dependency management
+## Dependency management
 
 [Renovate](https://renovate.whitesourcesoftware.com/) facilitates automated dependency updates. Make sure to [configure renovate for your project](https://github.com/apps/renovate) if you want to use it. The local project configuration can be found in [.renovaterc.json](.renovaterc.json).
