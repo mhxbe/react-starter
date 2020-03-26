@@ -6,8 +6,8 @@
   "description": "This is My App.",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#60dafb",
-  "theme_color": "#60dafb",
+  "background_color": "#00d8ff",
+  "theme_color": "#00d8ff",
   "icons": [
     {
       "src": "./images/icon-192x192.png",
