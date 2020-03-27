@@ -14,46 +14,42 @@ export const Header = styled.header`
 
 export const Title = styled.h1`
   color: black;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
 
-  @media (max-width: 320px) {
-    font-size: 18px;
+  @media (min-width: 440px) {
+    font-size: 24px;
   }
 `;
 
 export const Main = styled.main`
   background-color: white;
-  flex: 1;
-  height: 100%;
-  overflow-y: scroll;
-
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
+  height: 100%;
   justify-content: center;
+  overflow-y: scroll;
 `;
 
 export const Content = styled.section`
   margin: 0 auto;
-  padding: 0 12px 0 12px;
+  padding: 12px;
 
-  @media (min-width: 340px) {
-    padding: 0 18px 0 18px;
-  }
-  @media (min-width: 400px) {
-    padding: 0 36px 0 36px;
+  @media (min-width: 440px) {
+    padding: 24px;
     max-width: 800px;
   }
 `;
 
 export const Paragraph = styled.p`
   color: black;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
-  margin: 18px 0;
+  margin: 0 0 18px 0;
 
-  @media (min-width: 400px) {
+  @media (min-width: 440px) {
     font-size: 18px;
     line-height: 1.75;
   }
@@ -68,7 +64,7 @@ export const CopyRight = styled.div`
   color: black;
   flex-basis: 100%;
   font-size: 12px;
-  padding: 24px;
+  padding: 18px;
   text-align: center;
 `;
 
