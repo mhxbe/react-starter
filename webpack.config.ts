@@ -27,6 +27,7 @@ function getPlugins(mode: WebpackMode): pluginType[] {
     new CopyWebpackPlugin([
       { from: './src/images', to: 'images' },
       { from: './src/manifest.webmanifest' },
+      { from: './src/robots.txt' },
     ]),
   ]);
 
