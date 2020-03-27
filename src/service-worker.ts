@@ -18,9 +18,26 @@ workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 
+// Cache images with a cache first strategy.
 workbox.routing.registerRoute(
-  new RegExp(/\.(?:png|gif|jpg|jpeg|svg)$/),
+  /\.(?:png|gif|jpg|jpeg|svg)$/,
   new workbox.strategies.CacheFirst({
     cacheName: 'images-cache',
+  })
+);
+
+// Cache the Google Fonts stylesheets with a stale while revalidate strategy.
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.googleapis\.com/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'google-fonts-stylesheets',
+  })
+);
+
+// Cache the Google Fonts webfont files with a cache first strategy.
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.gstatic\.com/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'google-fonts-webfonts',
   })
 );
