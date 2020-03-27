@@ -40,7 +40,7 @@ function getPlugins(mode: WebpackMode): pluginType[] {
       new CleanWebpackPlugin(),
       new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
       new InjectManifest({
-        swSrc: './src/service-worker.js',
+        swSrc: './src/service-worker.ts',
         swDest: 'sw.js',
         exclude: [/\.map$/, 'manifest.webmanifest', 'report.html'],
       }),
