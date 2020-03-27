@@ -42,7 +42,12 @@ function getPlugins(mode: WebpackMode): pluginType[] {
       new InjectManifest({
         swSrc: './src/service-worker.ts',
         swDest: 'sw.js',
-        exclude: [/\.map$/, 'manifest.webmanifest', 'report.html'],
+        exclude: [
+          /\.map$/,
+          'manifest.webmanifest',
+          'report.html',
+          'robots.txt',
+        ],
       }),
     ]);
   }
