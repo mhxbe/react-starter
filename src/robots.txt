@@ -1,0 +1,12 @@
+User-agent: *
+# JS, Images
+Allow: /*.js
+Allow: /images/*.gif
+Allow: /images/*.jpg
+Allow: /images/*.jpeg
+Allow: /images/*.png
+Allow: /images/*.svg
+
+# Disallow Files
+Disallow: /report.html
+Disallow: /*.map
