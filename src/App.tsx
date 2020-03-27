@@ -14,20 +14,28 @@ const App: React.FC = () => {
     <>
       <ResetCss />
       <Header>
-        <Title>react-starter</Title>
+        <Title>mhxbe/react-starter</Title>
       </Header>
       <Main role="main">
         <Content>
           <Paragraph>
             This is an opinionated starter-kit for quickly bootstrapping
             client-side React projects written in TypeScript. Support for
-            Support for Progressive Web Apps (PWA) is powered by{' '}
+            Progressive Web Apps (PWA) is powered by{' '}
             <a
               href="https://developers.google.com/web/tools/workbox"
               rel="noopener noreferrer"
               target="_blank"
             >
               Google Workbox
+            </a>
+            . You can find this starterkit at{' '}
+            <a
+              href="https://github.com/mhxbe/react-starter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github.com/mhxbe/react-starter
             </a>
             .
           </Paragraph>

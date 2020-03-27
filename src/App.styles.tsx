@@ -16,7 +16,6 @@ export const Title = styled.h1`
   color: black;
   font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase;
 
   @media (min-width: 440px) {
     font-size: 24px;
