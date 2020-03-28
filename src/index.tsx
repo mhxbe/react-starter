@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as WebFont from 'webfontloader';
 import { Workbox } from 'workbox-window';
 import App from './App';
 
@@ -31,9 +30,3 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
 
   wb.register();
 }
-
-WebFont.load({
-  google: {
-    families: ['Open+Sans:400,800&display=swap'],
-  },
-});

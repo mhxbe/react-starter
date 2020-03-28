@@ -68,6 +68,24 @@ export const CopyRight = styled.div`
 `;
 
 const reset = css`
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+      url(./fonts/OpenSans-Regular.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+      url(./fonts/OpenSans-ExtraBold.woff2) format('woff2');
+  }
+
   html {
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
