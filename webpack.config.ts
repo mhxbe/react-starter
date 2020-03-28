@@ -11,14 +11,10 @@ enum WebpackMode {
   none = 'none',
 }
 
-type pluginType =
-  | HtmlWebpackPlugin
-  | webpack.HotModuleReplacementPlugin
-  | CleanWebpackPlugin
-  | BundleAnalyzerPlugin;
+type WebpackPlugins = Array<object>;
 
-function getPlugins(mode: WebpackMode): pluginType[] {
-  let plugins: pluginType[] = [];
+function getPlugins(mode: WebpackMode): WebpackPlugins {
+  let plugins: WebpackPlugins = [];
 
   plugins = plugins.concat([
     new HtmlWebpackPlugin({
