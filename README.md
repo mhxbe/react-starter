@@ -20,6 +20,23 @@ This folder contains all of the app's dependencies which are defined in [package
 
 [Progressive Web Apps (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) are supported through a **Service Worker** which is present in this starterkit. It's powered by [Google's Workbox](https://developers.google.com/web/tools/workbox) via its [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). The [`src/service-worker.ts`](src/service-worker.ts) will be enriched and copied to `dist/sw.js` by `workbox-webpack-plugin`'s `InjectManifest()` which can be found in [webpack.config.ts](webpack.config.ts). The registration of the **Service Worker** happens in [src/index.tsx](src/index.tsx).
 
+## Open Graph
+
+Some [Open Graph meta-tags](https://ogp.me/) are present in [src/index.html](src/index.html) to make sure your app will look nice when it's shared on Facebook & Twitter.
+
+The images that are used on Facebook & Twitter can be found in `src/images/open-graph/`.
+
+- Facebook: [src/images/open-graph/facebook.open-graph.png](src/images/open-graph/facebook.open-graph.png)
+- Twitter: [src/images/open-graph/twitter.open-graph.png](src/images/open-graph/twitter.open-graph.png)
+
+Make sure to respect the following filename pattern:
+
+- `{facebook|twitter}.open-graph.{png|jpg|jpeg}`.
+
+Why? We want to exclude these images in our Service Worker. All images ending with `.open-graph.{png|jpg|jpeg}` will be ignored.
+
+Check out the `exclude`-field in `InjectManifest()` which can be found in [webpack.config.ts](webpack.config.ts).
+
 ## Configurations
 
 ### webpack ([webpack.config.ts](webpack.config.ts))
