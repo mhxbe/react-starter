@@ -58,19 +58,20 @@ type argvType = { mode: WebpackMode };
 
 export default function (env: envType, { mode }: argvType): object {
   const isDevelopment = mode === 'development';
+  const ouputPath = __dirname + '/dist/';
   return {
     entry: './src/index.tsx',
     module: { rules: [{ test: /\.ts(x?)$/, use: ['ts-loader'] }] },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
     output: {
-      path: __dirname + '/dist',
+      path: ouputPath,
       filename: isDevelopment ? '[name]-[hash].js' : '[name]-[contenthash].js',
     },
     optimization: { splitChunks: { chunks: 'all' } },
     plugins: getPlugins(mode),
     devtool: isDevelopment ? 'inline-source-map' : 'source-map',
     devServer: {
-      contentBase: './dist/',
+      contentBase: ouputPath,
       compress: true,
       hot: true,
       open: true,
