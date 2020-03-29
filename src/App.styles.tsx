@@ -4,7 +4,7 @@ import { css, Global } from '@emotion/core';
 
 export const Header = styled.header`
   background-color: #00d8ff;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #333333;
   display: flex;
   flex-direction: column;
   height: 56px;
@@ -13,7 +13,7 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h1`
-  color: black;
+  color: #333333;
   font-size: 18px;
   font-weight: bold;
 
@@ -23,7 +23,7 @@ export const Title = styled.h1`
 `;
 
 export const Main = styled.main`
-  background-color: white;
+  background-color: #333333;
   display: flex;
   flex-wrap: wrap;
   flex: 1;
@@ -43,7 +43,7 @@ export const Content = styled.section`
 `;
 
 export const Paragraph = styled.p`
-  color: black;
+  color: white;
   font-size: 16px;
   line-height: 1.5;
   margin: 0 0 18px 0;
@@ -60,7 +60,7 @@ export const Paragraph = styled.p`
 
 export const CopyRight = styled.div`
   align-self: flex-end;
-  color: black;
+  color: white;
   flex-basis: 100%;
   font-size: 12px;
   padding: 18px;
