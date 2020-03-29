@@ -39,7 +39,13 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
       new InjectManifest({
         swSrc: './src/service-worker.ts',
         swDest: 'sw.js',
-        exclude: [/\.DS_Store$/, /\.map$/, 'report.html', 'robots.txt'],
+        exclude: [
+          /\.DS_Store$/,
+          /\.map$/,
+          /\.open-graph.(?:png|jpg|jpeg)$/,
+          'report.html',
+          'robots.txt',
+        ],
       }),
     ]);
   }
