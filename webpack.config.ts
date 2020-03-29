@@ -21,7 +21,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
       template: './src/index.html',
     }),
     new CopyWebpackPlugin([
-      { from: './src/images', to: 'images' },
+      { from: './src/images', to: 'images', ignore: ['.DS_Store'] },
       { from: './src/fonts', to: 'fonts' },
       { from: './src/manifest.webmanifest' },
       { from: './src/robots.txt' },
@@ -39,7 +39,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
       new InjectManifest({
         swSrc: './src/service-worker.ts',
         swDest: 'sw.js',
-        exclude: [/\.map$/, 'report.html', 'robots.txt'],
+        exclude: [/\.DS_Store$/, /\.map$/, 'report.html', 'robots.txt'],
       }),
     ]);
   }
