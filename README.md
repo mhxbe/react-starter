@@ -2,6 +2,8 @@
 
 This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
+A demo of this starter-kit can be found on [https://react-starter.mhx.be](https://react-starter.mhx.be).
+
 ## Structure
 
 ### src/
