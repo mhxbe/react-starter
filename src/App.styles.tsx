@@ -87,6 +87,7 @@ const reset = css`
   }
 
   html {
+    background-color: #00d8ff; /* iOS topbar background color */
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     -ms-text-size-adjust: 100%;
