@@ -8,6 +8,27 @@ This is an opinionated starter-kit for quickly bootstrapping client-side [React]
 
 A demo of this starter-kit can be found on [https://react-starter.mhx.be](https://react-starter.mhx.be).
 
+## Installation
+
+```bash
+git clone git@github.com:mhxbe/react-starter.git
+npm install
+```
+
+## Usage
+
+### Development server
+
+```bash
+npm start
+```
+
+### Production build
+
+```bash
+npm run build
+```
+
 ## Structure
 
 ### src/
