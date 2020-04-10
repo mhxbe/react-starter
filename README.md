@@ -107,3 +107,7 @@ The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits 
 ## Dependency management
 
 [Renovate](https://renovate.whitesourcesoftware.com/) facilitates automated dependency updates. Make sure to [configure renovate for your project](https://github.com/apps/renovate) if you want to use it. The local project configuration can be found in [.renovaterc.json](.renovaterc.json).
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
