@@ -1,7 +1,5 @@
 # React Starter
 
-![GitHub](https://img.shields.io/github/package-json/dependency-version/mhxbe/react-starter/react)
-![GitHub](https://img.shields.io/github/package-json/dependency-version/mhxbe/react-starter/dev/typescript)
 ![David](https://david-dm.org/mhxbe/react-starter.svg)
 ![David](https://david-dm.org/mhxbe/react-starter/dev-status.svg)
 [![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
