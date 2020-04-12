@@ -1,7 +1,7 @@
 # React Starter
 
-![David](https://david-dm.org/mhxbe/react-starter.svg)
-![David](https://david-dm.org/mhxbe/react-starter/dev-status.svg)
+![David](https://img.shields.io/david/mhxbe/react-starter)
+![David](https://img.shields.io/david/dev/mhxbe/react-starter)
 [![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
 
 This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
