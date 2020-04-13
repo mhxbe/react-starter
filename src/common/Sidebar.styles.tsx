@@ -30,6 +30,7 @@ export const Overlay = styled.div<OverlayProps>`
   position: absolute;
   top: 0;
   transition: 0.25s ease-in-out;
+  visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
   width: 100%;
   z-index: 1;
 `;
