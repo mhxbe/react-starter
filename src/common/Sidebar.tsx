@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { GoX } from 'react-icons/go';
 import { Aside, ButtonClose, Overlay } from './Sidebar.styles';
 
 interface SidebarProps {
@@ -20,15 +19,13 @@ const Sidebar: React.FC<SidebarProps> = ({
   return (
     <>
       <Aside showSidebar={showSidebar}>
-        <h2>Wow sidebar</h2>
+        <h2>Sidebar wow</h2>
         <p>So cool</p>
         <p>Many items</p>
         <p>Such animation</p>
         <p>Very height</p>
         {showCloseButton && (
-          <ButtonClose onClick={hideSidebar}>
-            <GoX />
-          </ButtonClose>
+          <ButtonClose onClick={hideSidebar}>&times;</ButtonClose>
         )}
       </Aside>
       <Overlay showSidebar={showSidebar} onClick={hideSidebar} />

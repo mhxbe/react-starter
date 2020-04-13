@@ -25,8 +25,11 @@ export const ButtonToggleSidebar = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
   height: 48px;
   left: 4px;
+  line-height: 1;
   margin: 0;
   padding: 12px;
   position: absolute;

@@ -35,10 +35,12 @@ export const Overlay = styled.div<OverlayProps>`
 `;
 
 export const ButtonClose = styled.button`
-  background-color: lightgrey;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
+  font-size: 36px;
   height: 48px;
+  line-height: 0;
   margin: 0;
   padding: 12px;
   position: absolute;
