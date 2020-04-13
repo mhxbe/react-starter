@@ -2,26 +2,6 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 import { css, Global } from '@emotion/core';
 
-export const Header = styled.header`
-  background-color: #00d8ff;
-  border-bottom: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  height: 56px;
-  justify-content: center;
-  text-align: center;
-`;
-
-export const Title = styled.h1`
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-
-  @media (min-width: 440px) {
-    font-size: 24px;
-  }
-`;
-
 export const Main = styled.main`
   background-color: white;
   display: flex;
@@ -30,6 +10,7 @@ export const Main = styled.main`
   height: 100%;
   justify-content: center;
   overflow-y: scroll;
+  position: relative;
 `;
 
 export const Content = styled.section`
@@ -118,6 +99,11 @@ const reset = css`
   ::before,
   ::after {
     box-sizing: border-box;
+  }
+  *:focus {
+    box-shadow: 0 0 0 2px #006680;
+    outline: 0;
+    border-radius: 0px;
   }
   ul {
     margin: 0;

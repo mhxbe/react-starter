@@ -1,22 +1,20 @@
 import * as React from 'react';
-import {
-  ResetCss,
-  Header,
-  Title,
-  Main,
-  Content,
-  Paragraph,
-  CopyRight,
-} from './App.styles';
+import { ResetCss, Main, Content, Paragraph, CopyRight } from './App.styles';
+import Header from './common/Header';
+import Sidebar from './common/Sidebar';
 
 const App: React.FC = () => {
+  const [showSidebar, setShowSidebar] = React.useState(false);
   return (
     <>
       <ResetCss />
-      <Header>
-        <Title>mhxbe/react-starter</Title>
-      </Header>
+      <Header onToggleSidebar={() => setShowSidebar(!showSidebar)} />
       <Main role="main">
+        <Sidebar
+          showSidebar={showSidebar}
+          onToggleSidebar={setShowSidebar}
+          showCloseButton
+        />
         <Content>
           <Paragraph>
             This is an opinionated starter-kit for quickly bootstrapping
