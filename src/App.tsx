@@ -1,29 +1,16 @@
 import * as React from 'react';
-import {
-  ResetCss,
-  Header,
-  Title,
-  Main,
-  Content,
-  Paragraph,
-  CopyRight,
-} from './App.styles';
-
+import { ResetCss, Main, Content, Paragraph, CopyRight } from './App.styles';
+import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 
 const App: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [showSidebar, setShowSidebar] = React.useState(true);
   return (
     <>
       <ResetCss />
-      <Header>
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? 'Hide' : 'Open'}
-        </button>
-        <Title>mhxbe/react-starter</Title>
-      </Header>
+      <Header onToggleSidebar={() => setShowSidebar(!showSidebar)} />
       <Main role="main">
-        <Sidebar open={isOpen} onToggle={setIsOpen} />
+        <Sidebar showSidebar={showSidebar} onToggleSidebar={setShowSidebar} />
         <Content>
           <Paragraph>
             This is an opinionated starter-kit for quickly bootstrapping

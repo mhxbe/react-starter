@@ -3,20 +3,18 @@ import { GoX } from 'react-icons/go';
 import { Aside, ButtonClose, Overlay } from './Sidebar.styles';
 
 interface SidebarProps {
-  open: boolean;
-  onToggle: (isOpen: boolean) => void;
+  onToggleSidebar: (isOpen: boolean) => void;
+  showSidebar: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
-  console.log('Sidebar open?', open);
-
+const Sidebar: React.FC<SidebarProps> = ({ showSidebar, onToggleSidebar }) => {
   function hideSidebar(): void {
-    return onToggle(false);
+    return onToggleSidebar(false);
   }
 
   return (
     <>
-      <Aside open={open}>
+      <Aside showSidebar={showSidebar}>
         <h2>Wow sidebar</h2>
         <p>So cool</p>
         <p>Many items</p>
@@ -26,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
           <GoX />
         </ButtonClose>
       </Aside>
-      <Overlay show={open} onClick={hideSidebar} />
+      <Overlay showSidebar={showSidebar} onClick={hideSidebar} />
     </>
   );
 };
