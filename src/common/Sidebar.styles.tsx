@@ -6,11 +6,11 @@ interface AsideProps {
 export const Aside = styled.div<AsideProps>`
   background: white;
   height: 100%;
+  left: 0;
   overflow-y: auto;
   padding: 12px;
   position: absolute;
   top: 0;
-  left: 0;
   transform: translateX(
     ${({ showSidebar }) => (showSidebar ? '0px' : '-300px')}
   );

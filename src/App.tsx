@@ -4,13 +4,17 @@ import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 
 const App: React.FC = () => {
-  const [showSidebar, setShowSidebar] = React.useState(true);
+  const [showSidebar, setShowSidebar] = React.useState(false);
   return (
     <>
       <ResetCss />
       <Header onToggleSidebar={() => setShowSidebar(!showSidebar)} />
       <Main role="main">
-        <Sidebar showSidebar={showSidebar} onToggleSidebar={setShowSidebar} />
+        <Sidebar
+          showSidebar={showSidebar}
+          onToggleSidebar={setShowSidebar}
+          showCloseButton
+        />
         <Content>
           <Paragraph>
             This is an opinionated starter-kit for quickly bootstrapping

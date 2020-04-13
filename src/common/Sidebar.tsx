@@ -4,10 +4,15 @@ import { Aside, ButtonClose, Overlay } from './Sidebar.styles';
 
 interface SidebarProps {
   onToggleSidebar: (isOpen: boolean) => void;
+  showCloseButton?: boolean;
   showSidebar: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ showSidebar, onToggleSidebar }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+  onToggleSidebar,
+  showCloseButton,
+  showSidebar,
+}) => {
   function hideSidebar(): void {
     return onToggleSidebar(false);
   }
@@ -20,13 +25,19 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, onToggleSidebar }) => {
         <p>Many items</p>
         <p>Such animation</p>
         <p>Very height</p>
-        <ButtonClose onClick={hideSidebar}>
-          <GoX />
-        </ButtonClose>
+        {showCloseButton && (
+          <ButtonClose onClick={hideSidebar}>
+            <GoX />
+          </ButtonClose>
+        )}
       </Aside>
       <Overlay showSidebar={showSidebar} onClick={hideSidebar} />
     </>
   );
+};
+
+Sidebar.defaultProps = {
+  showCloseButton: false,
 };
 
 export default Sidebar;
