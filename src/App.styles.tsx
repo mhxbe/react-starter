@@ -31,6 +31,7 @@ export const Main = styled.main`
   height: 100%;
   justify-content: center;
   overflow-y: scroll;
+  position: relative;
 `;
 
 export const Content = styled.section`
