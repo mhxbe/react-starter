@@ -4,12 +4,13 @@ import { css, Global } from '@emotion/core';
 
 export const Header = styled.header`
   background-color: #00d8ff;
-  border-bottom: 1px solid black;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   height: 56px;
   justify-content: center;
   text-align: center;
+  z-index: 3;
 `;
 
 export const Title = styled.h1`
