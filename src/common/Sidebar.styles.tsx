@@ -5,8 +5,10 @@ interface SidebarProps {
 }
 
 export const SidebarWrapper = styled.div<SidebarProps>`
-  display: contents;
+  height: 100%;
+  position: absolute;
   visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
+  width: 100%;
 `;
 
 export const Aside = styled.aside<SidebarProps>`
