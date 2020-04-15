@@ -101,7 +101,7 @@ const reset = css`
     box-sizing: border-box;
   }
   *:focus {
-    box-shadow: 0 0 0 2px #006680;
+    box-shadow: 0 0 0 2px #015b6d;
     outline: 0;
     border-radius: 0px;
   }
