@@ -5,6 +5,7 @@ interface SidebarProps {
 }
 
 export const SidebarWrapper = styled.div<SidebarProps>`
+  display: contents;
   visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
 `;
 
