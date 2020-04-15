@@ -1,35 +1,56 @@
 import * as React from 'react';
-import { Aside, ButtonClose, Overlay } from './Sidebar.styles';
+import { Aside, ButtonClose, Overlay, SidebarWrapper } from './Sidebar.styles';
 
 interface SidebarProps {
   onToggleSidebar: (isOpen: boolean) => void;
   showCloseButton?: boolean;
   showSidebar: boolean;
+  toggleSidebarRef: React.RefObject<HTMLButtonElement>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
   onToggleSidebar,
   showCloseButton,
   showSidebar,
+  toggleSidebarRef,
 }) => {
   function hideSidebar(): void {
+    toggleSidebarRef.current?.focus();
     return onToggleSidebar(false);
   }
 
   return (
-    <>
-      <Aside showSidebar={showSidebar}>
+    <SidebarWrapper
+      aria-hidden={!showSidebar}
+      id="sidebar"
+      role="region"
+      showSidebar={showSidebar}
+    >
+      <Aside role="navigation" showSidebar={showSidebar}>
         <h2>Sidebar wow</h2>
-        <p>So cool</p>
-        <p>Many items</p>
-        <p>Such animation</p>
-        <p>Very height</p>
+        <ul role="menubar">
+          <li>
+            <a href="#">So cool</a>
+          </li>
+          <li>
+            <a href="#">Many items</a>
+          </li>
+          <li>
+            <a href="#">Such animation</a>
+          </li>
+          <li>
+            <a href="#">Very height</a>
+          </li>
+        </ul>
         {showCloseButton && (
-          <ButtonClose onClick={hideSidebar}>&times;</ButtonClose>
+          <ButtonClose aria-label="Close" onClick={hideSidebar}>
+            &times;
+          </ButtonClose>
         )}
       </Aside>
+
       <Overlay showSidebar={showSidebar} onClick={hideSidebar} />
-    </>
+    </SidebarWrapper>
   );
 };
 

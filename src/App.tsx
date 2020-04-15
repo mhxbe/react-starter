@@ -5,33 +5,37 @@ import Sidebar from './common/Sidebar';
 
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
+  const toggleSidebarRef = React.useRef<HTMLButtonElement>(null);
   return (
     <>
       <ResetCss />
-      <Header onToggleSidebar={() => setShowSidebar(!showSidebar)} />
+      <Header
+        showSidebar={showSidebar}
+        onToggleSidebar={() => setShowSidebar(!showSidebar)}
+        toggleSidebarRef={toggleSidebarRef}
+      />
       <Main role="main">
         <Sidebar
           showSidebar={showSidebar}
           onToggleSidebar={setShowSidebar}
           showCloseButton
+          toggleSidebarRef={toggleSidebarRef}
         />
-        <Content>
+        <Content aria-hidden={showSidebar}>
           <Paragraph>
             This is an opinionated starter-kit for quickly bootstrapping
             client-side React projects written in TypeScript. Support for
             Progressive Web Apps (PWA) is powered by{' '}
             <a
               href="https://developers.google.com/web/tools/workbox"
-              rel="noopener noreferrer"
-              target="_blank"
+              title="This is a link to Google's Workbox project.s"
             >
               Google Workbox
             </a>
             . You can find this starterkit at{' '}
             <a
               href="https://github.com/mhxbe/react-starter"
-              target="_blank"
-              rel="noopener noreferrer"
+              title="This is a link to Mike's react starterkit Github page."
             >
               github.com/mhxbe/react-starter
             </a>
@@ -56,7 +60,9 @@ const App: React.FC = () => {
             repudiandae, recusandae repellat voluptatem corrupti ab consequatur.
           </Paragraph>
         </Content>
-        <CopyRight>&copy; 2020 Mike Henderyckx</CopyRight>
+        <CopyRight aria-hidden={showSidebar}>
+          &copy; 2020 Mike Henderyckx
+        </CopyRight>
       </Main>
     </>
   );

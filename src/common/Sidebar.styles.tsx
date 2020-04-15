@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
 
-interface AsideProps {
+interface SidebarProps {
   readonly showSidebar: boolean;
 }
-export const Aside = styled.div<AsideProps>`
+
+export const SidebarWrapper = styled.div<SidebarProps>`
+  visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
+`;
+
+export const Aside = styled.aside<SidebarProps>`
   background: white;
   height: 100%;
   left: 0;
@@ -19,10 +24,7 @@ export const Aside = styled.div<AsideProps>`
   z-index: 2;
 `;
 
-interface OverlayProps {
-  readonly showSidebar: boolean;
-}
-export const Overlay = styled.div<OverlayProps>`
+export const Overlay = styled.div<SidebarProps>`
   background: black;
   height: 100%;
   left: 0;
@@ -30,7 +32,6 @@ export const Overlay = styled.div<OverlayProps>`
   position: absolute;
   top: 0;
   transition: 0.25s ease-in-out;
-  visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
   width: 100%;
   z-index: 1;
 `;
