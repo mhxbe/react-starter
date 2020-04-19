@@ -3,14 +3,12 @@ import { Aside, ButtonClose, Overlay, SidebarWrapper } from './Sidebar.styles';
 
 interface SidebarProps {
   onToggleSidebar: (isOpen: boolean) => void;
-  showCloseButton?: boolean;
   showSidebar: boolean;
   toggleSidebarRef: React.RefObject<HTMLButtonElement>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
   onToggleSidebar,
-  showCloseButton,
   showSidebar,
   toggleSidebarRef,
 }) => {
@@ -42,20 +40,14 @@ const Sidebar: React.FC<SidebarProps> = ({
             <a href="#">Very height</a>
           </li>
         </ul>
-        {showCloseButton && (
-          <ButtonClose aria-label="Close" onClick={hideSidebar}>
-            &times;
-          </ButtonClose>
-        )}
+        <ButtonClose aria-label="Close" onClick={hideSidebar}>
+          &times;
+        </ButtonClose>
       </Aside>
 
       <Overlay showSidebar={showSidebar} onClick={hideSidebar} />
     </SidebarWrapper>
   );
-};
-
-Sidebar.defaultProps = {
-  showCloseButton: false,
 };
 
 export default Sidebar;

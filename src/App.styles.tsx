@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { css, Global } from '@emotion/core';
+import { BREAKPOINT_DESKTOP } from './constants';
 
 export const Main = styled.main`
   background-color: white;
@@ -9,17 +10,34 @@ export const Main = styled.main`
   flex: 1;
   height: 100%;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   position: relative;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: ${BREAKPOINT_DESKTOP}px;
+    overflow: hidden;
+  }
 `;
 
 export const Content = styled.section`
   margin: 0 auto;
   padding: 12px;
 
+  &[aria-hidden='true'] {
+    max-height: auto;
+    overflow-y: hidden;
+  }
+
   @media (min-width: 440px) {
     padding: 24px;
     max-width: 800px;
+  }
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    max-height: 100%;
+    max-width: 960px;
+    overflow-y: auto;
   }
 `;
 
@@ -37,15 +55,6 @@ export const Paragraph = styled.p`
   &:last-child {
     margin-bottom: 0;
   }
-`;
-
-export const CopyRight = styled.div`
-  align-self: flex-end;
-  color: black;
-  flex-basis: 100%;
-  font-size: 12px;
-  padding: 18px;
-  text-align: center;
 `;
 
 const reset = css`
@@ -75,6 +84,7 @@ const reset = css`
     -webkit-text-size-adjust: 100%;
   }
   body {
+    background-color: whitesmoke;
     height: inherit;
     margin: 0rem;
   }

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT_DESKTOP } from '../constants';
 
 interface SidebarProps {
   readonly showSidebar: boolean;
@@ -6,13 +7,19 @@ interface SidebarProps {
 
 export const SidebarWrapper = styled.div<SidebarProps>`
   height: 100%;
-  position: absolute;
+  position: fixed;
   visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
   width: 100%;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    position: relative;
+    /* visibility: visible; */
+    width: 300px;
+  }
 `;
 
 export const Aside = styled.aside<SidebarProps>`
-  background: white;
+  background-color: whitesmoke;
   height: 100%;
   left: 0;
   overflow-y: auto;
@@ -25,6 +32,12 @@ export const Aside = styled.aside<SidebarProps>`
   transition: 0.25s ease-in-out;
   width: 300px;
   z-index: 2;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    display: block;
+    position: relative;
+    transform: none;
+  }
 `;
 
 export const Overlay = styled.div<SidebarProps>`
@@ -37,6 +50,10 @@ export const Overlay = styled.div<SidebarProps>`
   transition: 0.25s ease-in-out;
   width: 100%;
   z-index: 1;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    display: none;
+  }
 `;
 
 export const ButtonClose = styled.button`
@@ -52,6 +69,10 @@ export const ButtonClose = styled.button`
   right: 0;
   top: 0;
   width: 48px;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    display: none;
+  }
 
   svg {
     height: 24px;

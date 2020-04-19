@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BREAKPOINT_DESKTOP } from '../constants';
 
 export const StyledHeader = styled.header`
   background-color: #00d8ff;
@@ -35,6 +36,10 @@ export const ButtonToggleSidebar = styled.button`
   position: absolute;
   top: 4px;
   width: 48px;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    display: none;
+  }
 
   svg {
     height: 24px;
