@@ -64,42 +64,6 @@ const App: React.FC = () => {
             tempora consectetur cupiditate accusantium aperiam voluptate
             repudiandae, recusandae repellat voluptatem corrupti ab consequatur.
           </Paragraph>
-          <Paragraph>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-            laborum adipisci quis in modi aperiam error rem harum nisi, facilis
-            corrupti blanditiis, necessitatibus temporibus sapiente corporis
-            delectus earum. Vel, alias.
-          </Paragraph>
-          <Paragraph>
-            Sequi, inventore possimus! Hic eveniet iure repellendus eius
-            doloribus labore at, nobis, sed soluta, quia dolores? Mollitia
-            molestias odit est minima officiis. Consectetur suscipit iure
-            eligendi veniam, minus amet.
-          </Paragraph>
-          <Paragraph>
-            Earum dolorum possimus adipisci quidem debitis libero amet nobis,
-            beatae placeat reiciendis, odit enim necessitatibus. Officiis, quae
-            tempora consectetur cupiditate accusantium aperiam voluptate
-            repudiandae, recusandae repellat voluptatem corrupti ab consequatur.
-          </Paragraph>
-          <Paragraph>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-            laborum adipisci quis in modi aperiam error rem harum nisi, facilis
-            corrupti blanditiis, necessitatibus temporibus sapiente corporis
-            delectus earum. Vel, alias.
-          </Paragraph>
-          <Paragraph>
-            Sequi, inventore possimus! Hic eveniet iure repellendus eius
-            doloribus labore at, nobis, sed soluta, quia dolores? Mollitia
-            molestias odit est minima officiis. Consectetur suscipit iure
-            eligendi veniam, minus amet.
-          </Paragraph>
-          <Paragraph>
-            Earum dolorum possimus adipisci quidem debitis libero amet nobis,
-            beatae placeat reiciendis, odit enim necessitatibus. Officiis, quae
-            tempora consectetur cupiditate accusantium aperiam voluptate
-            repudiandae, recusandae repellat voluptatem corrupti ab consequatur.
-          </Paragraph>
         </Content>
       </Main>
     </>
