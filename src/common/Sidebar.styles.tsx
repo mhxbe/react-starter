@@ -1,41 +1,40 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT_DESKTOP } from '../constants';
+import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
 interface SidebarProps {
   readonly showSidebar: boolean;
 }
 
 export const SidebarWrapper = styled.div<SidebarProps>`
-  height: 100%;
+  height: calc(100% - ${HEADER_HEIGHT}px);
   position: fixed;
   visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
   width: 100%;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    position: relative;
-    /* visibility: visible; */
+    height: auto;
+    left: 0;
+    position: sticky;
+    top: ${HEADER_HEIGHT}px;
     width: 300px;
   }
 `;
 
 export const Aside = styled.aside<SidebarProps>`
-  background-color: whitesmoke;
+  background-color: white;
   height: 100%;
-  left: 0;
   overflow-y: auto;
   padding: 12px;
-  position: absolute;
-  top: 0;
+  position: relative;
   transform: translateX(
     ${({ showSidebar }) => (showSidebar ? '0px' : '-300px')}
   );
   transition: 0.25s ease-in-out;
   width: 300px;
-  z-index: 2;
+  z-index: 1;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     display: block;
-    position: relative;
     transform: none;
   }
 `;
@@ -49,7 +48,6 @@ export const Overlay = styled.div<SidebarProps>`
   top: 0;
   transition: 0.25s ease-in-out;
   width: 100%;
-  z-index: 1;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     display: none;

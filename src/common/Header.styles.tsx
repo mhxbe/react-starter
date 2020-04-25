@@ -1,14 +1,19 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT_DESKTOP } from '../constants';
+import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
 export const StyledHeader = styled.header`
   background-color: #00d8ff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  height: 56px;
+  height: ${HEADER_HEIGHT}px;
   justify-content: center;
+  left: 0;
+  min-height: ${HEADER_HEIGHT}px;
+  position: sticky;
+  right: 0;
   text-align: center;
+  top: 0;
   z-index: 3;
 `;
 

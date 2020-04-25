@@ -8,16 +8,11 @@ export const Main = styled.main`
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  height: 100%;
   justify-content: center;
-  overflow-y: auto;
-  position: relative;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     margin: 0 auto;
-    max-height: 100%;
     max-width: ${BREAKPOINT_DESKTOP}px;
-    overflow: hidden;
   }
 `;
 
@@ -25,19 +20,12 @@ export const Content = styled.section`
   margin: 0 auto;
   padding: 12px;
 
-  &[aria-hidden='true'] {
-    max-height: auto;
-    overflow-y: hidden;
-  }
-
   @media (min-width: 440px) {
     padding: 24px;
     max-width: 800px;
   }
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    max-height: 100%;
     max-width: 960px;
-    overflow-y: auto;
   }
 `;
 
@@ -88,10 +76,10 @@ const reset = css`
     margin: 0rem;
   }
   #root {
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    height: inherit;
+    min-height: 100%;
   }
   h1,
   h2,
