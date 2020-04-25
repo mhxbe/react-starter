@@ -84,11 +84,11 @@ const reset = css`
     -webkit-text-size-adjust: 100%;
   }
   body {
-    background-color: whitesmoke;
     height: inherit;
     margin: 0rem;
   }
   #root {
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     height: inherit;
