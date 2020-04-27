@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { css, Global } from '@emotion/core';
-import { BREAKPOINT_DESKTOP } from './constants';
+import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from './constants';
 
 export const Main = styled.main`
   background-color: white;
@@ -65,18 +65,20 @@ const reset = css`
   }
 
   html {
-    background-color: #00d8ff; /* iOS topbar background color */
+    background-color: #00d8ff; /* iOS topbar background color when black-translucent */
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
   body {
-    height: inherit;
+    background-color: white;
     margin: 0rem;
+    min-height: 100%;
+    overflow-y: auto;
+    padding-top: ${HEADER_HEIGHT}px;
   }
   #root {
-    background-color: white;
     display: flex;
     flex-direction: column;
     min-height: 100%;

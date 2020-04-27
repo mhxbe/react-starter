@@ -10,7 +10,7 @@ export const StyledHeader = styled.header`
   justify-content: center;
   left: 0;
   min-height: ${HEADER_HEIGHT}px;
-  position: sticky;
+  position: fixed;
   right: 0;
   text-align: center;
   top: 0;
