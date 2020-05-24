@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -20,12 +21,18 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    new CopyWebpackPlugin([
-      { from: './src/images', to: 'images', ignore: ['.DS_Store'] },
-      { from: './src/fonts', to: 'fonts' },
-      { from: './src/manifest.webmanifest' },
-      { from: './src/robots.txt' },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/images',
+          to: 'images',
+          globOptions: { dot: true, ignore: ['.DS_Store'] },
+        },
+        { from: './src/fonts', to: 'fonts' },
+        { from: './src/manifest.webmanifest' },
+        { from: './src/robots.txt' },
+      ],
+    }),
   ]);
 
   if (mode === 'development') {
