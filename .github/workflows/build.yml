@@ -40,3 +40,15 @@ jobs:
           npm run lint:css
           npm test
           npm run build
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+      - name: Archive webpack-bundle-analyzer report
+        uses: actions/upload-artifact@v2
+        with:
+          name: webpack-bundle-analyzer-report
+          path: dist/report.html
