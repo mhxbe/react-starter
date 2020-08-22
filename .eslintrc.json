@@ -35,6 +35,7 @@
     "plugin:import/typescript",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:compat/recommended",
     "prettier/@typescript-eslint",
     "eslint:recommended"
   ],

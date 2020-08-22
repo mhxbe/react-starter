@@ -90,6 +90,9 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 [stylelint](https://stylelint.io/) is a tool that reports bad code in your CSS files. It helps to enforce the consistent code and prevents you from making errors in your stylesheets. It is configured in [.stylelintrc.json](.stylelintrc.json). Specific files & folders can be ignored by adding them to [.stylelintignore](.stylelintignore).
 
+[Browserslist](https://github.com/browserslist/browserslist) shares target browsers versions between different front-end tools.
+Currently it's used in combination with [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) which will give linting errors/warnings when non-compatible code is written.
+
 ### Pre-commit hooks
 
 [Husky](https://github.com/typicode/husky) makes it easy to set up Git hooks. It's configured in [.huskyrc.json](.huskyrc.json).
