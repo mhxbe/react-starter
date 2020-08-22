@@ -56,3 +56,4 @@ jobs:
           source: 'dist/*'
           target: 'TEST_FOLDER'
           rm: true
+          strip_components: 1
