@@ -53,6 +53,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: 'dist/*.'
+          source: 'dist/*'
           target: 'TEST_FOLDER'
           rm: true
