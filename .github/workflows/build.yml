@@ -54,6 +54,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: 'dist/*'
-          target: 'react-starter.mhx.be'
+          target: ${{ secrets.TARGET }}
           rm: true
           strip_components: 1
