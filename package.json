@@ -2,7 +2,7 @@
   "name": "react-starter",
   "version": "1.0.0",
   "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
-  "main": "index.js",
+  "browser": "src/index.tsx",
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --mode development",
@@ -15,11 +15,26 @@
     "starter-kit",
     "typescript"
   ],
-  "author": "Mike Henderyckx",
+  "author": {
+    "name": "Mike Henderyckx",
+    "email": "mike.henderyckx@gmail.com",
+    "url": "https://mhx.be/"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/mhxbe/react-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhxbe/react-starter/issues"
+  },
+  "directories": {
+    "lib": "src",
+    "doc": "README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": "~6.9.0"
   },
   "dependencies": {
     "@emotion/core": "10.0.35",
