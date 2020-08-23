@@ -10,6 +10,7 @@ export const SidebarWrapper = styled.div<SidebarProps>`
   position: fixed;
   visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
   width: 100%;
+  z-index: 2;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     height: auto;
@@ -54,11 +55,51 @@ export const Overlay = styled.div<SidebarProps>`
   }
 `;
 
+export const SidebarNavigation = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+export const SidebarMenuItem = styled.li`
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  height: 48px;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    height: 36px;
+  }
+
+  a {
+    display: block;
+    line-height: 48px;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: #015b6d;
+    }
+    &:hover {
+      color: #060060;
+    }
+
+    @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+      line-height: 36px;
+    }
+  }
+`;
+
 export const ButtonClose = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  font-size: 36px;
+  font-size: 2rem;
   height: 48px;
   line-height: 0;
   margin: 0;

@@ -17,13 +17,13 @@ export const StyledHeader = styled.header`
   z-index: 3;
 `;
 
-export const Title = styled.h1`
+export const HeaderTitle = styled.span`
   color: #282a37;
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: bold;
 
   @media (min-width: 440px) {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 
@@ -31,7 +31,7 @@ export const ButtonToggleSidebar = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   height: 48px;
   left: 4px;

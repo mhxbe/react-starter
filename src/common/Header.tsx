@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { ButtonToggleSidebar, StyledHeader, Title } from './Header.styles';
+import {
+  ButtonToggleSidebar,
+  StyledHeader,
+  HeaderTitle,
+} from './Header.styles';
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -22,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({
       >
         &#9776;
       </ButtonToggleSidebar>
-      <Title>mhxbe/react-starter</Title>
+      <HeaderTitle>mhxbe/react-starter</HeaderTitle>
     </StyledHeader>
   );
 };

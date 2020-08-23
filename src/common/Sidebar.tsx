@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { Aside, ButtonClose, Overlay, SidebarWrapper } from './Sidebar.styles';
+import { Link } from 'react-router-dom';
+import { BREAKPOINT_DESKTOP } from '../constants';
+import {
+  Aside,
+  ButtonClose,
+  Overlay,
+  SidebarWrapper,
+  SidebarMenuItem,
+  SidebarNavigation,
+} from './Sidebar.styles';
 
 interface SidebarProps {
   onToggleSidebar: (isOpen: boolean) => void;
@@ -13,8 +22,11 @@ const Sidebar: React.FC<SidebarProps> = ({
   toggleSidebarRef,
 }) => {
   function hideSidebar(): void {
-    toggleSidebarRef.current?.focus();
-    return onToggleSidebar(false);
+    // Only hide sidebar when its toggleable (on desktop, sidebar is always shown)
+    if (document.body.clientWidth < BREAKPOINT_DESKTOP) {
+      toggleSidebarRef.current?.focus();
+      return onToggleSidebar(false);
+    }
   }
 
   return (
@@ -25,21 +37,23 @@ const Sidebar: React.FC<SidebarProps> = ({
       showSidebar={showSidebar}
     >
       <Aside role="navigation" showSidebar={showSidebar}>
-        <h2>Sidebar wow</h2>
-        <ul role="menubar">
-          <li>
-            <a href="#">So cool</a>
-          </li>
-          <li>
-            <a href="#">Many items</a>
-          </li>
-          <li>
-            <a href="#">Such animation</a>
-          </li>
-          <li>
-            <a href="#">Very height</a>
-          </li>
-        </ul>
+        <SidebarNavigation role="menubar">
+          <SidebarMenuItem>
+            <Link to="/" onClick={hideSidebar}>
+              Home
+            </Link>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <Link to="/about" onClick={hideSidebar}>
+              About
+            </Link>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <Link to="/foo" onClick={hideSidebar}>
+              Page Not Found (404)
+            </Link>
+          </SidebarMenuItem>
+        </SidebarNavigation>
         <ButtonClose aria-label="Close" onClick={hideSidebar}>
           &times;
         </ButtonClose>
