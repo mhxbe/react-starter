@@ -14,7 +14,7 @@ function useShowSidebar(): ShowSidebarHook {
 
   const [showSidebar, setShowSidebar] = React.useState(isDesktop);
   const [showContent, setShowContent] = React.useState(true);
-  const [innerWidth, setInnerWidth] = React.useState(0);
+  const [innerWidth, setInnerWidth] = React.useState(window.innerWidth);
   const toggleSidebarRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
