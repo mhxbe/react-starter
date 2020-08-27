@@ -22,8 +22,14 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   function hideSidebar(): void {
     // Only hide sidebar when its toggleable (on desktop, sidebar is always shown)
-    if (document.body.clientWidth < BREAKPOINT_DESKTOP) {
+    if (window.innerWidth < BREAKPOINT_DESKTOP) {
       toggleSidebarRef.current?.focus();
+
+      // @todo move to util
+      const circles = document.querySelectorAll('svg circle');
+      const circle = showSidebar ? circles[0] : circles[1];
+      circle.dispatchEvent(new Event('click'));
+
       return onToggleSidebar(false);
     }
   }
