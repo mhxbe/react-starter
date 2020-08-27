@@ -1,14 +1,11 @@
 import * as React from 'react';
-import {
-  ButtonToggleSidebar,
-  StyledHeader,
-  HeaderTitle,
-} from './Header.styles';
+import { StyledHeader, HeaderTitle } from './Header.styles';
+import MenuIconToggle from './MenuIconToggle';
 
 interface HeaderProps {
   onToggleSidebar: () => void;
   showSidebar: boolean;
-  toggleSidebarRef: React.RefObject<HTMLButtonElement>;
+  toggleSidebarRef: React.RefObject<HTMLDivElement>;
 }
 const Header: React.FC<HeaderProps> = ({
   onToggleSidebar,
@@ -17,15 +14,14 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <StyledHeader>
-      <ButtonToggleSidebar
+      <MenuIconToggle
         id="toggle-sidebar"
+        aria-label={showSidebar ? 'Show menu' : 'Close menu'}
         aria-controls="sidebar"
-        aria-expanded={showSidebar}
-        onClick={onToggleSidebar}
+        showSidebar={showSidebar}
+        onToggleSidebar={onToggleSidebar}
         ref={toggleSidebarRef}
-      >
-        &#9776;
-      </ButtonToggleSidebar>
+      />
       <HeaderTitle>mhxbe/react-starter</HeaderTitle>
     </StyledHeader>
   );

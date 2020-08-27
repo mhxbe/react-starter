@@ -47,7 +47,7 @@ export const Content = styled.section`
     max-width: 800px;
   }
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    max-width: 960px;
+    width: 960px;
   }
 `;
 

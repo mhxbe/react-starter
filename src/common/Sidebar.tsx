@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { BREAKPOINT_DESKTOP } from '../constants';
 import {
   Aside,
-  ButtonClose,
   Overlay,
   SidebarWrapper,
   SidebarMenuItem,
@@ -13,7 +12,7 @@ import {
 interface SidebarProps {
   onToggleSidebar: (isOpen: boolean) => void;
   showSidebar: boolean;
-  toggleSidebarRef: React.RefObject<HTMLButtonElement>;
+  toggleSidebarRef: React.RefObject<HTMLDivElement>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -54,9 +53,6 @@ const Sidebar: React.FC<SidebarProps> = ({
             </Link>
           </SidebarMenuItem>
         </SidebarNavigation>
-        <ButtonClose aria-label="Close" onClick={hideSidebar}>
-          &times;
-        </ButtonClose>
       </Aside>
 
       <Overlay showSidebar={showSidebar} onClick={hideSidebar} />
