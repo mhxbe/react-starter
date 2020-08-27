@@ -13,6 +13,7 @@ const App: React.FC = () => {
     showSidebar,
     setShowSidebar,
     showContent,
+    setShowContent,
     toggleSidebarRef,
   } = useShowSidebar();
 
@@ -21,7 +22,10 @@ const App: React.FC = () => {
       <ResetCss />
       <Header
         showSidebar={showSidebar}
-        onToggleSidebar={() => setShowSidebar(!showSidebar)}
+        onToggleSidebar={() => {
+          setShowSidebar(!showSidebar);
+          setShowContent(showSidebar);
+        }}
         toggleSidebarRef={toggleSidebarRef}
       />
       <Main role="main">

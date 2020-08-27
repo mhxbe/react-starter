@@ -5,6 +5,7 @@ interface ShowSidebarHook {
   showSidebar: boolean;
   setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
   showContent: boolean;
+  setShowContent: React.Dispatch<React.SetStateAction<boolean>>;
   toggleSidebarRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -28,19 +29,15 @@ function useShowSidebar(): ShowSidebarHook {
   }, []);
 
   React.useEffect(() => {
-    if (innerWidth >= BREAKPOINT_DESKTOP) {
-      setShowContent(true);
-      setShowSidebar(true);
-      return;
-    }
-
-    setShowContent(!showSidebar);
-  }, [innerWidth, showSidebar]);
+    setShowContent(true);
+    setShowSidebar(innerWidth >= BREAKPOINT_DESKTOP);
+  }, [innerWidth]);
 
   return {
     showSidebar,
     setShowSidebar,
     showContent,
+    setShowContent,
     toggleSidebarRef,
   };
 }
