@@ -85,6 +85,8 @@ export default function (env: envType, { mode }: argvType): object {
       overlay: { errors: true, warnings: true },
       useLocalIp: true,
       host: '0.0.0.0',
+      publicPath: '/',
+      historyApiFallback: true,
     },
   };
 }

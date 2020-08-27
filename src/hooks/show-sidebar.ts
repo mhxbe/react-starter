@@ -5,7 +5,8 @@ interface ShowSidebarHook {
   showSidebar: boolean;
   setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
   showContent: boolean;
-  toggleSidebarRef: React.RefObject<HTMLButtonElement>;
+  setShowContent: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleSidebarRef: React.RefObject<HTMLDivElement>;
 }
 
 function useShowSidebar(): ShowSidebarHook {
@@ -14,7 +15,7 @@ function useShowSidebar(): ShowSidebarHook {
   const [showSidebar, setShowSidebar] = React.useState(isDesktop);
   const [showContent, setShowContent] = React.useState(true);
   const [innerWidth, setInnerWidth] = React.useState(0);
-  const toggleSidebarRef = React.useRef<HTMLButtonElement>(null);
+  const toggleSidebarRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     function handleScreenResize(): number {
@@ -28,19 +29,15 @@ function useShowSidebar(): ShowSidebarHook {
   }, []);
 
   React.useEffect(() => {
-    if (innerWidth >= BREAKPOINT_DESKTOP) {
-      setShowContent(true);
-      setShowSidebar(true);
-      return;
-    }
-
-    setShowContent(!showSidebar);
-  }, [innerWidth, showSidebar]);
+    setShowContent(true);
+    setShowSidebar(innerWidth >= BREAKPOINT_DESKTOP);
+  }, [innerWidth]);
 
   return {
     showSidebar,
     setShowSidebar,
     showContent,
+    setShowContent,
     toggleSidebarRef,
   };
 }

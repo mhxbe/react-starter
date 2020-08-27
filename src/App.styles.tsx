@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { css, Global } from '@emotion/core';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from './constants';
 
 export const Main = styled.main`
@@ -16,32 +17,93 @@ export const Main = styled.main`
   }
 `;
 
+export const Title = styled.h1`
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 2px solid #00d8ff;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: 440px) {
+    font-size: 2rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+`;
+
+export const SubTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
 export const Content = styled.section`
   margin: 0 auto;
-  padding: 12px;
+  padding: 1rem;
+  z-index: 1;
+  width: 100%;
 
   @media (min-width: 440px) {
     padding: 24px;
     max-width: 800px;
   }
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    max-width: 960px;
+    width: 960px;
   }
 `;
 
 export const Paragraph = styled.p`
   color: black;
-  font-size: 16px;
   line-height: 1.5;
   margin: 0 0 18px 0;
 
   @media (min-width: 440px) {
-    font-size: 18px;
+    font-size: 1.25rem;
     line-height: 1.75;
   }
 
   &:last-child {
     margin-bottom: 0;
+  }
+`;
+
+const linkStyle = `
+  &:link,
+  &:visited {
+    color: #015b6d;
+  }
+  &:hover {
+    color: #060060;
+  }
+`;
+export const Anchor = styled.a`
+  ${linkStyle}
+`;
+
+export const Link = styled(ReactRouterLink)`
+  ${linkStyle}
+`;
+
+export const List = styled.ul`
+  padding: 0;
+  padding-left: 18px;
+
+  li {
+    line-height: 2.5rem;
+  }
+`;
+
+export const ButtonLink = styled.button`
+  background: transparent;
+  border: 0;
+  color: #015b6d;
+  cursor: pointer;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+
+  &:hover {
+    color: #060060;
   }
 `;
 
@@ -68,6 +130,7 @@ const reset = css`
     background-color: #00d8ff; /* iOS topbar background color when black-translucent */
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }

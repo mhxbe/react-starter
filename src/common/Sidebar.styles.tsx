@@ -10,6 +10,7 @@ export const SidebarWrapper = styled.div<SidebarProps>`
   position: fixed;
   visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
   width: 100%;
+  z-index: 2;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     height: auto;
@@ -24,7 +25,6 @@ export const Aside = styled.aside<SidebarProps>`
   background-color: white;
   height: 100%;
   overflow-y: auto;
-  padding: 12px;
   position: relative;
   transform: translateX(
     ${({ showSidebar }) => (showSidebar ? '0px' : '-300px')}
@@ -35,6 +35,7 @@ export const Aside = styled.aside<SidebarProps>`
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     display: block;
+    padding: 12px;
     transform: none;
   }
 `;
@@ -54,26 +55,46 @@ export const Overlay = styled.div<SidebarProps>`
   }
 `;
 
-export const ButtonClose = styled.button`
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  font-size: 36px;
-  height: 48px;
-  line-height: 0;
-  margin: 0;
-  padding: 12px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 48px;
+export const SidebarNavigation = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
 
-  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    display: none;
+export const SidebarMenuItem = styled.li`
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  height: 48px;
+
+  &:last-child {
+    border-bottom: 0;
   }
 
-  svg {
-    height: 24px;
-    width: 24px;
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    height: 36px;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    line-height: 48px;
+    padding: 0 12px;
+    text-decoration: none;
+    width: 100%;
+
+    &:link,
+    &:visited {
+      color: #015b6d;
+    }
+    &:hover {
+      color: #060060;
+    }
+    &:focus {
+      background-color: lightcyan;
+    }
+
+    @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+      line-height: 36px;
+    }
   }
 `;

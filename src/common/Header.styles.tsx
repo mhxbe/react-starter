@@ -17,27 +17,23 @@ export const StyledHeader = styled.header`
   z-index: 3;
 `;
 
-export const Title = styled.h1`
+export const HeaderTitle = styled.span`
   color: #282a37;
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: bold;
 
   @media (min-width: 440px) {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 
-export const ButtonToggleSidebar = styled.button`
-  background-color: transparent;
-  border: 0;
+export const MenuIconWrapper = styled.div`
   cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
   height: 48px;
   left: 4px;
-  line-height: 1;
-  margin: 0;
-  padding: 12px;
+  min-height: 48px;
+  min-width: 48px;
+  overflow: hidden;
   position: absolute;
   top: 4px;
   width: 48px;
@@ -46,8 +42,14 @@ export const ButtonToggleSidebar = styled.button`
     display: none;
   }
 
+  &:focus {
+    box-shadow: 0 0 0 2px #015b6d;
+    outline: 0;
+    border-radius: 0px;
+  }
+
   svg {
-    height: 24px;
-    width: 24px;
+    height: 48px;
+    width: 48px;
   }
 `;
