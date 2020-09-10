@@ -47,6 +47,12 @@ This folder contains all of the app's dependencies which are defined in [package
 
 [Progressive Web Apps (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) are supported through a **Service Worker** which is present in this starterkit. It's powered by [Google's Workbox](https://developers.google.com/web/tools/workbox) via its [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). The [`src/service-worker.ts`](src/service-worker.ts) will be enriched and copied to `dist/sw.js` by `workbox-webpack-plugin`'s `InjectManifest()` which can be found in [webpack.config.ts](webpack.config.ts). The registration of the **Service Worker** happens in [src/index.tsx](src/index.tsx).
 
+## SEO (react-helmet)
+
+[React Helmet](https://github.com/nfl/react-helmet) is a document head manager for React. This way we can dynamically set meta-tags, title, ... in the document head.
+
+There's a caveat. Every React "Page"-component must make use of a `<Helmet>` to set the **description** meta-tag. This meta-tag is not present in [src/index.html](src/index.html) so each page is responsible for rendering one.
+
 ## Open Graph
 
 Some [Open Graph meta-tags](https://ogp.me/) are present in [src/index.html](src/index.html) to make sure your app will look nice when it's shared on Facebook & Twitter.
