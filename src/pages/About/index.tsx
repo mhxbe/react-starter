@@ -1,9 +1,14 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 import { Paragraph, Title } from '../../App.styles';
 
 const Home: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>About</title>
+        <meta name="description" content="About..." />
+      </Helmet>
       <Title>About</Title>
       <Paragraph>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo laborum
