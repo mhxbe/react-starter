@@ -54,6 +54,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
           /\.open-graph.(?:png|jpg|jpeg)$/,
           'report.html',
           'robots.txt',
+          '.htaccess',
         ],
       }),
     ]);
