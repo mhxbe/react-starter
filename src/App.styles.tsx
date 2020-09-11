@@ -32,8 +32,14 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
+  padding-bottom: 0.75rem;
+
+  @media (min-width: 440px) {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
 `;
 
 export const Content = styled.section`
@@ -54,7 +60,7 @@ export const Content = styled.section`
 export const Paragraph = styled.p`
   color: black;
   line-height: 1.5;
-  margin: 0 0 18px 0;
+  margin: 0 0 1.25rem 0;
 
   @media (min-width: 440px) {
     font-size: 1.25rem;
