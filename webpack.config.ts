@@ -1,10 +1,11 @@
-// @ts-nocheck
 import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { InjectManifest } from 'workbox-webpack-plugin';
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+import * as ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 enum WebpackMode {
   development = 'development',
@@ -12,7 +13,7 @@ enum WebpackMode {
   none = 'none',
 }
 
-type WebpackPlugins = Array<object>;
+type WebpackPlugins = Array<webpack.Plugin>;
 
 function getPlugins(mode: WebpackMode): WebpackPlugins {
   let plugins: WebpackPlugins = [];
@@ -31,12 +32,13 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
         { from: './src/fonts', to: 'fonts' },
         { from: './src/manifest.webmanifest' },
         { from: './src/robots.txt' },
+        { from: '.htaccess' },
       ],
     }),
   ]);
 
   if (mode === 'development') {
-    plugins = plugins.concat([new webpack.HotModuleReplacementPlugin()]);
+    plugins = plugins.concat([new ReactRefreshWebpackPlugin()]);
   }
 
   if (mode === 'production') {
@@ -63,12 +65,30 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
 type envType = string | undefined;
 type argvType = { mode: WebpackMode };
 
-export default function (env: envType, { mode }: argvType): object {
+interface Configuration extends webpack.Configuration {
+  devServer?: WebpackDevServerConfiguration;
+}
+
+export default function (env: envType, { mode }: argvType): Configuration {
   const isDevelopment = mode === 'development';
   const ouputPath = __dirname + '/dist/';
   return {
     entry: './src/index.tsx',
-    module: { rules: [{ test: /\.ts(x?)$/, use: ['ts-loader'] }] },
+    module: {
+      rules: [
+        {
+          test: /\.ts(x?)$/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                plugins: isDevelopment ? ['react-refresh/babel'] : [],
+              },
+            },
+          ],
+        },
+      ],
+    },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
     output: {
       path: ouputPath,
