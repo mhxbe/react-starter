@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Paragraph, Title, Anchor } from '../../App.styles';
+import { useErrorHandler } from 'react-error-boundary';
+import { Paragraph, Title, SubTitle, Anchor } from '../../App.styles';
 
 const Home: React.FC = () => {
+  const handleError = useErrorHandler();
+
   return (
     <>
       <Helmet>
@@ -32,6 +35,14 @@ const Home: React.FC = () => {
         </Anchor>
         .
       </Paragraph>
+      <SubTitle>Error Boundary</SubTitle>
+      <Paragraph>
+        Here is an example of a React Error Boundary. Click the following button
+        to trigger it.
+      </Paragraph>
+      <button onClick={() => handleError(new Error('Example error'))}>
+        Trigger error (react-error-boundary)
+      </button>
     </>
   );
 };

@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Switch, Route, Redirect, RouteComponentProps } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 import { ResetCss, Main, Content } from './App.styles';
+import useShowSidebar from './hooks/show-sidebar';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
-import useShowSidebar from './hooks/show-sidebar';
+import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import Home from './pages/Home';
 import About from './pages/About';
 import PageNotFound from './pages/404';
@@ -36,8 +38,31 @@ const App: React.FC = () => {
         />
         <Content aria-hidden={!showContent}>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <ErrorBoundary
+                  key="home"
+                  FallbackComponent={ErrorFallback}
+                  onError={errorHandler}
+                >
+                  <Home />
+                </ErrorBoundary>
+              )}
+            />
+            <Route
+              path="/about"
+              render={() => (
+                <ErrorBoundary
+                  key="about"
+                  FallbackComponent={ErrorFallback}
+                  onError={errorHandler}
+                >
+                  <About />
+                </ErrorBoundary>
+              )}
+            />
             <Route
               path="/404"
               component={(props: RouteComponentProps) => (
