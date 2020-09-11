@@ -14,10 +14,6 @@ ReactDOM.render(
   document.querySelector('#root')
 );
 
-if (module.hot) {
-  module.hot.accept();
-}
-
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   const wb = new Workbox('./sw.js');
 
