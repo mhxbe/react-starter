@@ -44,6 +44,7 @@
   "dependencies": {
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
+    "focus-visible": "5.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-error-boundary": "2.3.2",
