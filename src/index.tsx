@@ -4,6 +4,9 @@ import { Workbox } from 'workbox-window';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
+/* :focus-visible polyfill */
+require('focus-visible');
+
 ReactDOM.render(
   <BrowserRouter basename="/">
     <App />

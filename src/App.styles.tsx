@@ -161,6 +161,12 @@ const reset = css`
     margin: 0;
   }
 
+  /* :focus-visible polyfill: https://github.com/WICG/focus-visible */
+  .js-focus-visible :focus:not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+
   /* Opiniated selection from https://csstools.github.io/sanitize.css/11.0.0/sanitize.css */
   * {
     box-sizing: border-box;
@@ -173,6 +179,11 @@ const reset = css`
     box-shadow: 0 0 0 2px #015b6d;
     outline: 0;
     border-radius: 0px;
+
+    &:focus:not(:focus-visible) {
+      box-shadow: none;
+      outline: none;
+    }
   }
   ul {
     margin: 0;
