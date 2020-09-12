@@ -103,7 +103,6 @@ export default function (env: envType, { mode }: argvType): Configuration {
       compress: true,
       hot: true,
       open: true,
-      overlay: { errors: true, warnings: true },
       useLocalIp: true,
       host: '0.0.0.0',
       publicPath: '/',
