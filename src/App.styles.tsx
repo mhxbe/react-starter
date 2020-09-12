@@ -20,6 +20,7 @@ export const Main = styled.main`
 export const Title = styled.h1`
   font-size: 1.25rem;
   font-weight: bold;
+  line-height: 1;
   border-bottom: 2px solid #00d8ff;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -34,6 +35,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.h2`
   font-size: 1rem;
   font-weight: bold;
+  line-height: 1;
   padding-bottom: 0.75rem;
 
   @media (min-width: 440px) {

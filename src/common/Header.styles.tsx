@@ -21,6 +21,7 @@ export const HeaderTitle = styled.span`
   color: #282a37;
   font-size: 1.25rem;
   font-weight: bold;
+  line-height: 1;
 
   @media (min-width: 440px) {
     font-size: 1.5rem;
