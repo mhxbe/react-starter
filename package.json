@@ -47,7 +47,7 @@
     "focus-visible": "5.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-error-boundary": "3.0.0",
+    "react-error-boundary": "3.0.1",
     "react-helmet": "6.1.0",
     "react-router-dom": "5.2.0",
     "workbox-core": "5.1.4",
