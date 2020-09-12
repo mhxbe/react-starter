@@ -16,9 +16,7 @@ const ErrorFallback = ({
   );
 };
 
-export const errorHandler = (
-  error: Error /* , componentStack: string */
-): Error => {
+export const errorHandler = (error: Error): Error => {
   console.debug('Do something with following error:', error.message);
   return error;
 };
