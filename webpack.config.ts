@@ -13,7 +13,7 @@ enum WebpackMode {
   none = 'none',
 }
 
-type WebpackPlugins = Array<webpack.Plugin>;
+type WebpackPlugins = Array<webpack.WebpackPluginInstance>;
 
 function getPlugins(mode: WebpackMode): WebpackPlugins {
   let plugins: WebpackPlugins = [];
@@ -93,7 +93,7 @@ export default function (env: envType, { mode }: argvType): Configuration {
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
     output: {
       path: ouputPath,
-      filename: isDevelopment ? '[name]-[hash].js' : '[name]-[contenthash].js',
+      filename: '[name]-[contenthash].js',
     },
     optimization: { splitChunks: { chunks: 'all' } },
     plugins: getPlugins(mode),
