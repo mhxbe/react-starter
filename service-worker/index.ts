@@ -3,12 +3,11 @@ import { createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching';
 import { NavigationRoute, registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: __WB_MANIFEST does not exist on window
+// eslint-disable-next-line no-undef
+declare const self: ServiceWorkerGlobalScope;
+
 precacheAndRoute(self.__WB_MANIFEST);
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 self.skipWaiting();
 clientsClaim();
 
