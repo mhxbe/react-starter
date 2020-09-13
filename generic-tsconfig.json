@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "rootDir": ".",
+    "strict": true,
+    "module": "CommonJS",
+    "target": "ESNext",
+    "jsx": "react",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "composite": true
+  },
+  "include": ["src", "typings", "service-worker"],
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "./src" }, { "path": "./service-worker" }]
+}

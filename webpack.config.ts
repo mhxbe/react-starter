@@ -46,7 +46,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
       new CleanWebpackPlugin(),
       new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
       new InjectManifest({
-        swSrc: './src/service-worker.ts',
+        swSrc: './service-worker/index.ts',
         swDest: 'sw.js',
         exclude: [
           /\.DS_Store$/,
