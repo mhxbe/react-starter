@@ -94,6 +94,7 @@ export default function (env: envType, { mode }: argvType): Configuration {
     output: {
       path: ouputPath,
       filename: '[name]-[contenthash].js',
+      publicPath: '',
     },
     optimization: { splitChunks: { chunks: 'all' } },
     plugins: getPlugins(mode),
