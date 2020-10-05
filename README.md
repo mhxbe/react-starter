@@ -126,6 +126,10 @@ Currently it's used in combination with [eslint-plugin-compat](https://github.co
 
 The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits are clean so our code-base stays consistent.
 
+### SonarQube
+
+@todo: write documentation for SonarQube configuration.
+
 ### Git
 
 [.gitignore](.gitignore) file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.
