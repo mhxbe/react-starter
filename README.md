@@ -86,7 +86,7 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 ## SonarQube
 
-SonarCloud is used for SonarQube analysis.
+SonarCloud is used for SonarQube analysis. @todo: complete this!
 
 ## Configurations
 
