@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
         onToggleSidebar={onToggleSidebar}
         ref={toggleSidebarRef}
       />
-      <HeaderTitle>mhxbe/react-starter</HeaderTitle>
+      <HeaderTitle>Hello SonarQube!</HeaderTitle>
     </StyledHeader>
   );
 };
