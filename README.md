@@ -4,6 +4,13 @@
 ![David](https://img.shields.io/david/dev/mhxbe/react-starter)
 [![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=alert_status)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=security_rating)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=bugs)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=code_smells)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+
 This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
 A demo of this starter-kit can be found on [https://react-starter.mhx.be](https://react-starter.mhx.be).
@@ -76,6 +83,10 @@ Make sure to respect the following filename pattern:
 Why? We want to exclude these images in our Service Worker. All images ending with `.open-graph.{png|jpg|jpeg}` will be ignored.
 
 Check out the `exclude`-field in `InjectManifest()` which can be found in [webpack.config.ts](webpack.config.ts).
+
+## SonarQube
+
+SonarCloud is used for SonarQube analysis.
 
 ## Configurations
 
