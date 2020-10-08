@@ -14,8 +14,9 @@ jobs:
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
 
-      - name: Run jest to generate test-report.xml
+      - name: Generate test-report.xml
         run: |
+          npm install --no-save jest-sonar-reporter
           npx jest
 
       - name: SonarCloud Scan
