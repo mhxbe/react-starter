@@ -5,6 +5,8 @@
 [![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=alert_status)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=ncloc)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 
 This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
