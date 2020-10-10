@@ -91,6 +91,7 @@ export default function (env: envType, { mode }: argvType): Configuration {
       ],
     },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
+    target: 'web', // @todo: remove this default value when https://github.com/webpack/webpack-dev-server/issues/2758#issuecomment-704457483 is fixed.
     output: {
       path: ouputPath,
       filename: '[name]-[contenthash].js',
