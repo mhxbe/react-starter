@@ -36,10 +36,17 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:compat/recommended",
+    "plugin:sonarjs/recommended",
     "prettier/@typescript-eslint",
     "eslint:recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "sonarjs",
+    "prettier"
+  ],
   "rules": {
     "react/prop-types": "off",
     "import/newline-after-import": "error",
