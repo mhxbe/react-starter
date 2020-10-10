@@ -15,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <StyledHeader>
       <MenuIconToggle
+        data-testid="toggle-sidebar"
         id="toggle-sidebar"
         aria-label={showSidebar ? 'Show menu' : 'Close menu'}
         aria-controls="sidebar"
