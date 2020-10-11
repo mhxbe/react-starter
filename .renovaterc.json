@@ -9,6 +9,5 @@
       "rangeStrategy": "bump",
       "groupName": "dependencies (non-major)"
     }
-  ],
-  "ignoreDeps": ["webpack"]
+  ]
 }
