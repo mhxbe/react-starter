@@ -7,12 +7,12 @@ const ErrorFallback = ({
   error,
 }: FallbackProps): React.ReactElement => {
   return (
-    <>
+    <div data-testid="error-fallback-component">
       <Title>Error</Title>
       <Paragraph>The following error occured:</Paragraph>
       <pre>{error?.message}</pre>
       <button onClick={resetErrorBoundary}>Try again.</button>
-    </>
+    </div>
   );
 };
 

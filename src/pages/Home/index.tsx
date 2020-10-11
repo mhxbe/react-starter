@@ -45,7 +45,10 @@ const Home: React.FC = () => {
         Here is an example of a React Error Boundary. Click the following button
         to trigger it.
       </Paragraph>
-      <button onClick={() => handleError(new Error('Example error'))}>
+      <button
+        data-testid="button-error-boundary"
+        onClick={() => handleError(new Error('Example error'))}
+      >
         Trigger error (react-error-boundary)
       </button>
     </div>
