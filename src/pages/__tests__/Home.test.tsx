@@ -10,6 +10,9 @@ test('Displays a title', () => {
 });
 
 test('Renders an error-boundary fallback component when the button is clicked', () => {
+  const originalError = console.error;
+  console.error = jest.fn();
+
   render(
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Home />)
@@ -19,4 +22,6 @@ test('Renders an error-boundary fallback component when the button is clicked', 
 
   expect(screen.getByTestId('error-fallback-component')).toBeInTheDocument();
   expect(screen.queryByTestId('page-home')).not.toBeInTheDocument();
+
+  console.error = originalError;
 });

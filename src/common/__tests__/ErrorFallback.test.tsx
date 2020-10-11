@@ -12,6 +12,11 @@ test('Should call resetErrorBoundary', () => {
 });
 
 test('errorHandler should return given error', () => {
+  const originalDebug = console.debug;
+  console.debug = jest.fn();
+
   const fakeError = new Error('Booom!');
   expect(errorHandler(fakeError)).toEqual(fakeError);
+
+  console.debug = originalDebug;
 });
