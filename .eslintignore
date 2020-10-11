@@ -2,6 +2,7 @@ node_modules/
 dist/
 src/images
 src/fonts
+src/**/__tests__
 
 *.html
 *.md
