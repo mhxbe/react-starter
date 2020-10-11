@@ -22,5 +22,3 @@ test('Header has a toggle-button', () => {
   render(HeaderComponent);
   expect(screen.getByTestId('toggle-sidebar')).toBeInTheDocument();
 });
-
-test.todo('Test toggling of button');
