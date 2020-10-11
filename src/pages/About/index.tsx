@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Paragraph, Title } from '../../App.styles';
 
-const Home: React.FC = () => {
+const About: React.FC = () => {
   return (
-    <>
+    <div data-testid="page-about">
       <Helmet>
         <title>About</title>
         <meta name="description" content="About..." />
@@ -41,8 +41,8 @@ const Home: React.FC = () => {
         doloribus error qui quos obcaecati, possimus voluptatum sed doloremque
         at fuga, earum culpa est voluptas esse.
       </Paragraph>
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default About;

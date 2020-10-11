@@ -6,7 +6,7 @@ import { Paragraph, Title, ButtonLink, Link, List } from '../../App.styles';
 const PageNotFound: React.FC<RouteComponentProps> = (props) => {
   const { history } = props;
   return (
-    <>
+    <div data-testid="page-404">
       <Helmet>
         <title>Page Not Found</title>
         <meta
@@ -27,7 +27,7 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
           </ButtonLink>
         </li>
       </List>
-    </>
+    </div>
   );
 };
 
