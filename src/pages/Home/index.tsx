@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   const handleError = useErrorHandler();
 
   return (
-    <>
+    <div data-testid="page-home">
       <Helmet>
         <title>Home</title>
         <meta
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
       <button onClick={() => handleError(new Error('Example error'))}>
         Trigger error (react-error-boundary)
       </button>
-    </>
+    </div>
   );
 };
 

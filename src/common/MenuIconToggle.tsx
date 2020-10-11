@@ -3,22 +3,13 @@ import { MenuIconWrapper } from './Header.styles';
 
 interface MentuIconToggleProps {
   id: string;
-  ['data-testid']: string;
   onToggleSidebar: (event: React.MouseEvent | React.KeyboardEvent) => void;
   showSidebar: boolean;
   ref: React.RefObject<HTMLDivElement>;
 }
 
 const MenuIconToggle = React.forwardRef<HTMLDivElement, MentuIconToggleProps>(
-  (
-    {
-      id,
-      'data-testid': dataTestId,
-      onToggleSidebar,
-      showSidebar,
-    }: MentuIconToggleProps,
-    ref
-  ) => {
+  ({ id, onToggleSidebar, showSidebar }: MentuIconToggleProps, ref) => {
     function handleKeypress(event: React.KeyboardEvent): void {
       event.persist();
       // @todo move to util
@@ -30,7 +21,7 @@ const MenuIconToggle = React.forwardRef<HTMLDivElement, MentuIconToggleProps>(
 
     return (
       <MenuIconWrapper
-        data-testid={dataTestId}
+        data-testid="toggle-sidebar"
         tabIndex={0}
         aria-expanded={showSidebar}
         onKeyPress={handleKeypress}

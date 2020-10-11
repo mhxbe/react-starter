@@ -36,6 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <SidebarWrapper
+      data-testid="sidebar"
       aria-hidden={!showSidebar}
       id="sidebar"
       role="region"

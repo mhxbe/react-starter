@@ -43,8 +43,10 @@ const App: React.FC = () => {
           onToggleSidebar={setShowSidebar}
           toggleSidebarRef={toggleSidebarRef}
         />
-        <Content aria-hidden={!showContent}>
-          <React.Suspense fallback={<div>Loading...</div>}>
+        <Content data-testid="content" aria-hidden={!showContent}>
+          <React.Suspense
+            fallback={<div data-testid="page-loading">Loading...</div>}
+          >
             <Switch>
               <Route
                 exact
