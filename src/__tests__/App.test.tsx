@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import * as React from 'react';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { Router } from 'react-router-dom';
