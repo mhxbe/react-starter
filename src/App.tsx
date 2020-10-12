@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ResetCss, Main, Content } from './App.styles';
-import useShowSidebar from './hooks/show-sidebar';
+import useShowSidebar from './hooks/useShowSidebar';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
