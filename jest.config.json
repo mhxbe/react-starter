@@ -1,6 +1,6 @@
 {
   "roots": ["<rootDir>/src/"],
   "testResultsProcessor": "jest-sonar-reporter",
-  "collectCoverage": true,
+  "collectCoverage": false,
   "collectCoverageFrom": ["src/**/*.{ts,tsx}"]
 }
