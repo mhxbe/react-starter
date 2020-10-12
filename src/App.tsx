@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route, Redirect, RouteComponentProps } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ResetCss, Main, Content } from './App.styles';
 import useShowSidebar from './hooks/show-sidebar';
@@ -73,12 +73,7 @@ const App: React.FC = () => {
                   </ErrorBoundary>
                 )}
               />
-              <Route
-                path="/404"
-                component={(props: RouteComponentProps) => (
-                  <PageNotFound {...props} />
-                )}
-              />
+              <Route path="/404" component={PageNotFound} />
               <Redirect to="/404" />
             </Switch>
           </React.Suspense>
