@@ -2,11 +2,9 @@
 
 ![David](https://img.shields.io/david/mhxbe/react-starter)
 ![David](https://img.shields.io/david/dev/mhxbe/react-starter)
-[![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
-
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=alert_status)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=ncloc)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
 
 This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
@@ -133,6 +131,10 @@ Currently it's used in combination with [eslint-plugin-compat](https://github.co
 The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits are clean so our code-base stays consistent.
 
 ### Sonar
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=bugs)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=code_smells)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 
 [SonarCloud](https://sonarcloud.io) is an open source cloud platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities. It is configured in [.sonar-project.properties](.sonar-project.properties).
 
