@@ -109,6 +109,8 @@ Check this Stack Overflow Question for more information about this approach:
 
 [Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.json](jest.config.json).
 
+[React Testing Library](https://testing-library.com/react) is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
+
 ### Linting
 
 [ESLint](http://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. It is configured in [.eslintrc.json](.eslintrc.json). Specific files & folders can be ignored by adding them to [.eslintignore](.eslintignore).
