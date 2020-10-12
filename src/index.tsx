@@ -19,9 +19,8 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
 
   wb.addEventListener('installed', (event) => {
     if (event.isUpdate) {
-      if (confirm('Update available. Click ok to renew app.')) {
-        window.location.reload();
-      }
+      // @todo: implement more gracefull reload
+      window.location.reload();
     } else {
       console.log('App successfully installed!');
     }
