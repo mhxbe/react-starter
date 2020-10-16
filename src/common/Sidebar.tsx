@@ -45,24 +45,28 @@ const Sidebar: React.FC<SidebarProps> = ({
       <Aside role="navigation" showSidebar={showSidebar}>
         <SidebarNavigation role="menubar">
           <SidebarMenuItem>
-            <Link to="/" onClick={hideSidebar}>
+            <Link to="/" onClick={hideSidebar} data-testid="link-home">
               Home
             </Link>
           </SidebarMenuItem>
-          <SidebarMenuItem>
+          <SidebarMenuItem data-testid="link-about">
             <Link to="/about" onClick={hideSidebar}>
               About
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <Link to="/foo" onClick={hideSidebar}>
+            <Link to="/foo" onClick={hideSidebar} data-testid="link-foo">
               Page Not Found (404)
             </Link>
           </SidebarMenuItem>
         </SidebarNavigation>
       </Aside>
 
-      <Overlay showSidebar={showSidebar} onClick={hideSidebar} />
+      <Overlay
+        data-testid="overlay"
+        showSidebar={showSidebar}
+        onClick={hideSidebar}
+      />
     </SidebarWrapper>
   );
 };
