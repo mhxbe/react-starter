@@ -37,6 +37,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:compat/recommended",
     "plugin:sonarjs/recommended",
+    "plugin:testing-library/recommended",
+    "plugin:jest-dom/recommended",
     "prettier/@typescript-eslint",
     "eslint:recommended"
   ],
@@ -45,6 +47,8 @@
     "react",
     "react-hooks",
     "sonarjs",
+    "testing-library",
+    "jest-dom",
     "prettier"
   ],
   "rules": {
