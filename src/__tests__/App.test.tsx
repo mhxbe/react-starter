@@ -102,4 +102,13 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
     expect(sidebar).toHaveAttribute('aria-hidden', 'false');
     expect(screen.getByRole('region')).toHaveAttribute('aria-hidden', 'false');
   });
+
+  const overlay = screen.getByTestId('overlay');
+  fireEvent.click(overlay);
+
+  // Should set aria-hidden to false for Sidebar & Content when toggleSidebar is called
+  await waitFor(() => {
+    expect(sidebar).toHaveAttribute('aria-hidden', 'false');
+    expect(screen.getByRole('region')).toHaveAttribute('aria-hidden', 'false');
+  });
 });
