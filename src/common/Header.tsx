@@ -5,13 +5,8 @@ import MenuIconToggle from './MenuIconToggle';
 interface HeaderProps {
   onToggleSidebar: () => void;
   showSidebar: boolean;
-  toggleSidebarRef: React.RefObject<HTMLDivElement>;
 }
-const Header: React.FC<HeaderProps> = ({
-  onToggleSidebar,
-  toggleSidebarRef,
-  showSidebar,
-}) => {
+const Header: React.FC<HeaderProps> = ({ onToggleSidebar, showSidebar }) => {
   return (
     <StyledHeader data-testid="header">
       <MenuIconToggle
@@ -20,7 +15,6 @@ const Header: React.FC<HeaderProps> = ({
         aria-controls="sidebar"
         showSidebar={showSidebar}
         onToggleSidebar={onToggleSidebar}
-        ref={toggleSidebarRef}
       />
       <HeaderTitle>mhxbe/react-starter</HeaderTitle>
     </StyledHeader>

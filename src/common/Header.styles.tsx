@@ -28,16 +28,19 @@ export const HeaderTitle = styled.span`
   }
 `;
 
-export const MenuIconWrapper = styled.div`
+export const MenuIconWrapper = styled.button`
+  background: transparent;
+  border: 0;
   cursor: pointer;
-  height: 48px;
+  height: 44px;
   left: 4px;
-  min-height: 48px;
-  min-width: 48px;
+  margin: 0;
+  min-height: 44px;
+  min-width: 44px;
   overflow: hidden;
+  padding: 0;
   position: absolute;
-  top: 4px;
-  width: 48px;
+  width: 44px;
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     display: none;
@@ -50,7 +53,7 @@ export const MenuIconWrapper = styled.div`
   }
 
   svg {
-    height: 48px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
   }
 `;

@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ResetCss, Main, Content } from './App.styles';
-import useShowSidebar from './hooks/useShowSidebar';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
+import { BREAKPOINT_DESKTOP } from './constants';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: 'home' */ './pages/Home')
@@ -18,31 +18,33 @@ const PageNotFound = React.lazy(
 );
 
 const App: React.FC = () => {
-  const {
-    showSidebar,
-    setShowSidebar,
-    showContent,
-    setShowContent,
-    toggleSidebarRef,
-  } = useShowSidebar();
+  const [showSidebar, setShowSidebar] = React.useState(false);
+  const [showContent, setShowContent] = React.useState(true);
+
+  React.useEffect(() => {
+    if (window.innerWidth >= BREAKPOINT_DESKTOP) {
+      setShowContent(true);
+      setShowSidebar(true);
+    }
+  }, []);
+
+  function toggleSidebar(): void {
+    let mustShowContent = !showContent;
+    let mustShowSidebar = !showSidebar;
+    if (window.innerWidth >= BREAKPOINT_DESKTOP) {
+      mustShowContent = true;
+      mustShowSidebar = true;
+    }
+    setShowContent(mustShowContent);
+    setShowSidebar(mustShowSidebar);
+  }
 
   return (
     <>
       <ResetCss />
-      <Header
-        showSidebar={showSidebar}
-        onToggleSidebar={() => {
-          setShowSidebar(!showSidebar);
-          setShowContent(showSidebar);
-        }}
-        toggleSidebarRef={toggleSidebarRef}
-      />
+      <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <Main role="main">
-        <Sidebar
-          showSidebar={showSidebar}
-          onToggleSidebar={setShowSidebar}
-          toggleSidebarRef={toggleSidebarRef}
-        />
+        <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
         <Content data-testid="content" aria-hidden={!showContent}>
           <React.Suspense
             fallback={<div data-testid="page-loading">Loading...</div>}

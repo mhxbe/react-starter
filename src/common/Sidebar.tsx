@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { BREAKPOINT_DESKTOP } from '../constants';
 import {
   Aside,
   Overlay,
@@ -10,28 +9,13 @@ import {
 } from './Sidebar.styles';
 
 interface SidebarProps {
-  onToggleSidebar: (isOpen: boolean) => void;
+  onToggleSidebar: (hideSidebar?: boolean) => void;
   showSidebar: boolean;
-  toggleSidebarRef: React.RefObject<HTMLDivElement>;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({
-  onToggleSidebar,
-  showSidebar,
-  toggleSidebarRef,
-}) => {
+const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
   function hideSidebar(): void {
-    // Only hide sidebar when its toggleable (on desktop, sidebar is always shown)
-    if (window.innerWidth < BREAKPOINT_DESKTOP) {
-      toggleSidebarRef.current?.focus();
-
-      // @todo move to util
-      const circles = document.querySelectorAll('svg circle');
-      const circle = showSidebar ? circles[0] : circles[1];
-      circle.dispatchEvent(new Event('click'));
-
-      return onToggleSidebar(false);
-    }
+    return onToggleSidebar(false);
   }
 
   return (
@@ -43,19 +27,17 @@ const Sidebar: React.FC<SidebarProps> = ({
       showSidebar={showSidebar}
     >
       <Aside role="navigation" showSidebar={showSidebar}>
-        <SidebarNavigation role="menubar">
+        <SidebarNavigation role="menubar" onClick={hideSidebar}>
           <SidebarMenuItem>
-            <Link to="/" onClick={hideSidebar} data-testid="link-home">
+            <Link to="/" data-testid="link-home">
               Home
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem data-testid="link-about">
-            <Link to="/about" onClick={hideSidebar}>
-              About
-            </Link>
+            <Link to="/about">About</Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <Link to="/foo" onClick={hideSidebar} data-testid="link-foo">
+            <Link to="/foo" data-testid="link-foo">
               Page Not Found (404)
             </Link>
           </SidebarMenuItem>
