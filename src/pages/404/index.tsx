@@ -14,7 +14,7 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
           content="We couldn't find what you were looking for."
         />
       </Helmet>
-      <Title>Page Not Found</Title>
+      <Title id="page-heading">Page Not Found</Title>
       <Paragraph>{`We couldn't find what you were looking for.`}</Paragraph>
       <List>
         <li>

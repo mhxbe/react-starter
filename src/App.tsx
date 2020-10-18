@@ -45,7 +45,12 @@ const App: React.FC = () => {
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <Main role="main">
         <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-        <Content data-testid="content" aria-hidden={!showContent}>
+        <Content
+          data-testid="content"
+          role="region"
+          aria-labelledby="page-heading"
+          aria-hidden={!showContent}
+        >
           <React.Suspense
             fallback={<div data-testid="page-loading">Loading...</div>}
           >

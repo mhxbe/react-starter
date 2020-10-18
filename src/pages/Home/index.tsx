@@ -15,7 +15,7 @@ const Home: React.FC = () => {
           content="An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript."
         />
       </Helmet>
-      <Title>React Starterkit Template</Title>
+      <Title id="page-heading">React Starterkit Template</Title>
       <Paragraph>
         This is an opinionated starter-kit for quickly bootstrapping client-side
         React projects written in TypeScript.

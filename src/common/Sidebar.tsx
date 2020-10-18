@@ -23,7 +23,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
       data-testid="sidebar"
       aria-hidden={!showSidebar}
       id="sidebar"
-      role="region"
       showSidebar={showSidebar}
     >
       <Aside role="navigation" showSidebar={showSidebar}>
