@@ -17,6 +17,7 @@ export const SidebarWrapper = styled.div<SidebarProps>`
     left: 0;
     position: sticky;
     top: ${HEADER_HEIGHT}px;
+    visibility: visible;
     width: 300px;
   }
 `;
@@ -36,7 +37,7 @@ export const Aside = styled.aside<SidebarProps>`
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     display: block;
     padding: 12px;
-    transform: none;
+    transform: translateX(0px);
   }
 `;
 
@@ -70,10 +71,6 @@ export const SidebarMenuItem = styled.li`
     border-bottom: 0;
   }
 
-  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    height: 36px;
-  }
-
   a {
     display: block;
     height: 100%;
@@ -91,10 +88,6 @@ export const SidebarMenuItem = styled.li`
     }
     &:focus {
       background-color: lightcyan;
-    }
-
-    @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-      line-height: 36px;
     }
   }
 `;

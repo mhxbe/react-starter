@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <title>About</title>
         <meta name="description" content="About..." />
       </Helmet>
-      <Title>About</Title>
+      <Title id="page-heading">About</Title>
       <Paragraph>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo laborum
         adipisci quis in modi aperiam error rem harum nisi, facilis corrupti
