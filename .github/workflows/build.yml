@@ -34,8 +34,7 @@ jobs:
       - name: NPM Scripts
         run: |
           npm ci
-          npm run lint:js
-          npm run lint:css
+          npm run lint
           npm test
           npm run build
 
