@@ -1,7 +1,0 @@
-{
-  "roots": ["<rootDir>/src/"],
-  "testResultsProcessor": "jest-sonar-reporter",
-  "collectCoverage": false,
-  "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
-  "setupFilesAfterEnv": ["./jest.setup.ts"]
-}
