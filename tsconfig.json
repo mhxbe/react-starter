@@ -9,9 +9,10 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "moduleResolution": "Node",
-    "composite": true
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
+    "noEmit": false,
+    "skipLibCheck": true
   },
-  "include": ["src", "typings", "service-worker"],
-  "exclude": ["node_modules", "dist"],
-  "references": [{ "path": "./src" }, { "path": "./service-worker" }]
+  "include": ["src", "typings", "service-worker.ts"],
+  "exclude": ["node_modules", "dist"]
 }

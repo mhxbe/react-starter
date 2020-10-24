@@ -47,7 +47,7 @@ This folder contains all of the app's dependencies which are defined in [package
 
 ## Progressive Web App (PWA)
 
-[Progressive Web Apps (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) are supported through a **Service Worker** which is present in this starterkit. It's powered by [Google's Workbox](https://developers.google.com/web/tools/workbox) via its [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). The [`service-worker/index.ts`](service-worker/index.ts) will be enriched and copied to `dist/sw.js` by `workbox-webpack-plugin`'s `InjectManifest()` which can be found in [webpack.config.ts](webpack.config.ts). The registration of the **Service Worker** happens in [src/index.tsx](src/index.tsx).
+[Progressive Web Apps (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) are supported through a **Service Worker** which is present in this starterkit. It's powered by [Google's Workbox](https://developers.google.com/web/tools/workbox) via its [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). The [`service-worker.ts`](service-worker.ts) will be enriched and copied to `dist/sw.js` by `workbox-webpack-plugin`'s `InjectManifest()` which can be found in [webpack.config.ts](webpack.config.ts). The registration of the **Service Worker** happens in [src/index.tsx](src/index.tsx).
 
 ## Routing
 
@@ -87,17 +87,7 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 ### TypeScript ([tsconfig.json](tsconfig.json))
 
-[TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is a typed superset of JavaScript that compiles to a backwards compatible version of JavaScript in current and older browsers or environments.
-
-For this project, 2 tsconfig.json files are present so we can both type our app logic & the service worker efficiently.
-
-A [generic-tsconfig.json](generic-tsconfig.json) is also used from which both tsconfig.json files extend their configuration.
-
-- [src/tsconfig.json](src/tsconfig.json) (App logic)
-- [service-worker/tsconfig.json](service-worker/tsconfig.json) (Service Worker)
-
-Check this Stack Overflow Question for more information about this approach:
-[Structuring a TypeScript project with workers](https://stackoverflow.com/questions/56356655/structuring-a-typescript-project-with-workers)
+[TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is a typed superset of JavaScript that compiles to a backwards compatible version of JavaScript in current and older browsers or environments.It's configured in [tsconfig.json](tsconfig.json)
 
 ### Styling
 
