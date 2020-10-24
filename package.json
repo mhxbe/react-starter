@@ -7,8 +7,7 @@
     "test": "jest",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint \"src/**\" && stylelint \"src/**\"",
-    "tsc": "tsc ./src/**/*.{ts,tsx} --noEmit --jsx react --skipLibCheck"
+    "lint": "eslint \"src/**\" && stylelint \"src/**\""
   },
   "keywords": [
     "react",
@@ -18,7 +17,7 @@
   "author": {
     "name": "Mike Henderyckx",
     "email": "mike.henderyckx@gmail.com",
-    "url": "https://mhx.be/"
+    "url": "https://mhx.be"
   },
   "license": "MIT",
   "repository": {
