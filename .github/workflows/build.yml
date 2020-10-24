@@ -35,6 +35,7 @@ jobs:
         run: |
           npm ci
           npm run lint
+          tsc
           npm test
           npm run build
 
