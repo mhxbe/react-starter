@@ -130,6 +130,8 @@ The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits 
 
 A Github Action is used to generate a `test-report.xml` in [Sonar's Generic Test Data](https://docs.sonarqube.org/latest/analysis/generic-test) and upload it to SonarCloud. It is configured in [.github/workflows/sonarcloud.yml](.github/workflows/sonarcloud.yml).
 
+For this project, the **Sonar way recommended** Quality Profile is used.
+
 ### Git
 
 [.gitignore](.gitignore) file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.
