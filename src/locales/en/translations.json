@@ -1,0 +1,36 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "404": "Page not found"
+  },
+  "home": {
+    "title": "React Starterkit Template",
+    "description": "This is an opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.",
+    "workbox": {
+      "link": "Support for Progressive Web Apps (PWA) is powered by <0>Google Workbox</0>.",
+      "description": "Link to Google's Workbox project."
+    },
+    "github": {
+      "link": "You can find this starter kit at <0>github.com/mhxbe/react-starter</0>.",
+      "description": "Link to Mike's react starterkit Github page."
+    },
+    "error_boundary": {
+      "description": "Here is an example of a React Error Boundary. Click the following button to trigger it.",
+      "button": "Trigger error (react-error-boundary)"
+    }
+  },
+  "about": {
+    "title": "About"
+  },
+  "404": {
+    "title": "Page not found",
+    "description": "We couldn't find what you were looking for.",
+    "navigate_home": "Navigate to <0>homepage</0>",
+    "go_back": "Go back to <0>previous page</0>"
+  },
+  "languages": {
+    "en": "english",
+    "nl": "dutch"
+  }
+}
