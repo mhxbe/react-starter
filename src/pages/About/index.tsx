@@ -1,15 +1,18 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { Paragraph, Title } from '../../App.styles';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div data-testid="page-about">
       <Helmet>
-        <title>About</title>
+        <title>{t('about.title')}</title>
         <meta name="description" content="About..." />
       </Helmet>
-      <Title id="page-heading">About</Title>
+      <Title id="page-heading">{t('about.title')}</Title>
       <Paragraph>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo laborum
         adipisci quis in modi aperiam error rem harum nisi, facilis corrupti

@@ -1,55 +1,48 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
+import { useTranslation, Trans } from 'react-i18next';
 import { Paragraph, Title, SubTitle, Anchor } from '../../App.styles';
 
 const Home: React.FC = () => {
   const handleError = useErrorHandler();
+  const { t } = useTranslation();
 
   return (
     <div data-testid="page-home">
       <Helmet>
-        <title>Home</title>
-        <meta
-          name="description"
-          content="An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript."
-        />
+        <title>{t('home.title')}</title>
+        <meta name="description" content={t('home.description')} />
       </Helmet>
-      <Title id="page-heading">React Starterkit Template</Title>
+      <Title id="page-heading">{t('home.title')}</Title>
+      <Paragraph>{t('home.description')}</Paragraph>
       <Paragraph>
-        This is an opinionated starter-kit for quickly bootstrapping client-side
-        React projects written in TypeScript.
+        <Trans i18nKey="home.workbox.link">
+          <Anchor
+            href="https://developers.google.com/web/tools/workbox"
+            title={t('home.workbox.description')}
+          >
+            Google Workbox
+          </Anchor>
+        </Trans>
       </Paragraph>
       <Paragraph>
-        Support for Progressive Web Apps (PWA) is powered by{' '}
-        <Anchor
-          href="https://developers.google.com/web/tools/workbox"
-          title="This is a link to Google's Workbox project.s"
-        >
-          Google Workbox
-        </Anchor>
-        .
-      </Paragraph>
-      <Paragraph>
-        You can find this starterkit at{' '}
-        <Anchor
-          href="https://github.com/mhxbe/react-starter"
-          title="This is a link to Mike's react starterkit Github page."
-        >
-          github.com/mhxbe/react-starter
-        </Anchor>
-        .
+        <Trans i18nKey="home.github.link">
+          <Anchor
+            href="https://github.com/mhxbe/react-starter"
+            title={t('home.github.description')}
+          >
+            github.com/mhxbe/react-starter
+          </Anchor>
+        </Trans>
       </Paragraph>
       <SubTitle>Error Boundary</SubTitle>
-      <Paragraph>
-        Here is an example of a React Error Boundary. Click the following button
-        to trigger it.
-      </Paragraph>
+      <Paragraph>{t('home.error_boundary.description')}</Paragraph>
       <button
         data-testid="button-error-boundary"
         onClick={() => handleError(new Error('Example error'))}
       >
-        Trigger error (react-error-boundary)
+        {t('home.error_boundary.button')}
       </button>
     </div>
   );
