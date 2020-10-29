@@ -5,7 +5,7 @@
   "short_name": "React Starterkit",
   "start_url": ".",
   "scope": ".",
-  "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
+  "description": "An opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#00d8ff",
