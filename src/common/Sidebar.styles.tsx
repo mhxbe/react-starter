@@ -59,6 +59,7 @@ export const Overlay = styled.div<SidebarProps>`
 export const SidebarNavigation = styled.ul`
   list-style-type: none;
   padding: 0;
+  margin-bottom: 1.5rem;
 `;
 
 export const SidebarMenuItem = styled.li`
@@ -66,10 +67,6 @@ export const SidebarMenuItem = styled.li`
   border-bottom: 1px solid #d9d9d9;
   display: flex;
   height: 48px;
-
-  &:last-child {
-    border-bottom: 0;
-  }
 
   a {
     display: block;
