@@ -16,7 +16,7 @@
       "description": "Link naar Mike's React beginnerskit Github-pagina."
     },
     "error_boundary": {
-      "description": "Hier is een voorbeel van een React Error Boundary. Klick op onderstaande knop om hem om gang te brengen.",
+      "description": "Hier is een voorbeeld van een React Error Boundary. Klik op onderstaande knop om hem om gang te brengen.",
       "button": "Veroorzaak error (react-error-boundary)"
     }
   },
