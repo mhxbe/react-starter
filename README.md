@@ -93,6 +93,12 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 [Emotion](https://emotion.sh/) is a CSS-in-JS library designed for writing css styles with JavaScript. It allows you to style apps quickly with string or object styles. [`@emotion/styled`](https://emotion.sh/docs/@emotion/styled) is used whose API is heavily inspired from [`styled-components`](https://www.styled-components.com/).
 
+### Multilinguality
+
+[react-i18next](https://react.i18next.com/) is a powerful internationalization framework for React / React Native which is based on [i18next](https://www.i18next.com/).
+
+It uses translation-files in json format which can be found in [src/locales](src/locales). It's configured in [src/i18n.ts](src/i18n.ts).
+
 ### Testing
 
 [Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.json](jest.config.json).
