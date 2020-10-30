@@ -9,7 +9,9 @@ import 'focus-visible';
 
 ReactDOM.render(
   <BrowserRouter basename="/">
-    <App />
+    <React.Suspense fallback="Loading...">
+      <App />
+    </React.Suspense>
   </BrowserRouter>,
   document.querySelector('#root')
 );
