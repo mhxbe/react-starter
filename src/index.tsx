@@ -4,7 +4,7 @@ import { Workbox } from 'workbox-window';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-import './i18n';
+import './config/i18n';
 import 'focus-visible';
 
 ReactDOM.render(
