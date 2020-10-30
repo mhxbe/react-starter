@@ -21,5 +21,5 @@ test('Displays a title', () => {
       <WrappedComponent />
     </BrowserRouter>
   );
-  expect(screen.getByText('Page Not Found')).toBeInTheDocument();
+  expect(screen.getByText('404.title')).toBeInTheDocument();
 });

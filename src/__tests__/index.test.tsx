@@ -13,7 +13,9 @@ describe('Application root', () => {
     require('../index.tsx');
     expect(ReactDOM.render).toHaveBeenCalledWith(
       <BrowserRouter basename="/">
-        <App />
+        <React.Suspense fallback="Loading...">
+          <App />
+        </React.Suspense>
       </BrowserRouter>,
       div
     );

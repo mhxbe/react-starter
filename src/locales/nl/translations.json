@@ -1,0 +1,36 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "Over",
+    "404": "Pagina niet gevonden"
+  },
+  "home": {
+    "title": "React Starterkit Sjabloon",
+    "description": "Dit is een beginnerskit om snel client-side React projecten op te starten die in TypeScript zijn geschreven.",
+    "workbox": {
+      "link": "Ondersteuning voor Progressieve Web Apps (PWA) is aangedreven door <0>Google Workbox</0>.",
+      "description": "Link naar het Google Workbox project."
+    },
+    "github": {
+      "link": "Je kan deze beginnerskit terugvinden op <0>github.com/mhxbe/react-starter</0>.",
+      "description": "Link naar Mike's React beginnerskit Github-pagina."
+    },
+    "error_boundary": {
+      "description": "Hier is een voorbeeld van een React Error Boundary. Klik op onderstaande knop om hem om gang te brengen.",
+      "button": "Veroorzaak error (react-error-boundary)"
+    }
+  },
+  "about": {
+    "title": "Over"
+  },
+  "404": {
+    "title": "Pagina niet gevonden",
+    "description": "We konden niet vinden wat u zocht.",
+    "navigate_home": "Navigeer naar <0>homepagina</0>",
+    "go_back": "Ga terug naar de <0>vorige pagina</0>"
+  },
+  "languages": {
+    "en": "engels",
+    "nl": "nederlands"
+  }
+}

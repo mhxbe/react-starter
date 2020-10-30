@@ -1,7 +1,7 @@
 {
   "name": "react-starter",
   "version": "1.0.0",
-  "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
+  "description": "An opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.",
   "browser": "src/index.tsx",
   "scripts": {
     "test": "jest",
@@ -44,10 +44,13 @@
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
     "focus-visible": "5.2.0",
+    "i18next": "19.8.3",
+    "i18next-http-backend": "1.0.21",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-error-boundary": "3.0.2",
     "react-helmet": "6.1.0",
+    "react-i18next": "11.7.3",
     "react-router-dom": "5.2.0",
     "workbox-core": "6.0.0-alpha.3",
     "workbox-precaching": "6.0.0-alpha.3",

@@ -6,9 +6,9 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 [![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
 
-This is an opinionated starter-kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
+This is an opinionated starter kit for quickly bootstrapping client-side [React](https://reactjs.org/) projects written in [TypeScript](https://www.typescriptlang.org/).
 
-A demo of this starter-kit can be found on [https://react-starter.mhx.be](https://react-starter.mhx.be).
+A demo of this starter kit can be found on [https://react-starter.mhx.be](https://react-starter.mhx.be).
 
 ## Installation
 
@@ -93,6 +93,12 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 [Emotion](https://emotion.sh/) is a CSS-in-JS library designed for writing css styles with JavaScript. It allows you to style apps quickly with string or object styles. [`@emotion/styled`](https://emotion.sh/docs/@emotion/styled) is used whose API is heavily inspired from [`styled-components`](https://www.styled-components.com/).
 
+### Multilinguality
+
+[react-i18next](https://react.i18next.com/) is a powerful internationalization framework for React / React Native which is based on [i18next](https://www.i18next.com/).
+
+It uses translation-files in json format which can be found in [src/locales](src/locales). It's configured in [src/i18n.ts](src/i18n.ts).
+
 ### Testing
 
 [Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.json](jest.config.json).
@@ -126,7 +132,7 @@ The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=code_smells)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 
-[SonarCloud](https://sonarcloud.io) is an open source cloud platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities. It is configured in [.sonar-project.properties](.sonar-project.properties).
+[SonarCloud](https://sonarcloud.io) is an open source cloud platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities. It is configured in [sonar-project.properties](sonar-project.properties).
 
 A Github Action is used to generate a `test-report.xml` in [Sonar's Generic Test Data](https://docs.sonarqube.org/latest/analysis/generic-test) and upload it to SonarCloud. It is configured in [.github/workflows/sonarcloud.yml](.github/workflows/sonarcloud.yml).
 

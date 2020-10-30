@@ -6,6 +6,10 @@ const config: Config.InitialOptions = {
   collectCoverage: false,
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   setupFilesAfterEnv: ['./jest.setup.ts'],
+  moduleNameMapper: {
+    'react-i18next': '<rootDir>/__mocks__/react-i18next.tsx',
+    i18next: '<rootDir>/__mocks__/i18next.ts',
+  },
 };
 
 export default config;

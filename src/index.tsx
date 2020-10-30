@@ -4,12 +4,14 @@ import { Workbox } from 'workbox-window';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-/* :focus-visible polyfill */
-require('focus-visible');
+import './i18n';
+import 'focus-visible';
 
 ReactDOM.render(
   <BrowserRouter basename="/">
-    <App />
+    <React.Suspense fallback="Loading...">
+      <App />
+    </React.Suspense>
   </BrowserRouter>,
   document.querySelector('#root')
 );
@@ -19,7 +21,6 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
 
   wb.addEventListener('installed', (event) => {
     if (event.isUpdate) {
-      // @todo: implement more gracefull reload
       window.location.reload();
     } else {
       console.log('App successfully installed!');
