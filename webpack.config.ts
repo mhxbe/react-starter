@@ -20,20 +20,20 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
 
   plugins = plugins.concat([
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './public/index.html',
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: './src/images',
+          from: './public/images',
           to: 'images',
           globOptions: { dot: true, ignore: ['.DS_Store'] },
         },
-        { from: './src/fonts', to: 'fonts' },
-        { from: './src/locales', to: 'locales' },
-        { from: './src/manifest.webmanifest' },
-        { from: './src/robots.txt' },
-        { from: '.htaccess' },
+        { from: './public/fonts', to: 'fonts' },
+        { from: './public/locales', to: 'locales' },
+        { from: './public/manifest.webmanifest' },
+        { from: './public/robots.txt' },
+        { from: './public/.htaccess' },
       ],
     }),
   ]);
@@ -92,7 +92,6 @@ export default function (env: envType, { mode }: argvType): Configuration {
       ],
     },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
-    target: 'web', // @todo: remove this default value when https://github.com/webpack/webpack-dev-server/issues/2758#issuecomment-704457483 is fixed.
     output: {
       path: ouputPath,
       filename: '[name]-[contenthash].js',
