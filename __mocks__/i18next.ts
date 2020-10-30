@@ -1,8 +1,13 @@
+const init = (): any => ({
+  t: (k) => k,
+  on: () => ({}),
+});
+
 module.exports = {
   use: () => ({
-    init: () => ({
-      t: (k) => k,
-      on: () => ({}),
+    init,
+    use: () => ({
+      init,
     }),
   }),
 };
