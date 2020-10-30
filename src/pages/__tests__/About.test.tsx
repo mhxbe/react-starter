@@ -4,5 +4,5 @@ import About from '../About';
 
 test('Displays a title', () => {
   render(<About />);
-  expect(screen.getByText('About')).toBeInTheDocument();
+  expect(screen.getByText('about.title')).toBeInTheDocument();
 });

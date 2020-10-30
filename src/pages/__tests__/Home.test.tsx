@@ -6,7 +6,7 @@ import ErrorFallback from '../../common/ErrorFallback';
 
 test('Displays a title', () => {
   render(<Home />);
-  expect(screen.getByText('React Starterkit Template')).toBeInTheDocument();
+  expect(screen.getByText('home.title')).toBeInTheDocument();
 });
 
 test('Renders an error-boundary fallback component when the button is clicked', () => {

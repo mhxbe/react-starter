@@ -3,18 +3,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 
-const mockChangeLanguage = jest.fn();
-beforeEach(() => {
-  jest.mock('react-i18next', () => {
-    useTranslation: () => ({
-      i18n: {
-        changeLanguage: mockChangeLanguage,
-      },
-      t: jest.fn(),
-    });
-  });
-});
-
 const mockOnToggleSidebar = jest.fn();
 const renderSidebar = (visible: boolean) => (
   <BrowserRouter>
@@ -44,7 +32,17 @@ test('Displays an Overlay with opacity 0.0 when Sidebar is not shown', () => {
   expect(overlay).toHaveStyle('opacity: 0');
 });
 
-test('Change language', () => {
+const mockChangeLanguage = jest.fn();
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    i18n: {
+      changeLanguage: mockChangeLanguage,
+    },
+    t: jest.fn(),
+  }),
+}));
+
+test('Change language', async () => {
   render(renderSidebar(true));
   const dutchLanguageButton = screen.getByTestId('language-switch-nl');
   const englishLanguageButton = screen.getByTestId('language-switch-en');
@@ -52,9 +50,13 @@ test('Change language', () => {
   expect(englishLanguageButton).toBeInTheDocument();
 
   fireEvent.click(dutchLanguageButton);
+  await waitFor(() => {
+    expect(mockChangeLanguage).toHaveBeenCalledWith('nl');
+  });
   fireEvent.click(englishLanguageButton);
-
-  // expect(mockChangeLanguage).toHaveBeenCalled();
+  await waitFor(() => {
+    expect(mockChangeLanguage).toHaveBeenCalledWith('en');
+  });
 });
 
 afterAll(() => {
