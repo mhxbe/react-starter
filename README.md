@@ -53,23 +53,23 @@ This folder contains all of the app's dependencies which are defined in [package
 
 [React Router](https://github.com/ReactTraining/react-router) is a collection of navigational components that compose declaratively with your application. This enables us to use routing in our SPA.
 
-We're using a [.htaccess](.htaccess) file to implement a "Catch All" approach so we can use nice URLs. If you're not using apache but nginx for example, make sure to add rewrites in your config.
+We're using a [public/.htaccess](public/.htaccess) file to implement a "Catch All" approach so we can use nice URLs. If you're not using apache but nginx for example, make sure to add rewrites in your config.
 If you don't want to use these kind of configurations in your app, you're free to use React Router's [HashRouter](https://reactrouter.com/web/api/HashRouter).
 
 ## SEO (react-helmet)
 
 [React Helmet](https://github.com/nfl/react-helmet) is a document head manager for React. This way we can dynamically set meta-tags, title, ... in the document head.
 
-There's a caveat. Every React "Page"-component must make use of a `<Helmet>` to set the **description** meta-tag. This meta-tag is not present in [src/index.html](src/index.html) so each page is responsible for rendering one.
+There's a caveat. Every React "Page"-component must make use of a `<Helmet>` to set the **description** meta-tag. This meta-tag is not present in [public/index.html](public/index.html) so each page is responsible for rendering one.
 
 ## Open Graph
 
-Some [Open Graph meta-tags](https://ogp.me/) are present in [src/index.html](src/index.html) to make sure your app will look nice when it's shared on Facebook & Twitter.
+Some [Open Graph meta-tags](https://ogp.me/) are present in [public/index.html](public/index.html) to make sure your app will look nice when it's shared on Facebook & Twitter.
 
 The images that are used on Facebook & Twitter can be found in `src/images/open-graph/`.
 
-- Facebook: [src/images/open-graph/facebook.open-graph.png](src/images/open-graph/facebook.open-graph.png)
-- Twitter: [src/images/open-graph/twitter.open-graph.png](src/images/open-graph/twitter.open-graph.png)
+- Facebook: [public/images/open-graph/facebook.open-graph.png](public/images/open-graph/facebook.open-graph.png)
+- Twitter: [public/images/open-graph/twitter.open-graph.png](public/images/open-graph/twitter.open-graph.png)
 
 Make sure to respect the following filename pattern:
 
@@ -97,7 +97,7 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 [react-i18next](https://react.i18next.com/) is a powerful internationalization framework for React / React Native which is based on [i18next](https://www.i18next.com/).
 
-It uses translation-files in json format which can be found in [src/locales](src/locales). It's configured in [src/i18n.ts](src/i18n.ts).
+It uses translation-files in json format which can be found in [public/locales](public/locales). It's configured in [src/config/i18n.ts](src/config/i18n.ts).
 
 ### Testing
 
