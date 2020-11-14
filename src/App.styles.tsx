@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css, Global } from '@emotion/core';
+import { css, Global } from '@emotion/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from './constants';
 
