@@ -41,7 +41,7 @@
     "not dead"
   ],
   "dependencies": {
-    "@emotion/core": "11.0.0",
+    "@emotion/react": "11.0.0",
     "@emotion/styled": "11.0.0",
     "focus-visible": "5.2.0",
     "i18next": "19.8.3",
