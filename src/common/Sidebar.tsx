@@ -34,9 +34,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
       <SidebarContent showSidebar={showSidebar} lang={i18n.language}>
         <nav role="navigation">
           <SidebarPadding>
-            <SidebarHeader>{t('sidebar.navigation')}</SidebarHeader>
+            <SidebarHeader id="sidebar-header">
+              {t('sidebar.navigation')}
+            </SidebarHeader>
           </SidebarPadding>
-          <List role="menu" onClick={hideSidebar}>
+          <List
+            role="menu"
+            onClick={hideSidebar}
+            aria-labelledby="sidebar-header"
+          >
             <SidebarMenuItem>
               <Link to="/" data-testid="link-home" role="menuitem">
                 {t('navigation.home')}
@@ -56,8 +62,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
         </nav>
         <aside>
           <SidebarPadding>
-            <SidebarHeader>{t('sidebar.switch_language')}</SidebarHeader>
-            <List aria-label="Switch langauge">
+            <SidebarHeader id="sidebar-language-switcher">
+              {t('sidebar.switch_language')}
+            </SidebarHeader>
+            <List aria-labelledby="sidebar-language-switcher">
               <li>
                 <LanguageButton
                   type="button"
