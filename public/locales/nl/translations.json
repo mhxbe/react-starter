@@ -31,6 +31,10 @@
   },
   "languages": {
     "en": "engels",
-    "nl": "nederlands"
+    "nl": "nederlands",
+    "aria": {
+      "en": "Wijzig taal naar engels",
+      "nl": "Wijzig taal naar nederlands"
+    }
   }
 }

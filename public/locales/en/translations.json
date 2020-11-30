@@ -31,6 +31,10 @@
   },
   "languages": {
     "en": "english",
-    "nl": "dutch"
+    "nl": "dutch",
+    "aria": {
+      "en": "Switch language to english",
+      "nl": "Switch langauge to dutch"
+    }
   }
 }
