@@ -4,6 +4,10 @@
     "about": "About",
     "404": "Page not found"
   },
+  "sidebar": {
+    "navigation": "Navigation",
+    "switch_language": "Switch language"
+  },
   "home": {
     "title": "React Starterkit Template",
     "description": "This is an opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.",
@@ -30,8 +34,8 @@
     "go_back": "Go back to <0>previous page</0>"
   },
   "languages": {
-    "en": "english",
-    "nl": "dutch",
+    "en": "English",
+    "nl": "Dutch",
     "aria": {
       "en": "Switch language to english",
       "nl": "Switch langauge to dutch"

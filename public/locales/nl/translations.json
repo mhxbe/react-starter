@@ -4,6 +4,10 @@
     "about": "Over",
     "404": "Pagina niet gevonden"
   },
+  "sidebar": {
+    "navigation": "Navigatie",
+    "switch_language": "Taal wijzigen"
+  },
   "home": {
     "title": "React Starterkit Sjabloon",
     "description": "Dit is een beginnerskit om snel client-side React projecten op te starten die in TypeScript zijn geschreven.",
@@ -30,8 +34,8 @@
     "go_back": "Ga terug naar de <0>vorige pagina</0>"
   },
   "languages": {
-    "en": "engels",
-    "nl": "nederlands",
+    "en": "Engels",
+    "nl": "Nederlands",
     "aria": {
       "en": "Wijzig taal naar engels",
       "nl": "Wijzig taal naar nederlands"
