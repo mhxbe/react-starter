@@ -13,7 +13,7 @@ const renderSidebar = (visible: boolean) => (
 test('Displays a sidebar with 3 menu items', () => {
   render(renderSidebar(true));
   expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-  expect(screen.getByRole('menubar').children.length).toEqual(3);
+  expect(screen.getByRole('menu').children.length).toEqual(3);
 });
 
 test('Displays an Overlay with opacity 0.5 when Sideba is shown & triggers onToggleSidebar when clicked', () => {

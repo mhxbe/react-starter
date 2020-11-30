@@ -74,8 +74,8 @@ test('toggling of the sidebar, settings correct aria-labels on Sidebar & Content
   render(renderAppComponent());
   // Only shows Content
   expect(screen.getByTestId('sidebar')).toHaveAttribute('aria-hidden', 'true');
-  const region = screen.getByRole('region');
-  expect(region).toHaveAttribute('aria-hidden', 'false');
+  const main = screen.getByRole('main');
+  expect(main).toHaveAttribute('aria-hidden', 'false');
 
   // Only shows Sidebar (aria-hidden false)
   fireEvent.click(screen.getByTestId('toggle-sidebar'));
@@ -84,7 +84,7 @@ test('toggling of the sidebar, settings correct aria-labels on Sidebar & Content
       'aria-hidden',
       'false'
     );
-    expect(region).toHaveAttribute('aria-hidden', 'true');
+    expect(main).toHaveAttribute('aria-hidden', 'true');
   });
 });
 
@@ -100,7 +100,7 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
   const sidebar = await screen.getByTestId('sidebar');
   await waitFor(() => {
     expect(sidebar).toHaveAttribute('aria-hidden', 'false');
-    expect(screen.getByRole('region')).toHaveAttribute('aria-hidden', 'false');
+    expect(screen.getByRole('main')).toHaveAttribute('aria-hidden', 'false');
   });
 
   const overlay = screen.getByTestId('overlay');
@@ -109,6 +109,6 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
   // Should set aria-hidden to false for Sidebar & Content when toggleSidebar is called
   await waitFor(() => {
     expect(sidebar).toHaveAttribute('aria-hidden', 'false');
-    expect(screen.getByRole('region')).toHaveAttribute('aria-hidden', 'false');
+    expect(screen.getByRole('main')).toHaveAttribute('aria-hidden', 'false');
   });
 });
