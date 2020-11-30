@@ -1,11 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import i18next from 'i18next';
 import { Workbox } from 'workbox-window';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 import './config/i18n';
 import 'focus-visible';
+
+i18next.on('languageChanged', (language: string) => {
+  window.document.documentElement.lang = language;
+});
 
 ReactDOM.render(
   <BrowserRouter basename="/">

@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
       id="sidebar"
       showSidebar={showSidebar}
     >
-      <SidebarContent showSidebar={showSidebar} lang={i18n.language}>
+      <SidebarContent showSidebar={showSidebar}>
         <nav role="navigation">
           <SidebarPadding>
             <SidebarHeader id="sidebar-header">

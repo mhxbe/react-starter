@@ -1,6 +1,5 @@
 const init = (): any => ({
   t: (k) => k,
-  on: () => ({}),
 });
 
 module.exports = {
@@ -10,4 +9,5 @@ module.exports = {
       init,
     }),
   }),
+  on: () => ({}),
 };
