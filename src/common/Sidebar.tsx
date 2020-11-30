@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import {
-  Aside,
+  Nav,
   Overlay,
   SidebarWrapper,
   SidebarMenuItem,
@@ -28,30 +28,31 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
       id="sidebar"
       showSidebar={showSidebar}
     >
-      <Aside role="navigation" showSidebar={showSidebar}>
-        <SidebarNavigation role="menubar" onClick={hideSidebar}>
+      <Nav role="navigation" showSidebar={showSidebar} lang={i18n.language}>
+        <SidebarNavigation role="menu" onClick={hideSidebar}>
           <SidebarMenuItem>
-            <Link to="/" data-testid="link-home">
+            <Link to="/" data-testid="link-home" role="menuitem">
               {t('navigation.home')}
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <Link to="/about" data-testid="link-about">
+            <Link to="/about" data-testid="link-about" role="menuitem">
               {t('navigation.about')}
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <Link to="/foo" data-testid="link-foo">
+            <Link to="/foo" data-testid="link-foo" role="menuitem">
               {t('navigation.404')}
             </Link>
           </SidebarMenuItem>
         </SidebarNavigation>
-        <ul>
+        <ul aria-label="Language switcher">
           <li>
             <button
               type="button"
               data-testid="language-switch-en"
               onClick={() => i18n.changeLanguage('en')}
+              aria-label={t('languages.aria.en')}
             >
               {t('languages.en')}
             </button>
@@ -61,12 +62,13 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
               type="button"
               data-testid="language-switch-nl"
               onClick={() => i18n.changeLanguage('nl')}
+              aria-label={t('languages.aria.nl')}
             >
               {t('languages.nl')}
             </button>
           </li>
         </ul>
-      </Aside>
+      </Nav>
 
       <Overlay
         data-testid="overlay"

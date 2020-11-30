@@ -22,7 +22,7 @@ export const SidebarWrapper = styled.div<SidebarProps>`
   }
 `;
 
-export const Aside = styled.aside<SidebarProps>`
+export const Nav = styled.nav<SidebarProps>`
   background-color: white;
   height: 100%;
   overflow-y: auto;

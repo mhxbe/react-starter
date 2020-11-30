@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { ResetCss, Main, Content } from './App.styles';
+import { ResetCss, Main, Wrapper } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
@@ -43,11 +43,11 @@ const App: React.FC = () => {
     <>
       <ResetCss />
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-      <Main role="main">
+      <Wrapper>
         <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-        <Content
+        <Main
           data-testid="content"
-          role="region"
+          role="main"
           aria-labelledby="page-heading"
           aria-hidden={!showContent}
         >
@@ -84,8 +84,8 @@ const App: React.FC = () => {
               <Redirect to="/404" />
             </Switch>
           </React.Suspense>
-        </Content>
-      </Main>
+        </Main>
+      </Wrapper>
     </>
   );
 };

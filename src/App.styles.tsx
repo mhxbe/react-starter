@@ -4,7 +4,7 @@ import { css, Global } from '@emotion/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from './constants';
 
-export const Main = styled.main`
+export const Wrapper = styled.div`
   background-color: white;
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +44,7 @@ export const SubTitle = styled.h2`
   }
 `;
 
-export const Content = styled.section`
+export const Main = styled.main`
   margin: 0 auto;
   padding: 1rem;
   z-index: 1;
@@ -189,9 +189,6 @@ const reset = css`
   }
   ul {
     margin: 0;
-  }
-  main {
-    display: block;
   }
   a {
     background-color: transparent;
