@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { ResetCss, Main, Wrapper } from './App.styles';
+import { ResetCss, Main, Wrapper, Footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
@@ -86,6 +86,11 @@ const App: React.FC = () => {
           </React.Suspense>
         </Main>
       </Wrapper>
+      <Footer>
+        <div className="wrapper">
+          <div>&copy; 2020 mhxbe</div>
+        </div>
+      </Footer>
     </>
   );
 };

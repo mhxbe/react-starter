@@ -49,6 +49,7 @@ export const Main = styled.main`
   padding: 1rem;
   z-index: 1;
   width: 100%;
+  flex: 1;
 
   @media (min-width: 440px) {
     padding: 24px;
@@ -115,6 +116,29 @@ export const ButtonLink = styled.button`
   }
 `;
 
+export const Footer = styled.footer`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+
+  .wrapper {
+    align-items: center;
+    display: inherit;
+    flex-direction: column;
+    max-width: 1100px;
+    padding: 12px 24px;
+    width: 100%;
+
+    @media (min-width: 960px) {
+      align-items: unset;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+`;
+
 const reset = css`
   @font-face {
     font-family: 'Open Sans';
@@ -144,6 +168,8 @@ const reset = css`
   }
   body {
     background-color: white;
+    display: flex;
+    flex-direction: column;
     margin: 0rem;
     min-height: 100%;
     overflow-y: auto;
@@ -152,7 +178,7 @@ const reset = css`
   #root {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    flex: 1;
   }
   h1,
   h2,
