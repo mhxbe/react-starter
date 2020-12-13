@@ -5,7 +5,10 @@ import ErrorFallback, { errorHandler } from '../ErrorFallback';
 const mockResetErrorBoundary = jest.fn();
 
 test('Should call resetErrorBoundary', () => {
-  render(<ErrorFallback resetErrorBoundary={mockResetErrorBoundary} />);
+  const error = new Error('Fake error');
+  render(
+    <ErrorFallback error={error} resetErrorBoundary={mockResetErrorBoundary} />
+  );
 
   fireEvent.click(screen.getByText('Try again.'));
   expect(mockResetErrorBoundary).toHaveBeenCalled();

@@ -28,7 +28,6 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/react",
@@ -40,7 +39,9 @@
     "plugin:testing-library/recommended",
     "plugin:jest-dom/recommended",
     "prettier/@typescript-eslint",
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier/react"
   ],
   "plugins": [
     "@typescript-eslint",
