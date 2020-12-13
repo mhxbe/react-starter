@@ -3,7 +3,7 @@ import { MenuIconWrapper } from './Header.styles';
 
 interface MentuIconToggleProps {
   id: string;
-  onToggleSidebar: (event: React.MouseEvent | React.KeyboardEvent) => void;
+  onToggleSidebar: () => void;
   showSidebar: boolean;
 }
 

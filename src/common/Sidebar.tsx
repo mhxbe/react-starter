@@ -13,13 +13,13 @@ import {
 } from './Sidebar.styles';
 
 interface SidebarProps {
-  onToggleSidebar: (hideSidebar?: boolean) => void;
+  onToggleSidebar: () => void;
   showSidebar: boolean;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
   function hideSidebar(): void {
-    return onToggleSidebar(false);
+    return onToggleSidebar();
   }
 
   const { t, i18n } = useTranslation();
