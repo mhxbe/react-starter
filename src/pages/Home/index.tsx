@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import { css, jsx } from '@emotion/react';
 import { Paragraph, Title, SubTitle, Anchor } from '../../App.styles';
 
 const Home: React.FC = () => {
@@ -16,26 +18,31 @@ const Home: React.FC = () => {
       </Helmet>
       <Title id="page-heading">{t('home.title')}</Title>
       <Paragraph>{t('home.description')}</Paragraph>
-      <Paragraph>
-        <Trans i18nKey="home.workbox.link">
+      <Paragraph>{t('home.workbox.text')} </Paragraph>
+      <Paragraph>{t('home.github.text')} </Paragraph>
+      <ul
+        css={css`
+          margin: 0 0 1.5rem 0;
+          padding: 0 0 0 1.5rem;
+        `}
+      >
+        <li>
           <Anchor
             href="https://developers.google.com/web/tools/workbox"
             title={t('home.workbox.description')}
           >
             Google Workbox
           </Anchor>
-        </Trans>
-      </Paragraph>
-      <Paragraph>
-        <Trans i18nKey="home.github.link">
+        </li>
+        <li>
           <Anchor
             href="https://github.com/mhxbe/react-starter"
             title={t('home.github.description')}
           >
-            github.com/mhxbe/react-starter
+            github react-starter
           </Anchor>
-        </Trans>
-      </Paragraph>
+        </li>
+      </ul>
       <SubTitle>Error Boundary</SubTitle>
       <Paragraph>{t('home.error_boundary.description')}</Paragraph>
       <button

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
 export const StyledHeader = styled.header`
@@ -10,7 +11,8 @@ export const StyledHeader = styled.header`
   justify-content: center;
   left: 0;
   min-height: ${HEADER_HEIGHT}px;
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
   right: 0;
   text-align: center;
   top: 0;
@@ -55,5 +57,31 @@ export const MenuIconWrapper = styled.button`
   svg {
     height: 44px;
     width: 44px;
+  }
+`;
+
+export const skipLink = css`
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+
+  &:focus {
+    align-items: center;
+    background: #333;
+    border: 3px solid #fff;
+    color: #fff;
+    display: flex;
+    font-size: inherit;
+    height: 44px;
+    left: 2px;
+    max-height: 48px;
+    overflow: auto;
+    padding: 0 6px;
+    text-decoration: none;
+    top: 2px;
+    width: auto;
+    z-index: 4;
   }
 `;

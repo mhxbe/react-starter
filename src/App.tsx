@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { ResetCss, Main, Wrapper, Footer } from './App.styles';
+import { ResetCss, MainWrapper, Main, Wrapper, Footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
@@ -45,46 +45,48 @@ const App: React.FC = () => {
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <Wrapper>
         <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-        <Main
-          data-testid="content"
-          role="main"
-          aria-labelledby="page-heading"
-          aria-hidden={!showContent}
-        >
-          <React.Suspense
-            fallback={<div data-testid="page-loading">Loading...</div>}
+        <MainWrapper aria-hidden={!showContent} data-testid="main-wrapper">
+          <Main
+            tabIndex={-1}
+            id="main-content"
+            role="main"
+            aria-labelledby="page-heading"
           >
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => (
-                  <ErrorBoundary
-                    key="home"
-                    FallbackComponent={ErrorFallback}
-                    onError={errorHandler}
-                  >
-                    <Home />
-                  </ErrorBoundary>
-                )}
-              />
-              <Route
-                path="/about"
-                render={() => (
-                  <ErrorBoundary
-                    key="about"
-                    FallbackComponent={ErrorFallback}
-                    onError={errorHandler}
-                  >
-                    <About />
-                  </ErrorBoundary>
-                )}
-              />
-              <Route path="/404" component={PageNotFound} />
-              <Redirect to="/404" />
-            </Switch>
-          </React.Suspense>
-        </Main>
+            <React.Suspense
+              fallback={<div data-testid="page-loading">Loading...</div>}
+            >
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <ErrorBoundary
+                      key="home"
+                      FallbackComponent={ErrorFallback}
+                      onError={errorHandler}
+                    >
+                      <Home />
+                    </ErrorBoundary>
+                  )}
+                />
+                <Route
+                  path="/about"
+                  render={() => (
+                    <ErrorBoundary
+                      key="about"
+                      FallbackComponent={ErrorFallback}
+                      onError={errorHandler}
+                    >
+                      <About />
+                    </ErrorBoundary>
+                  )}
+                />
+                <Route path="/404" component={PageNotFound} />
+                <Redirect to="/404" />
+              </Switch>
+            </React.Suspense>
+          </Main>
+        </MainWrapper>
       </Wrapper>
       <Footer>
         <div className="wrapper">

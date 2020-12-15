@@ -10,7 +10,7 @@ test('Should call resetErrorBoundary', () => {
     <ErrorFallback error={error} resetErrorBoundary={mockResetErrorBoundary} />
   );
 
-  fireEvent.click(screen.getByText('Try again.'));
+  fireEvent.click(screen.getByText('errorBoundary.buttonTryAgain'));
   expect(mockResetErrorBoundary).toHaveBeenCalled();
 });
 

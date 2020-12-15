@@ -44,7 +44,7 @@ export const SubTitle = styled.h2`
   }
 `;
 
-export const Main = styled.main`
+export const MainWrapper = styled.div`
   margin: 0 auto;
   padding: 1rem;
   z-index: 1;
@@ -57,6 +57,15 @@ export const Main = styled.main`
   }
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     width: 960px;
+  }
+`;
+
+export const Main = styled.main`
+  &:focus-visible::before {
+    content: '';
+    display: block;
+    height: 72px;
+    margin-top: -72px;
   }
 `;
 
@@ -173,7 +182,7 @@ const reset = css`
     margin: 0rem;
     min-height: 100%;
     overflow-y: auto;
-    padding-top: ${HEADER_HEIGHT}px;
+    /* padding-top: ${HEADER_HEIGHT}px; */
   }
   #root {
     display: flex;
