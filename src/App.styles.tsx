@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 import { css, Global } from '@emotion/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from './constants';
+import { BREAKPOINT_DESKTOP } from './constants';
 
 export const Wrapper = styled.div`
   background-color: white;
@@ -182,7 +182,6 @@ const reset = css`
     margin: 0rem;
     min-height: 100%;
     overflow-y: auto;
-    /* padding-top: ${HEADER_HEIGHT}px; */
   }
   #root {
     display: flex;

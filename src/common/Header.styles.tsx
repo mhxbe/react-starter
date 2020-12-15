@@ -11,7 +11,6 @@ export const StyledHeader = styled.header`
   justify-content: center;
   left: 0;
   min-height: ${HEADER_HEIGHT}px;
-  /* position: fixed; */
   position: sticky;
   right: 0;
   text-align: center;
