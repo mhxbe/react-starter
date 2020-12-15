@@ -62,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
         </nav>
         <aside>
           <SidebarPadding>
-            <SidebarHeader id="sidebar-language-switcher">
+            <SidebarHeader tabIndex={-1} id="sidebar-language-switcher">
               {t('sidebar.switch_language')}
             </SidebarHeader>
             <List aria-labelledby="sidebar-language-switcher">
@@ -71,9 +71,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
                   type="button"
                   data-testid="language-switch-en"
                   onClick={() => i18n.changeLanguage('en')}
-                  aria-label={t('languages.aria.en')}
                 >
-                  {t('languages.en')}
+                  <span aria-label={t('languages.aria.en')}>
+                    {t('languages.en')}
+                  </span>
                 </LanguageButton>
               </li>
               <li>
@@ -81,9 +82,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
                   type="button"
                   data-testid="language-switch-nl"
                   onClick={() => i18n.changeLanguage('nl')}
-                  aria-label={t('languages.aria.nl')}
                 >
-                  {t('languages.nl')}
+                  <span aria-label={t('languages.aria.nl')}>
+                    {t('languages.nl')}
+                  </span>
                 </LanguageButton>
               </li>
             </List>

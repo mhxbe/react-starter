@@ -2,7 +2,11 @@
   "navigation": {
     "home": "Home",
     "about": "Over",
-    "404": "Pagina niet gevonden"
+    "404": "Pagina niet gevonden",
+    "skipLinks": {
+      "main": "Ga naar hoofdinhoud",
+      "language": "Wijzig taal"
+    }
   },
   "sidebar": {
     "navigation": "Navigatie",
@@ -10,19 +14,24 @@
   },
   "home": {
     "title": "React Starterkit Sjabloon",
-    "description": "Dit is een beginnerskit om snel client-side React projecten op te starten die in TypeScript zijn geschreven.",
+    "description": "Dit is een sjabloon om snel client-side React projecten op te starten die in TypeScript zijn geschreven.",
     "workbox": {
-      "link": "Ondersteuning voor Progressieve Web Apps (PWA) is aangedreven door <0>Google Workbox</0>.",
+      "text": "Ondersteuning voor Progressieve Web Apps (PWA) is aangedreven door Google Workbox.",
       "description": "Link naar het Google Workbox project."
     },
     "github": {
-      "link": "Je kan deze beginnerskit terugvinden op <0>github.com/mhxbe/react-starter</0>.",
-      "description": "Link naar Mike's React beginnerskit Github-pagina."
+      "text": "Je kan dit sjabloon terugvinden op Github.",
+      "description": "Link naar Mike's React Starterkit sjabloon Github-pagina."
     },
     "error_boundary": {
-      "description": "Hier is een voorbeeld van een React Error Boundary. Klik op onderstaande knop om hem om gang te brengen.",
+      "description": "Hier kan je een voorbeeld van een React Error Boundary terugvinden. Klik op onderstaande knop om hem om gang te brengen.",
       "button": "Veroorzaak error (react-error-boundary)"
     }
+  },
+  "errorBoundary": {
+    "title": "Er is iets misgegaan",
+    "errorDescription": "De volgende fout heeft zich voorgedaan:",
+    "buttonTryAgain": "Probeer opnieuw"
   },
   "about": {
     "title": "Over"

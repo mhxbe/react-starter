@@ -2,7 +2,11 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "404": "Page not found"
+    "404": "Page not found",
+    "skipLinks": {
+      "main": "Skip to main content",
+      "language": "Select language"
+    }
   },
   "sidebar": {
     "navigation": "Navigation",
@@ -12,17 +16,22 @@
     "title": "React Starterkit Template",
     "description": "This is an opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.",
     "workbox": {
-      "link": "Support for Progressive Web Apps (PWA) is powered by <0>Google Workbox</0>.",
+      "text": "Support for Progressive Web Apps (PWA) is powered by Google Workbox.",
       "description": "Link to Google's Workbox project."
     },
     "github": {
-      "link": "You can find this starter kit at <0>github.com/mhxbe/react-starter</0>.",
+      "text": "You can find this starter kit on Github.",
       "description": "Link to Mike's react starterkit Github page."
     },
     "error_boundary": {
       "description": "Here is an example of a React Error Boundary. Click the following button to trigger it.",
       "button": "Trigger error (react-error-boundary)"
     }
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "errorDescription": "The following error occured:",
+    "buttonTryAgain": "Try again"
   },
   "about": {
     "title": "About"

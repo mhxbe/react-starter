@@ -22,6 +22,34 @@ describe('Application root', () => {
   });
 });
 
+describe('i18next', () => {
+  const i18nextEvents: any = {};
+
+  jest.mock('i18next', () => ({
+    use: () => ({
+      init: (): any => ({
+        t: (k: any) => k,
+      }),
+      use: () => ({
+        init: (): any => ({
+          t: (k: any) => k,
+        }),
+      }),
+    }),
+    on: jest.fn((event, callback) => {
+      i18nextEvents[event] = callback;
+    }),
+  }));
+
+  it("should handle change the document language when 'languageChanged' is triggered", () => {
+    require('../index.tsx');
+    i18nextEvents.languageChanged('nl');
+    expect(window.document.documentElement.lang).toEqual('nl');
+    i18nextEvents.languageChanged('en');
+    expect(window.document.documentElement.lang).toEqual('en');
+  });
+});
+
 describe('Workbox ServiceWorker', () => {
   const OLD_ENV = process.env;
   const events: any = {};

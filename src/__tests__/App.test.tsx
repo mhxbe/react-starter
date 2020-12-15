@@ -12,12 +12,12 @@ const renderAppComponent = () => (
   </Router>
 );
 
-test('Should render a Header, Content & Sidebar component', () => {
+test('Should render a Header, Main & Sidebar component', () => {
   render(renderAppComponent());
 
   expect(screen.getByTestId('header')).toBeInTheDocument();
   expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-  expect(screen.getByTestId('content')).toBeInTheDocument();
+  expect(screen.getByRole('main')).toBeInTheDocument();
 });
 
 describe('Rendering components through routing', () => {
@@ -74,8 +74,8 @@ test('toggling of the sidebar, settings correct aria-labels on Sidebar & Content
   render(renderAppComponent());
   // Only shows Content
   expect(screen.getByTestId('sidebar')).toHaveAttribute('aria-hidden', 'true');
-  const main = screen.getByRole('main');
-  expect(main).toHaveAttribute('aria-hidden', 'false');
+  const mainWrapper = screen.getByTestId('main-wrapper');
+  expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
 
   // Only shows Sidebar (aria-hidden false)
   fireEvent.click(screen.getByTestId('toggle-sidebar'));
@@ -84,7 +84,7 @@ test('toggling of the sidebar, settings correct aria-labels on Sidebar & Content
       'aria-hidden',
       'false'
     );
-    expect(main).toHaveAttribute('aria-hidden', 'true');
+    expect(mainWrapper).toHaveAttribute('aria-hidden', 'true');
   });
 });
 
@@ -98,9 +98,10 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
   render(renderAppComponent());
   fireEvent(window, new Event('resize'));
   const sidebar = await screen.getByTestId('sidebar');
+  const mainWrapper = screen.getByTestId('main-wrapper');
   await waitFor(() => {
+    expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
     expect(sidebar).toHaveAttribute('aria-hidden', 'false');
-    expect(screen.getByRole('main')).toHaveAttribute('aria-hidden', 'false');
   });
 
   const overlay = screen.getByTestId('overlay');
@@ -108,7 +109,7 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
 
   // Should set aria-hidden to false for Sidebar & Content when toggleSidebar is called
   await waitFor(() => {
+    expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
     expect(sidebar).toHaveAttribute('aria-hidden', 'false');
-    expect(screen.getByRole('main')).toHaveAttribute('aria-hidden', 'false');
   });
 });
