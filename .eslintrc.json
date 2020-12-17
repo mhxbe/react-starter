@@ -38,8 +38,9 @@
     "plugin:sonarjs/recommended",
     "plugin:testing-library/recommended",
     "plugin:jest-dom/recommended",
-    "prettier/@typescript-eslint",
+    "plugin:jsx-a11y/recommended",
     "eslint:recommended",
+    "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
@@ -50,7 +51,8 @@
     "sonarjs",
     "testing-library",
     "jest-dom",
-    "prettier"
+    "prettier",
+    "jsx-a11y"
   ],
   "rules": {
     "react/prop-types": "off",
