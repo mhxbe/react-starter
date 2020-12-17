@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import * as React from 'react';
 import { FallbackProps } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
-import { Title, Paragraph } from '../App.styles';
+import { jsx } from '@emotion/react';
+import { paragraph, title } from '../App.styles';
 
 const ErrorFallback = ({
   resetErrorBoundary,
@@ -10,8 +12,10 @@ const ErrorFallback = ({
   const { t } = useTranslation();
   return (
     <div data-testid="error-fallback-component">
-      <Title id="page-heading">{t('errorBoundary.title')}</Title>
-      <Paragraph>{t('errorBoundary.errorDescription')}</Paragraph>
+      <h1 id="page-heading" css={title}>
+        {t('errorBoundary.title')}
+      </h1>
+      <p css={paragraph}>{t('errorBoundary.errorDescription')}</p>
       <pre>{error?.message}</pre>
       <button onClick={resetErrorBoundary}>
         {t('errorBoundary.buttonTryAgain')}

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { jsx } from '@emotion/react';
 import { useTranslation } from 'react-i18next';
-import { StyledHeader, HeaderTitle, skipLink } from './Header.styles';
+import { header, headerTitle, skipLink } from './Header.styles';
 import MenuIconToggle from './MenuIconToggle';
 
 interface HeaderProps {
@@ -13,7 +13,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onToggleSidebar, showSidebar }) => {
   const { t } = useTranslation();
   return (
-    <StyledHeader data-testid="header">
+    <header data-testid="header" css={header}>
       <a href="#main-content" css={skipLink}>
         {t('navigation.skipLinks.main')}
       </a>
@@ -27,8 +27,8 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, showSidebar }) => {
         showSidebar={showSidebar}
         onToggleSidebar={onToggleSidebar}
       />
-      <HeaderTitle>mhxbe/react-starter</HeaderTitle>
-    </StyledHeader>
+      <span css={headerTitle}>mhxbe/react-starter</span>
+    </header>
   );
 };
 

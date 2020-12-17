@@ -1,8 +1,7 @@
-import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
-export const StyledHeader = styled.header`
+export const header = css`
   background-color: #00d8ff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -18,7 +17,7 @@ export const StyledHeader = styled.header`
   z-index: 3;
 `;
 
-export const HeaderTitle = styled.span`
+export const headerTitle = css`
   color: #282a37;
   font-size: 1.25rem;
   font-weight: bold;
@@ -29,7 +28,7 @@ export const HeaderTitle = styled.span`
   }
 `;
 
-export const MenuIconWrapper = styled.button`
+export const menuIconWrapper = css`
   background: transparent;
   border: 0;
   cursor: pointer;

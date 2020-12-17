@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 import { css, jsx } from '@emotion/react';
-import { Paragraph, Title, SubTitle, Anchor } from '../../App.styles';
+import { paragraph, title, subTitle, link, list } from '../../App.styles';
 
 const Home: React.FC = () => {
   const handleError = useErrorHandler();
@@ -16,35 +16,42 @@ const Home: React.FC = () => {
         <title>{t('home.title')}</title>
         <meta name="description" content={t('home.description')} />
       </Helmet>
-      <Title id="page-heading">{t('home.title')}</Title>
-      <Paragraph>{t('home.description')}</Paragraph>
-      <Paragraph>{t('home.workbox.text')} </Paragraph>
-      <Paragraph>{t('home.github.text')} </Paragraph>
+      <h1 id="page-heading" css={title}>
+        {t('home.title')}
+      </h1>
+      <div>
+        <p css={paragraph}>{t('home.description')}</p>
+        <p css={paragraph}>{t('home.workbox.text')} </p>
+        <p css={paragraph}>{t('home.github.text')} </p>
+      </div>
       <ul
         css={css`
-          margin: 0 0 1.5rem 0;
-          padding: 0 0 0 1.5rem;
+          ${list};
+          margin-bottom: 1rem;
+          padding-left: 1.25rem;
         `}
       >
         <li>
-          <Anchor
+          <a
             href="https://developers.google.com/web/tools/workbox"
             title={t('home.workbox.description')}
+            css={link}
           >
             Google Workbox
-          </Anchor>
+          </a>
         </li>
         <li>
-          <Anchor
+          <a
             href="https://github.com/mhxbe/react-starter"
             title={t('home.github.description')}
+            css={link}
           >
             github react-starter
-          </Anchor>
+          </a>
         </li>
       </ul>
-      <SubTitle>Error Boundary</SubTitle>
-      <Paragraph>{t('home.error_boundary.description')}</Paragraph>
+      <h2 css={subTitle}>Error Boundary</h2>
+      <p css={paragraph}>{t('home.error_boundary.description')}</p>
       <button
         data-testid="button-error-boundary"
         onClick={() => handleError(new Error('Example error'))}

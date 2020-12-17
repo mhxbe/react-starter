@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { ResetCss, MainWrapper, Main, Wrapper, Footer } from './App.styles';
+import { jsx } from '@emotion/react';
+import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
@@ -40,17 +42,22 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
+    <React.Fragment>
       <ResetCss />
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-      <Wrapper>
+      <div css={wrapper}>
         <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-        <MainWrapper aria-hidden={!showContent} data-testid="main-wrapper">
-          <Main
+        <div
+          aria-hidden={!showContent}
+          data-testid="main-wrapper"
+          css={mainWrapper}
+        >
+          <main
             tabIndex={-1}
             id="main-content"
             role="main"
             aria-labelledby="page-heading"
+            css={main}
           >
             <React.Suspense
               fallback={<div data-testid="page-loading">Loading...</div>}
@@ -85,15 +92,15 @@ const App: React.FC = () => {
                 <Redirect to="/404" />
               </Switch>
             </React.Suspense>
-          </Main>
-        </MainWrapper>
-      </Wrapper>
-      <Footer>
+          </main>
+        </div>
+      </div>
+      <footer css={footer}>
         <div className="wrapper">
           <div>&copy; 2020 mhxbe</div>
         </div>
-      </Footer>
-    </>
+      </footer>
+    </React.Fragment>
   );
 };
 

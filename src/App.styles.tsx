@@ -1,23 +1,8 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
 import { css, Global } from '@emotion/react';
-import { Link as ReactRouterLink } from 'react-router-dom';
 import { BREAKPOINT_DESKTOP } from './constants';
 
-export const Wrapper = styled.div`
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1;
-  justify-content: center;
-
-  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
-    margin: 0 auto;
-    max-width: ${BREAKPOINT_DESKTOP}px;
-  }
-`;
-
-export const Title = styled.h1`
+export const title = css`
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 1;
@@ -32,7 +17,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const SubTitle = styled.h2`
+export const subTitle = css`
   font-size: 1rem;
   font-weight: bold;
   line-height: 1;
@@ -44,7 +29,20 @@ export const SubTitle = styled.h2`
   }
 `;
 
-export const MainWrapper = styled.div`
+export const wrapper = css`
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+
+  @media (min-width: ${BREAKPOINT_DESKTOP}px) {
+    margin: 0 auto;
+    max-width: ${BREAKPOINT_DESKTOP}px;
+  }
+`;
+
+export const mainWrapper = css`
   margin: 0 auto;
   padding: 1rem;
   z-index: 1;
@@ -60,7 +58,7 @@ export const MainWrapper = styled.div`
   }
 `;
 
-export const Main = styled.main`
+export const main = css`
   &:focus-visible::before {
     content: '';
     display: block;
@@ -69,7 +67,7 @@ export const Main = styled.main`
   }
 `;
 
-export const Paragraph = styled.p`
+export const paragraph = css`
   color: black;
   line-height: 1.5;
   margin: 0 0 1.25rem 0;
@@ -84,7 +82,7 @@ export const Paragraph = styled.p`
   }
 `;
 
-const linkStyle = `
+export const linkStyle = `
   &:link,
   &:visited {
     color: #015b6d;
@@ -93,24 +91,32 @@ const linkStyle = `
     color: #060060;
   }
 `;
-export const Anchor = styled.a`
-  ${linkStyle}
-`;
 
-export const Link = styled(ReactRouterLink)`
-  ${linkStyle}
-`;
-
-export const List = styled.ul`
-  padding: 0;
-  padding-left: 18px;
-
-  li {
-    line-height: 2.5rem;
+export const link = css`
+  &:link,
+  &:visited {
+    color: #015b6d;
+  }
+  &:hover {
+    color: #060060;
   }
 `;
 
-export const ButtonLink = styled.button`
+export const list = css`
+  padding: 0;
+  font-size: 1rem;
+  @media (min-width: 440px) {
+    font-size: 1.25rem;
+  }
+  li {
+    line-height: 1.75rem;
+    @media (min-width: 440px) {
+      line-height: 2.5rem;
+    }
+  }
+`;
+
+export const button = css`
   background: transparent;
   border: 0;
   color: #015b6d;
@@ -125,7 +131,7 @@ export const ButtonLink = styled.button`
   }
 `;
 
-export const Footer = styled.footer`
+export const footer = css`
   align-items: center;
   display: flex;
   flex-direction: column;

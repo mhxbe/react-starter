@@ -1,15 +1,16 @@
+/** @jsx jsx */
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { css, jsx } from '@emotion/react';
+import { list } from '../App.styles';
 import {
-  Overlay,
-  SidebarWrapper,
-  SidebarMenuItem,
-  List,
-  SidebarHeader,
-  SidebarContent,
-  SidebarPadding,
-  LanguageButton,
+  overlay,
+  sidebarWrapper,
+  sidebarMenuItem,
+  sidebarHeader,
+  sidebarContent,
+  languageButton,
 } from './Sidebar.styles';
 
 interface SidebarProps {
@@ -25,79 +26,106 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
   const { t, i18n } = useTranslation();
 
   return (
-    <SidebarWrapper
+    <div
       data-testid="sidebar"
       aria-hidden={!showSidebar}
       id="sidebar"
-      showSidebar={showSidebar}
+      css={sidebarWrapper(showSidebar)}
     >
-      <SidebarContent showSidebar={showSidebar}>
+      <div css={sidebarContent(showSidebar)}>
         <nav role="navigation">
-          <SidebarPadding>
-            <SidebarHeader id="sidebar-header">
+          <div
+            css={css`
+              padding: 0 12px;
+            `}
+          >
+            <h3 id="sidebar-header" css={sidebarHeader}>
               {t('sidebar.navigation')}
-            </SidebarHeader>
-          </SidebarPadding>
-          <List
+            </h3>
+          </div>
+          <ul
             role="menu"
             onClick={hideSidebar}
             aria-labelledby="sidebar-header"
+            css={css`
+              ${list};
+              list-style-type: none;
+              @media (min-width: 440px) {
+                font-size: 1rem;
+              }
+            `}
           >
-            <SidebarMenuItem>
+            <li css={sidebarMenuItem}>
               <Link to="/" data-testid="link-home" role="menuitem">
                 {t('navigation.home')}
               </Link>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
+            </li>
+            <li css={sidebarMenuItem}>
               <Link to="/about" data-testid="link-about" role="menuitem">
                 {t('navigation.about')}
               </Link>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
+            </li>
+            <li css={sidebarMenuItem}>
               <Link to="/foo" data-testid="link-foo" role="menuitem">
                 {t('navigation.404')}
               </Link>
-            </SidebarMenuItem>
-          </List>
+            </li>
+          </ul>
         </nav>
         <aside>
-          <SidebarPadding>
-            <SidebarHeader tabIndex={-1} id="sidebar-language-switcher">
+          <div
+            css={css`
+              padding: 0 12px;
+            `}
+          >
+            <h3
+              tabIndex={-1}
+              id="sidebar-language-switcher"
+              css={sidebarHeader}
+            >
               {t('sidebar.switch_language')}
-            </SidebarHeader>
-            <List aria-labelledby="sidebar-language-switcher">
+            </h3>
+            <ul
+              aria-labelledby="sidebar-language-switcher"
+              css={css`
+                ${list};
+                list-style-type: none;
+              `}
+            >
               <li>
-                <LanguageButton
+                <button
                   type="button"
                   data-testid="language-switch-en"
                   onClick={() => i18n.changeLanguage('en')}
+                  css={languageButton}
                 >
                   <span aria-label={t('languages.aria.en')}>
                     {t('languages.en')}
                   </span>
-                </LanguageButton>
+                </button>
               </li>
               <li>
-                <LanguageButton
+                <button
                   type="button"
                   data-testid="language-switch-nl"
                   onClick={() => i18n.changeLanguage('nl')}
+                  css={languageButton}
                 >
                   <span aria-label={t('languages.aria.nl')}>
                     {t('languages.nl')}
                   </span>
-                </LanguageButton>
+                </button>
               </li>
-            </List>
-          </SidebarPadding>
+            </ul>
+          </div>
         </aside>
-      </SidebarContent>
-      <Overlay
+      </div>
+      <div
         data-testid="overlay"
-        showSidebar={showSidebar}
         onClick={hideSidebar}
+        css={overlay(showSidebar)}
       />
-    </SidebarWrapper>
+    </div>
   );
 };
 

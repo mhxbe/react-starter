@@ -1,8 +1,10 @@
+/** @jsx jsx */
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
-import { Paragraph, Title, ButtonLink, Link, List } from '../../App.styles';
+import { css, jsx } from '@emotion/react';
+import { paragraph, title, button, link, list } from '../../App.styles';
 
 const PageNotFound: React.FC<RouteComponentProps> = (props) => {
   const { history } = props;
@@ -13,20 +15,27 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
         <title>{t('404.title')}</title>
         <meta name="description" content={t('404.description')} />
       </Helmet>
-      <Title id="page-heading">{t('404.title')}</Title>
-      <Paragraph>{t('404.description')}</Paragraph>
-      <List>
+      <h1 id="page-heading" css={title}>
+        {t('404.title')}
+      </h1>
+      <p css={paragraph}>{t('404.description')}</p>
+      <ul
+        css={css`
+          ${list};
+          padding-left: 1.25rem;
+        `}
+      >
         <li>
           <Trans i18nKey="404.navigate_home">
-            <Link to="/" />
+            <Link to="/" css={link} />
           </Trans>
         </li>
         <li>
           <Trans i18nKey="404.go_back">
-            <ButtonLink type="button" onClick={history.goBack} />
+            <button type="button" onClick={history.goBack} css={button} />
           </Trans>
         </li>
-      </List>
+      </ul>
     </div>
   );
 };

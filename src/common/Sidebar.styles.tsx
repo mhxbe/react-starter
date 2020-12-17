@@ -1,14 +1,10 @@
-import styled from '@emotion/styled';
+import { css, SerializedStyles } from '@emotion/react';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
-interface SidebarProps {
-  readonly showSidebar: boolean;
-}
-
-export const SidebarWrapper = styled.div<SidebarProps>`
+export const sidebarWrapper = (showSidebar: boolean): SerializedStyles => css`
   height: calc(100% - ${HEADER_HEIGHT}px);
   position: fixed;
-  visibility: ${({ showSidebar }) => (showSidebar ? 'visible' : 'hidden')};
+  visibility: ${showSidebar ? 'visible' : 'hidden'};
   width: 100%;
   z-index: 2;
 
@@ -22,14 +18,12 @@ export const SidebarWrapper = styled.div<SidebarProps>`
   }
 `;
 
-export const SidebarContent = styled.div<SidebarProps>`
+export const sidebarContent = (showSidebar: boolean): SerializedStyles => css`
   background-color: white;
   height: 100%;
   overflow-y: auto;
   position: relative;
-  transform: translateX(
-    ${({ showSidebar }) => (showSidebar ? '0px' : '-300px')}
-  );
+  transform: translateX(${showSidebar ? '0px' : '-300px'});
   transition: 0.25s ease-in-out;
   width: 300px;
   z-index: 1;
@@ -41,15 +35,15 @@ export const SidebarContent = styled.div<SidebarProps>`
   }
 `;
 
-export const SidebarHeader = styled.h3`
+export const sidebarHeader = css`
   padding: 12px 0;
 `;
 
-export const Overlay = styled.div<SidebarProps>`
+export const overlay = (showSidebar: boolean): SerializedStyles => css`
   background: black;
   height: 100%;
   left: 0;
-  opacity: ${({ showSidebar }) => (showSidebar ? '0.5' : '0')};
+  opacity: ${showSidebar ? '0.5' : '0'};
   position: absolute;
   top: 0;
   transition: 0.25s ease-in-out;
@@ -60,16 +54,7 @@ export const Overlay = styled.div<SidebarProps>`
   }
 `;
 
-export const List = styled.ul`
-  list-style-type: none;
-  padding: 0;
-`;
-
-export const SidebarPadding = styled.div`
-  padding: 0 12px;
-`;
-
-export const SidebarMenuItem = styled.li`
+export const sidebarMenuItem = css`
   align-items: center;
   border-bottom: 1px solid #d9d9d9;
   display: flex;
@@ -100,7 +85,7 @@ export const SidebarMenuItem = styled.li`
   }
 `;
 
-export const LanguageButton = styled.button`
+export const languageButton = css`
   -webkit-appearance: none;
   -webkit-border-radius: none;
   background-color: #00d9fe;
