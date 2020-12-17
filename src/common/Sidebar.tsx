@@ -19,10 +19,6 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
-  function hideSidebar(): void {
-    return onToggleSidebar();
-  }
-
   const { t, i18n } = useTranslation();
 
   return (
@@ -45,7 +41,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
           </div>
           <ul
             role="menu"
-            onClick={hideSidebar}
             aria-labelledby="sidebar-header"
             css={css`
               ${list};
@@ -56,17 +51,32 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
             `}
           >
             <li css={sidebarMenuItem}>
-              <Link to="/" data-testid="link-home" role="menuitem">
+              <Link
+                to="/"
+                data-testid="link-home"
+                role="menuitem"
+                onClick={() => onToggleSidebar()}
+              >
                 {t('navigation.home')}
               </Link>
             </li>
             <li css={sidebarMenuItem}>
-              <Link to="/about" data-testid="link-about" role="menuitem">
+              <Link
+                to="/about"
+                data-testid="link-about"
+                role="menuitem"
+                onClick={() => onToggleSidebar()}
+              >
                 {t('navigation.about')}
               </Link>
             </li>
             <li css={sidebarMenuItem}>
-              <Link to="/foo" data-testid="link-foo" role="menuitem">
+              <Link
+                to="/404"
+                data-testid="link-foo"
+                role="menuitem"
+                onClick={() => onToggleSidebar()}
+              >
                 {t('navigation.404')}
               </Link>
             </li>
@@ -120,11 +130,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
           </div>
         </aside>
       </div>
-      <div
-        data-testid="overlay"
-        onClick={hideSidebar}
-        css={overlay(showSidebar)}
-      />
+      <div data-testid="overlay" css={overlay(showSidebar)} />
     </div>
   );
 };

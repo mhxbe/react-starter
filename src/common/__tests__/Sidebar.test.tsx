@@ -3,10 +3,9 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 
-const mockOnToggleSidebar = jest.fn();
 const renderSidebar = (visible: boolean) => (
   <BrowserRouter>
-    <Sidebar onToggleSidebar={mockOnToggleSidebar} showSidebar={visible} />
+    <Sidebar onToggleSidebar={jest.fn()} showSidebar={visible} />
   </BrowserRouter>
 );
 
@@ -16,13 +15,11 @@ test('Displays a sidebar with 3 menu items', () => {
   expect(screen.getByRole('menu').children.length).toEqual(3);
 });
 
-test('Displays an Overlay with opacity 0.5 when Sideba is shown & triggers onToggleSidebar when clicked', () => {
+test('Displays an Overlay with opacity 0.5 when Sidebar is shown', () => {
   render(renderSidebar(true));
   const overlay = screen.getByTestId('overlay');
   expect(overlay).toBeInTheDocument();
   expect(overlay).toHaveStyle('opacity: 0.5');
-  fireEvent.click(overlay);
-  expect(mockOnToggleSidebar).toHaveBeenCalled();
 });
 
 test('Displays an Overlay with opacity 0.0 when Sidebar is not shown', () => {
