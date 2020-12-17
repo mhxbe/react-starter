@@ -91,7 +91,7 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 ### Styling
 
-[Emotion](https://emotion.sh/) is a CSS-in-JS library designed for writing css styles with JavaScript. It allows you to style apps quickly with string or object styles. [`@emotion/styled`](https://emotion.sh/docs/@emotion/styled) is used whose API is heavily inspired from [`styled-components`](https://www.styled-components.com/).
+[Emotion](https://emotion.sh/) is a CSS-in-JS library designed for writing css styles with JavaScript. It allows you to style apps quickly with string or object styles.
 
 ### Multilinguality
 
