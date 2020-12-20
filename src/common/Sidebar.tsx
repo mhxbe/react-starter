@@ -26,7 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
       data-testid="sidebar"
       aria-hidden={!showSidebar}
       id="sidebar"
-      css={sidebarWrapper(showSidebar)}
+      css={sidebarWrapper}
     >
       <div css={sidebarContent(showSidebar)}>
         <nav role="navigation">

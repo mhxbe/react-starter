@@ -1,19 +1,22 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
-export const sidebarWrapper = (showSidebar: boolean): SerializedStyles => css`
+export const sidebarWrapper = css`
   height: calc(100% - ${HEADER_HEIGHT}px);
   position: fixed;
-  visibility: ${showSidebar ? 'visible' : 'hidden'};
+  visibility: visible;
   width: 100%;
   z-index: 2;
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+  }
 
   @media (min-width: ${BREAKPOINT_DESKTOP}px) {
     height: auto;
     left: 0;
     position: sticky;
     top: ${HEADER_HEIGHT}px;
-    visibility: visible;
     width: 300px;
   }
 `;
