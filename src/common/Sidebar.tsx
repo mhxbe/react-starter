@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
             <li css={sidebarMenuItem}>
               <Link
                 to="/404"
-                data-testid="link-foo"
+                data-testid="link-404"
                 role="menuitem"
                 onClick={() => onToggleSidebar()}
               >

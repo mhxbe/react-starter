@@ -3,9 +3,10 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 
+const toggleSidebarMock = jest.fn();
 const renderSidebar = (visible: boolean) => (
   <BrowserRouter>
-    <Sidebar onToggleSidebar={jest.fn()} showSidebar={visible} />
+    <Sidebar onToggleSidebar={toggleSidebarMock} showSidebar={visible} />
   </BrowserRouter>
 );
 
@@ -54,6 +55,22 @@ test('Change language', async () => {
   await waitFor(() => {
     expect(mockChangeLanguage).toHaveBeenCalledWith('en');
   });
+});
+
+test('Clicking home link should call onToggleSidebar', () => {
+  render(renderSidebar(true));
+  fireEvent.click(screen.getByTestId('link-home'));
+  expect(toggleSidebarMock).toHaveBeenCalled();
+});
+test('Clicking about link should call onToggleSidebar', () => {
+  render(renderSidebar(true));
+  fireEvent.click(screen.getByTestId('link-about'));
+  expect(toggleSidebarMock).toHaveBeenCalled();
+});
+test('Clicking 404 link should call onToggleSidebar', () => {
+  render(renderSidebar(true));
+  fireEvent.click(screen.getByTestId('link-404'));
+  expect(toggleSidebarMock).toHaveBeenCalled();
 });
 
 afterAll(() => {
