@@ -7,6 +7,7 @@ import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
+import useWindowWidth from './hooks/useWindowWidth';
 import { BREAKPOINT_DESKTOP } from './constants';
 
 const Home = React.lazy(
@@ -22,18 +23,20 @@ const PageNotFound = React.lazy(
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [showContent, setShowContent] = React.useState(true);
+  const windowWidth = useWindowWidth();
 
   React.useEffect(() => {
-    if (window.innerWidth >= BREAKPOINT_DESKTOP) {
-      setShowContent(true);
-      setShowSidebar(true);
-    }
-  }, []);
+    setShowContent(true);
+    windowWidth >= BREAKPOINT_DESKTOP
+      ? setShowSidebar(true)
+      : setShowSidebar(false);
+  }, [windowWidth]);
 
   function toggleSidebar(): void {
     let mustShowContent = !showContent;
     let mustShowSidebar = !showSidebar;
-    if (window.innerWidth >= BREAKPOINT_DESKTOP) {
+    console.log('windowWidth', windowWidth);
+    if (windowWidth >= BREAKPOINT_DESKTOP) {
       mustShowContent = true;
       mustShowSidebar = true;
     }

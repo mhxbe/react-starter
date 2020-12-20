@@ -12,7 +12,7 @@ const renderAppComponent = () => (
   </Router>
 );
 
-test('Should render a Header, Main & Sidebar component', () => {
+test('Should render a header, main & sidebar elements', () => {
   render(renderAppComponent());
 
   expect(screen.getByTestId('header')).toBeInTheDocument();
@@ -99,15 +99,6 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
   fireEvent(window, new Event('resize'));
   const sidebar = await screen.getByTestId('sidebar');
   const mainWrapper = screen.getByTestId('main-wrapper');
-  await waitFor(() => {
-    expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
-    expect(sidebar).toHaveAttribute('aria-hidden', 'false');
-  });
-
-  const overlay = screen.getByTestId('overlay');
-  fireEvent.click(overlay);
-
-  // Should set aria-hidden to false for Sidebar & Content when toggleSidebar is called
   await waitFor(() => {
     expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
     expect(sidebar).toHaveAttribute('aria-hidden', 'false');
