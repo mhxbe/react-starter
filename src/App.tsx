@@ -35,7 +35,6 @@ const App: React.FC = () => {
   function toggleSidebar(): void {
     let mustShowContent = !showContent;
     let mustShowSidebar = !showSidebar;
-    console.log('windowWidth', windowWidth);
     if (windowWidth >= BREAKPOINT_DESKTOP) {
       mustShowContent = true;
       mustShowSidebar = true;
