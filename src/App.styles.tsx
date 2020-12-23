@@ -85,6 +85,7 @@ export const paragraph = css`
 `;
 
 export const link = (theme: Theme): SerializedStyles => css`
+  display: inline-block;
   &:link {
     color: ${theme.href.link};
   }
