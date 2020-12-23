@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { render } from '../../../utils/test-util';
 import Home from '../Home';
 import ErrorFallback from '../../common/ErrorFallback';
 
