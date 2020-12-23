@@ -2,13 +2,14 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { jsx, ThemeProvider, Theme } from '@emotion/react';
+import { jsx, ThemeProvider } from '@emotion/react';
 import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import useWindowWidth from './hooks/useWindowWidth';
 import { BREAKPOINT_DESKTOP } from './constants';
+import { lightTheme } from './themes';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: 'home' */ './pages/Home')
@@ -42,47 +43,6 @@ const App: React.FC = () => {
     setShowContent(mustShowContent);
     setShowSidebar(mustShowSidebar);
   }
-
-  const lightTheme: Theme = {
-    color: '#282a37',
-    background: 'white',
-    focus: '#015b6d',
-    header: {
-      background: '#00d8ff',
-      hamburger: '#282a37',
-    },
-    sidebar: {
-      background: 'white',
-      border: '#d9d9d9',
-      href: {
-        link: '#015b6d',
-        hover: '#060060',
-        focus: 'lightcyan',
-      },
-    },
-    footer: {
-      background: 'white',
-    },
-    title: {
-      color: '#282a37',
-      border: '#00d8ff',
-    },
-    href: {
-      link: '#015b6d',
-      visited: '#015b6d',
-      hover: '#060060',
-    },
-    button: {
-      background: '#00d9fe',
-      border: '#d9d9d9',
-      color: '#272b37',
-    },
-    skipLink: {
-      background: '#333333',
-      border: '#ffffff',
-      color: '#ffffff',
-    },
-  };
 
   return (
     <ThemeProvider theme={lightTheme}>

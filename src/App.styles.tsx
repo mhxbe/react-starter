@@ -103,10 +103,7 @@ export const list = css`
     font-size: 1.25rem;
   }
   li {
-    line-height: 1.75rem;
-    @media (min-width: 440px) {
-      line-height: 2.5rem;
-    }
+    line-height: 3rem;
   }
 `;
 
@@ -121,8 +118,11 @@ export const button = (theme: Theme): SerializedStyles => css`
   height: 48px;
   margin: 0 0 12px 0;
   padding: 0 12px;
-`;
 
+  &.full-width {
+    width: 100%;
+  }
+`;
 export const backButton = (theme: Theme): SerializedStyles => css`
   background: transparent;
   border: 0;

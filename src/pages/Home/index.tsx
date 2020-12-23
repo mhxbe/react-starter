@@ -55,13 +55,6 @@ const Home: React.FC = () => {
           >
             github react-starter
           </a>
-          <a
-            href="https:/jidoka.be/test"
-            title={t('home.github.description')}
-            css={link}
-          >
-            test
-          </a>
         </li>
       </ul>
       <h2 css={subTitle}>Error Boundary</h2>

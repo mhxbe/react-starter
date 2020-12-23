@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { css, jsx } from '@emotion/react';
+import { css, jsx, Theme } from '@emotion/react';
 
 import { list, button } from '../App.styles';
 import {
@@ -108,6 +108,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
                   data-testid="language-switch-en"
                   onClick={() => i18n.changeLanguage('en')}
                   css={button}
+                  className="full-width"
                 >
                   <span aria-label={t('languages.aria.en')}>
                     {t('languages.en')}
@@ -120,6 +121,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
                   data-testid="language-switch-nl"
                   onClick={() => i18n.changeLanguage('nl')}
                   css={button}
+                  className="full-width"
                 >
                   <span aria-label={t('languages.aria.nl')}>
                     {t('languages.nl')}
