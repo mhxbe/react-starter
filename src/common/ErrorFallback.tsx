@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FallbackProps } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 import { jsx } from '@emotion/react';
-import { paragraph, title } from '../App.styles';
+import { button, paragraph, title } from '../App.styles';
 
 const ErrorFallback = ({
   resetErrorBoundary,
@@ -17,7 +17,7 @@ const ErrorFallback = ({
       </h1>
       <p css={paragraph}>{t('errorBoundary.errorDescription')}</p>
       <pre>{error?.message}</pre>
-      <button onClick={resetErrorBoundary}>
+      <button css={button} onClick={resetErrorBoundary}>
         {t('errorBoundary.buttonTryAgain')}
       </button>
     </div>

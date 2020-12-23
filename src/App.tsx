@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { jsx } from '@emotion/react';
+import { jsx, ThemeProvider, Theme } from '@emotion/react';
 import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
@@ -43,8 +43,45 @@ const App: React.FC = () => {
     setShowSidebar(mustShowSidebar);
   }
 
+  const lightTheme: Theme = {
+    color: '#282a37',
+    header: {
+      background: '#00d8ff',
+      hamburger: '#282a37',
+    },
+    main: {
+      background: 'white',
+    },
+    sidebar: {
+      background: 'white',
+      border: '#d9d9d9',
+      href: {
+        link: '#015b6d',
+        hover: '#060060',
+        focus: 'lightcyan',
+      },
+    },
+    footer: {
+      background: 'white',
+    },
+    title: {
+      color: '#282a37',
+      border: '#00d8ff',
+    },
+    href: {
+      link: '#015b6d',
+      visited: '#015b6d',
+      hover: '#060060',
+    },
+    button: {
+      background: '#00d9fe',
+      border: '#d9d9d9',
+      color: '#272b37',
+    },
+  };
+
   return (
-    <React.Fragment>
+    <ThemeProvider theme={lightTheme}>
       <ResetCss />
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <div css={wrapper}>
@@ -102,7 +139,7 @@ const App: React.FC = () => {
           <div>&copy; 2020 mhxbe</div>
         </div>
       </footer>
-    </React.Fragment>
+    </ThemeProvider>
   );
 };
 

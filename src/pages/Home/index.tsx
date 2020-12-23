@@ -4,7 +4,14 @@ import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 import { css, jsx } from '@emotion/react';
-import { paragraph, title, subTitle, link, list } from '../../App.styles';
+import {
+  paragraph,
+  title,
+  subTitle,
+  link,
+  button,
+  list,
+} from '../../App.styles';
 
 const Home: React.FC = () => {
   const handleError = useErrorHandler();
@@ -48,11 +55,19 @@ const Home: React.FC = () => {
           >
             github react-starter
           </a>
+          <a
+            href="https:/jidoka.be/test"
+            title={t('home.github.description')}
+            css={link}
+          >
+            test
+          </a>
         </li>
       </ul>
       <h2 css={subTitle}>Error Boundary</h2>
       <p css={paragraph}>{t('home.error_boundary.description')}</p>
       <button
+        css={button}
         data-testid="button-error-boundary"
         onClick={() => handleError(new Error('Example error'))}
       >
