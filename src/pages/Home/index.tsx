@@ -53,7 +53,7 @@ const Home: React.FC = () => {
             title={t('home.github.description')}
             css={link}
           >
-            github react-starter
+            Github react-starter
           </a>
         </li>
       </ul>
