@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { css, jsx, Theme } from '@emotion/react';
+import { css, jsx } from '@emotion/react';
 
 import { list, button } from '../App.styles';
 import {
