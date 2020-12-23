@@ -45,12 +45,11 @@ const App: React.FC = () => {
 
   const lightTheme: Theme = {
     color: '#282a37',
+    background: 'white',
+    focus: '#015b6d',
     header: {
       background: '#00d8ff',
       hamburger: '#282a37',
-    },
-    main: {
-      background: 'white',
     },
     sidebar: {
       background: 'white',
@@ -77,6 +76,11 @@ const App: React.FC = () => {
       background: '#00d9fe',
       border: '#d9d9d9',
       color: '#272b37',
+    },
+    skipLink: {
+      background: '#333333',
+      border: '#ffffff',
+      color: '#ffffff',
     },
   };
 

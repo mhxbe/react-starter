@@ -32,7 +32,7 @@ export const subTitle = (theme: Theme): SerializedStyles => css`
 `;
 
 export const wrapper = (theme: Theme): SerializedStyles => css`
-  background-color: ${theme.main.background};
+  background-color: ${theme.background};
   color: ${theme.color};
   display: flex;
   flex-wrap: wrap;
@@ -123,10 +123,10 @@ export const button = (theme: Theme): SerializedStyles => css`
   padding: 0 12px;
 `;
 
-export const backButton = css`
+export const backButton = (theme: Theme): SerializedStyles => css`
   background: transparent;
   border: 0;
-  color: #015b6d;
+  color: ${theme.href.link};
   cursor: pointer;
   font-size: inherit;
   margin: 0;
@@ -134,7 +134,7 @@ export const backButton = css`
   text-decoration: underline;
 
   &:hover {
-    color: #060060;
+    color: ${theme.href.hover};
   }
 `;
 
@@ -163,7 +163,7 @@ export const footer = (theme: Theme): SerializedStyles => css`
   }
 `;
 
-const reset = css`
+const reset = (theme: Theme): SerializedStyles => css`
   @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -183,7 +183,8 @@ const reset = css`
   }
 
   html {
-    background-color: #00d8ff; /* iOS topbar background color when black-translucent */
+    background-color: ${theme.header
+      .background}; /* iOS topbar background color when black-translucent */
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -191,6 +192,7 @@ const reset = css`
     -webkit-text-size-adjust: 100%;
   }
   body {
+    background: ${theme.background};
     display: flex;
     flex-direction: column;
     margin: 0rem;
@@ -226,7 +228,7 @@ const reset = css`
     box-sizing: border-box;
   }
   *:focus {
-    box-shadow: 0 0 0 2px #015b6d;
+    box-shadow: 0 0 0 2px ${theme.focus};
     outline: 0;
     border-radius: 0px;
 

@@ -47,7 +47,7 @@ export const menuIconWrapper = (theme: Theme): SerializedStyles => css`
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px #015b6d;
+    box-shadow: 0 0 0 2px ${theme.focus};
     outline: 0;
     border-radius: 0px;
   }
@@ -62,7 +62,7 @@ export const menuIconWrapper = (theme: Theme): SerializedStyles => css`
   }
 `;
 
-export const skipLink = css`
+export const skipLink = (theme: Theme): SerializedStyles => css`
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -71,9 +71,9 @@ export const skipLink = css`
 
   &:focus {
     align-items: center;
-    background: #333;
-    border: 3px solid #fff;
-    color: #fff;
+    background: ${theme.skipLink.background};
+    border: 3px solid ${theme.skipLink.border};
+    color: ${theme.skipLink.color};
     display: flex;
     font-size: inherit;
     height: 44px;

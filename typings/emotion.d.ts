@@ -2,13 +2,12 @@ import '@emotion/react';
 
 declare module '@emotion/react' {
   export interface Theme {
+    background: string;
     color: string;
+    focus: string;
     header: {
       background: string;
       hamburger: string;
-    };
-    main: {
-      background: string;
     };
     sidebar: {
       background: string;
@@ -32,6 +31,11 @@ declare module '@emotion/react' {
       hover: string;
     };
     button: {
+      background: string;
+      border: string;
+      color: string;
+    };
+    skipLink: {
       background: string;
       border: string;
       color: string;
