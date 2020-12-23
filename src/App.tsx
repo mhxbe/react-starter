@@ -2,13 +2,14 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { jsx } from '@emotion/react';
+import { jsx, ThemeProvider } from '@emotion/react';
 import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import useWindowWidth from './hooks/useWindowWidth';
 import { BREAKPOINT_DESKTOP } from './constants';
+import { lightTheme } from './themes';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: 'home' */ './pages/Home')
@@ -44,7 +45,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <React.Fragment>
+    <ThemeProvider theme={lightTheme}>
       <ResetCss />
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <div css={wrapper}>
@@ -102,7 +103,7 @@ const App: React.FC = () => {
           <div>&copy; 2020 mhxbe</div>
         </div>
       </footer>
-    </React.Fragment>
+    </ThemeProvider>
   );
 };
 

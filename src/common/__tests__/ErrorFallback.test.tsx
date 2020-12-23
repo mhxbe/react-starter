@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
+import { render } from '../../../utils/test-util';
 import ErrorFallback, { errorHandler } from '../ErrorFallback';
 
 const mockResetErrorBoundary = jest.fn();

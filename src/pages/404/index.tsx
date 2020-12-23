@@ -4,7 +4,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
 import { css, jsx } from '@emotion/react';
-import { paragraph, title, button, link, list } from '../../App.styles';
+import { paragraph, title, backButton, link, list } from '../../App.styles';
 
 const PageNotFound: React.FC<RouteComponentProps> = (props) => {
   const { history } = props;
@@ -32,7 +32,7 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
         </li>
         <li>
           <Trans i18nKey="404.go_back">
-            <button type="button" onClick={history.goBack} css={button} />
+            <button type="button" onClick={history.goBack} css={backButton} />
           </Trans>
         </li>
       </ul>

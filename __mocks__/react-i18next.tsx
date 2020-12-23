@@ -8,7 +8,7 @@ module.exports = {
     },
   }),
   initReactI18next: {},
-  Trans: function Trans(): React.ReactElement {
-    return <></>;
+  Trans: function Trans({ children }): React.ReactElement {
+    return <>{children}</>;
   },
 };

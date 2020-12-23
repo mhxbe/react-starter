@@ -3,14 +3,14 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { css, jsx } from '@emotion/react';
-import { list } from '../App.styles';
+
+import { list, button } from '../App.styles';
 import {
   overlay,
   sidebarWrapper,
   sidebarMenuItem,
   sidebarHeader,
   sidebarContent,
-  languageButton,
 } from './Sidebar.styles';
 
 interface SidebarProps {
@@ -28,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
       id="sidebar"
       css={sidebarWrapper}
     >
-      <div css={sidebarContent(showSidebar)}>
+      <div css={(theme) => sidebarContent(theme, showSidebar)}>
         <nav role="navigation">
           <div
             css={css`
@@ -107,7 +107,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
                   type="button"
                   data-testid="language-switch-en"
                   onClick={() => i18n.changeLanguage('en')}
-                  css={languageButton}
+                  css={button}
+                  className="full-width"
                 >
                   <span aria-label={t('languages.aria.en')}>
                     {t('languages.en')}
@@ -119,7 +120,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
                   type="button"
                   data-testid="language-switch-nl"
                   onClick={() => i18n.changeLanguage('nl')}
-                  css={languageButton}
+                  css={button}
+                  className="full-width"
                 >
                   <span aria-label={t('languages.aria.nl')}>
                     {t('languages.nl')}

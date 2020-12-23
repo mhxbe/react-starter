@@ -1,4 +1,4 @@
-import { css, SerializedStyles } from '@emotion/react';
+import { css, SerializedStyles, Theme } from '@emotion/react';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
 export const sidebarWrapper = css`
@@ -21,8 +21,11 @@ export const sidebarWrapper = css`
   }
 `;
 
-export const sidebarContent = (showSidebar: boolean): SerializedStyles => css`
-  background-color: white;
+export const sidebarContent = (
+  theme: Theme,
+  showSidebar: boolean
+): SerializedStyles => css`
+  background-color: ${theme.sidebar.background};
   height: 100%;
   overflow-y: auto;
   position: relative;
@@ -38,7 +41,8 @@ export const sidebarContent = (showSidebar: boolean): SerializedStyles => css`
   }
 `;
 
-export const sidebarHeader = css`
+export const sidebarHeader = (theme: Theme): SerializedStyles => css`
+  color: ${theme.title.color};
   padding: 12px 0;
 `;
 
@@ -57,14 +61,14 @@ export const overlay = (showSidebar: boolean): SerializedStyles => css`
   }
 `;
 
-export const sidebarMenuItem = css`
+export const sidebarMenuItem = (theme: Theme): SerializedStyles => css`
   align-items: center;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid ${theme.sidebar.border};
   display: flex;
   height: 48px;
 
   &:first-of-type {
-    border-top: 1px solid #d9d9d9;
+    border-top: 1px solid ${theme.sidebar.border};
   }
 
   a {
@@ -77,27 +81,13 @@ export const sidebarMenuItem = css`
 
     &:link,
     &:visited {
-      color: #015b6d;
+      color: ${theme.sidebar.href.link};
     }
     &:hover {
-      color: #060060;
+      color: ${theme.sidebar.href.hover};
     }
     &:focus {
-      background-color: lightcyan;
+      background-color: ${theme.sidebar.href.focus};
     }
   }
-`;
-
-export const languageButton = css`
-  -webkit-appearance: none;
-  -webkit-border-radius: none;
-  background-color: #00d9fe;
-  border-radius: 0;
-  border: 1px solid #d9d9d9;
-  color: #272b37;
-  font-size: 1rem;
-  height: 48px;
-  margin: 0 0 12px 0;
-  padding: 0;
-  width: 100%;
 `;

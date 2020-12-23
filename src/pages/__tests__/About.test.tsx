@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { render } from '../../../utils/test-util';
 import About from '../About';
 
 test('Displays a title', () => {

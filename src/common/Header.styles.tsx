@@ -1,8 +1,8 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles, Theme } from '@emotion/react';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
-export const header = css`
-  background-color: #00d8ff;
+export const header = (theme: Theme): SerializedStyles => css`
+  background-color: ${theme.header.background};
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -17,8 +17,8 @@ export const header = css`
   z-index: 3;
 `;
 
-export const headerTitle = css`
-  color: #282a37;
+export const headerTitle = (theme: Theme): SerializedStyles => css`
+  color: ${theme.color};
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 1;
@@ -28,7 +28,7 @@ export const headerTitle = css`
   }
 `;
 
-export const menuIconWrapper = css`
+export const menuIconWrapper = (theme: Theme): SerializedStyles => css`
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -47,7 +47,7 @@ export const menuIconWrapper = css`
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px #015b6d;
+    box-shadow: 0 0 0 2px ${theme.focus};
     outline: 0;
     border-radius: 0px;
   }
@@ -55,10 +55,14 @@ export const menuIconWrapper = css`
   svg {
     height: 44px;
     width: 44px;
+
+    > polyline {
+      stroke: ${theme.header.hamburger};
+    }
   }
 `;
 
-export const skipLink = css`
+export const skipLink = (theme: Theme): SerializedStyles => css`
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -67,9 +71,9 @@ export const skipLink = css`
 
   &:focus {
     align-items: center;
-    background: #333;
-    border: 3px solid #fff;
-    color: #fff;
+    background: ${theme.skipLink.background};
+    border: 3px solid ${theme.skipLink.border};
+    color: ${theme.skipLink.color};
     display: flex;
     font-size: inherit;
     height: 44px;

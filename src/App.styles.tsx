@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { css, Global } from '@emotion/react';
+import { css, Global, Theme, SerializedStyles } from '@emotion/react';
 import { BREAKPOINT_DESKTOP } from './constants';
 
-export const title = css`
+export const title = (theme: Theme): SerializedStyles => css`
+  color: ${theme.title.color};
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 1;
-  border-bottom: 2px solid #00d8ff;
+  border-bottom: 2px solid ${theme.title.border};
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 
@@ -17,7 +18,8 @@ export const title = css`
   }
 `;
 
-export const subTitle = css`
+export const subTitle = (theme: Theme): SerializedStyles => css`
+  color: ${theme.title.color};
   font-size: 1rem;
   font-weight: bold;
   line-height: 1;
@@ -29,8 +31,9 @@ export const subTitle = css`
   }
 `;
 
-export const wrapper = css`
-  background-color: white;
+export const wrapper = (theme: Theme): SerializedStyles => css`
+  background-color: ${theme.background};
+  color: ${theme.color};
   display: flex;
   flex-wrap: wrap;
   flex: 1;
@@ -68,7 +71,6 @@ export const main = css`
 `;
 
 export const paragraph = css`
-  color: black;
   line-height: 1.5;
   margin: 0 0 1.25rem 0;
 
@@ -82,23 +84,15 @@ export const paragraph = css`
   }
 `;
 
-export const linkStyle = `
-  &:link,
+export const link = (theme: Theme): SerializedStyles => css`
+  &:link {
+    color: ${theme.href.link};
+  }
   &:visited {
-    color: #015b6d;
+    color: ${theme.href.visited};
   }
   &:hover {
-    color: #060060;
-  }
-`;
-
-export const link = css`
-  &:link,
-  &:visited {
-    color: #015b6d;
-  }
-  &:hover {
-    color: #060060;
+    color: ${theme.href.hover};
   }
 `;
 
@@ -109,17 +103,30 @@ export const list = css`
     font-size: 1.25rem;
   }
   li {
-    line-height: 1.75rem;
-    @media (min-width: 440px) {
-      line-height: 2.5rem;
-    }
+    line-height: 3rem;
   }
 `;
 
-export const button = css`
+export const button = (theme: Theme): SerializedStyles => css`
+  -webkit-appearance: none;
+  -webkit-border-radius: none;
+  background-color: ${theme.button.background};
+  border-radius: 0;
+  border: 1px solid ${theme.button.border};
+  color: ${theme.button.color};
+  font-size: 1rem;
+  height: 48px;
+  margin: 0 0 12px 0;
+  padding: 0 12px;
+
+  &.full-width {
+    width: 100%;
+  }
+`;
+export const backButton = (theme: Theme): SerializedStyles => css`
   background: transparent;
   border: 0;
-  color: #015b6d;
+  color: ${theme.href.link};
   cursor: pointer;
   font-size: inherit;
   margin: 0;
@@ -127,12 +134,14 @@ export const button = css`
   text-decoration: underline;
 
   &:hover {
-    color: #060060;
+    color: ${theme.href.hover};
   }
 `;
 
-export const footer = css`
+export const footer = (theme: Theme): SerializedStyles => css`
   align-items: center;
+  background-color: ${theme.footer.background};
+  color: ${theme.color};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,7 +163,7 @@ export const footer = css`
   }
 `;
 
-const reset = css`
+const reset = (theme: Theme): SerializedStyles => css`
   @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -174,7 +183,8 @@ const reset = css`
   }
 
   html {
-    background-color: #00d8ff; /* iOS topbar background color when black-translucent */
+    background-color: ${theme.header
+      .background}; /* iOS topbar background color when black-translucent */
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -182,7 +192,7 @@ const reset = css`
     -webkit-text-size-adjust: 100%;
   }
   body {
-    background-color: white;
+    background: ${theme.background};
     display: flex;
     flex-direction: column;
     margin: 0rem;
@@ -218,7 +228,7 @@ const reset = css`
     box-sizing: border-box;
   }
   *:focus {
-    box-shadow: 0 0 0 2px #015b6d;
+    box-shadow: 0 0 0 2px ${theme.focus};
     outline: 0;
     border-radius: 0px;
 
