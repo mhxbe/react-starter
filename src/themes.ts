@@ -40,3 +40,44 @@ export const lightTheme: Theme = {
     color: '#ffffff',
   },
 };
+
+export const darkTheme: Theme = {
+  color: '#d7feff',
+  background: '#081d20',
+  focus: '#fff36b',
+  header: {
+    background: '#015b6d',
+    hamburger: '#d7feff',
+  },
+  sidebar: {
+    background: '#081d20',
+    border: '#015b6d',
+    href: {
+      link: '#d7feff',
+      hover: '#00d8ff',
+      focus: '#015b6d',
+    },
+  },
+  footer: {
+    background: '#081d20',
+  },
+  title: {
+    color: '#fff36b',
+    border: '#015b6d',
+  },
+  href: {
+    link: '#30c8e4',
+    visited: '#30c8e4',
+    hover: '#fff36b',
+  },
+  button: {
+    background: '#015b6d',
+    border: '#00d8ff',
+    color: '#d7feff',
+  },
+  skipLink: {
+    background: '#081d20',
+    border: '#ffffff',
+    color: '#ffffff',
+  },
+};
