@@ -9,6 +9,7 @@ import {
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import App from '../App';
+import * as useWindowWidth from '../hooks/useWindowWidth';
 import { BREAKPOINT_DESKTOP } from '../constants';
 
 const history = createMemoryHistory();
@@ -123,18 +124,16 @@ test('toggling of the sidebar, settings correct aria-labels on Sidebar & Content
 });
 
 test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
-  Object.defineProperty(window, 'innerWidth', {
-    writable: true,
-    configurable: true,
-    value: BREAKPOINT_DESKTOP + 1,
-  });
-
+  const mock = jest.spyOn(useWindowWidth, 'default');
+  mock.mockImplementation(() => BREAKPOINT_DESKTOP + 1);
   render(renderAppComponent());
   fireEvent(window, new Event('resize'));
-  const sidebar = await screen.getByTestId('sidebar');
+
+  const sidebar = screen.getByTestId('sidebar');
   const mainWrapper = screen.getByTestId('main-wrapper');
-  await waitFor(() => {
-    expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
-    expect(sidebar).toHaveAttribute('aria-hidden', 'false');
-  });
+  const toggle = screen.getByTestId('toggle-sidebar');
+  fireEvent.click(toggle);
+
+  expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
+  expect(sidebar).toHaveAttribute('aria-hidden', 'false');
 });
