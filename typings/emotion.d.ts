@@ -12,6 +12,7 @@ declare module '@emotion/react' {
     sidebar: {
       background: string;
       border: string;
+      overlay: string;
       href: {
         link: string;
         hover: string;

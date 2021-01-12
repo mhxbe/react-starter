@@ -46,8 +46,11 @@ export const sidebarHeader = (theme: Theme): SerializedStyles => css`
   padding: 12px 0;
 `;
 
-export const overlay = (showSidebar: boolean): SerializedStyles => css`
-  background: black;
+export const overlay = (
+  theme: Theme,
+  showSidebar: boolean
+): SerializedStyles => css`
+  background: ${theme.sidebar.overlay};
   height: 100%;
   left: 0;
   opacity: ${showSidebar ? '0.5' : '0'};

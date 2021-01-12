@@ -52,6 +52,7 @@ export const darkTheme: Theme = {
   sidebar: {
     background: '#081d20',
     border: '#015b6d',
+    overlay: '#333333',
     href: {
       link: '#d7feff',
       hover: '#00d8ff',

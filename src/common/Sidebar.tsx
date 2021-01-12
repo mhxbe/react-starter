@@ -132,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
           </div>
         </aside>
       </div>
-      <div data-testid="overlay" css={overlay(showSidebar)} />
+      <div data-testid="overlay" css={(theme) => overlay(theme, showSidebar)} />
     </div>
   );
 };
