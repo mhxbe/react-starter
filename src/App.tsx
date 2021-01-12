@@ -9,7 +9,7 @@ import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import useWindowWidth from './hooks/useWindowWidth';
 import { BREAKPOINT_DESKTOP } from './constants';
-import { lightTheme } from './themes';
+import { darkTheme, lightTheme } from './themes';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: 'home' */ './pages/Home')
@@ -24,7 +24,22 @@ const PageNotFound = React.lazy(
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [showContent, setShowContent] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
   const windowWidth = useWindowWidth();
+
+  React.useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (event: MediaQueryListEvent): void => {
+      setDarkMode(event.matches);
+    };
+    prefersDarkMode.addEventListener('change', handleChange);
+
+    return function () {
+      prefersDarkMode.removeEventListener('change', handleChange);
+    };
+  }, []);
 
   React.useEffect(() => {
     setShowContent(true);
@@ -45,7 +60,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <ResetCss />
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <div css={wrapper}>

@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitFor,
+  fireEvent,
+  act,
+} from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import App from '../App';
@@ -11,6 +17,34 @@ const renderAppComponent = () => (
     <App />
   </Router>
 );
+
+test('viewing the app in darkMode & change preference', () => {
+  const isDarkMode = true;
+  const events: any = {};
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    configurable: true,
+    value: jest.fn().mockImplementation((query) => {
+      return {
+        matches: isDarkMode,
+        media: query,
+        onchange: null,
+        addEventListener: jest.fn((event, callback) => {
+          events[event] = callback;
+        }),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      };
+    }),
+  });
+
+  render(renderAppComponent());
+
+  // simulate change event
+  act(() => {
+    events.change({ matches: !isDarkMode });
+  });
+});
 
 test('Should render a header, main & sidebar elements', () => {
   render(renderAppComponent());
