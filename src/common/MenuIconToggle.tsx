@@ -23,7 +23,7 @@ const MenuIconToggle: React.FC<MentuIconToggleProps> = ({
       id={id}
       css={menuIconWrapper}
     >
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 48 48">
         <polyline points="12,16 36,16" stroke="black" strokeWidth="3" />
         <polyline points="12,24 36,24" stroke="black" strokeWidth="3" />
         <polyline points="12,32 35,32" stroke="black" strokeWidth="3" />
