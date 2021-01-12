@@ -2,15 +2,16 @@ import { Theme } from '@emotion/react';
 
 export const lightTheme: Theme = {
   color: '#282a37',
-  background: 'white',
+  background: '#ffffff',
   focus: '#015b6d',
   header: {
     background: '#00d8ff',
     hamburger: '#282a37',
   },
   sidebar: {
-    background: 'white',
+    background: '#ffffff',
     border: '#d9d9d9',
+    overlay: '#000000',
     href: {
       link: '#015b6d',
       hover: '#060060',
@@ -18,7 +19,7 @@ export const lightTheme: Theme = {
     },
   },
   footer: {
-    background: 'white',
+    background: '#ffffff',
   },
   title: {
     color: '#282a37',
