@@ -118,6 +118,7 @@ export const button = (theme: Theme): SerializedStyles => css`
   font-size: 1rem;
   height: 48px;
   margin: 0 0 12px 0;
+  overflow: hidden;
   padding: 0 12px;
 
   &.full-width {
@@ -205,62 +206,11 @@ const reset = (theme: Theme): SerializedStyles => css`
     flex-direction: column;
     flex: 1;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
 
   /* :focus-visible polyfill: https://github.com/WICG/focus-visible */
   .js-focus-visible :focus:not(.focus-visible) {
     box-shadow: none;
     outline: none;
-  }
-
-  /* Opiniated selection from https://csstools.github.io/sanitize.css/11.0.0/sanitize.css */
-  * {
-    box-sizing: border-box;
-  }
-  ::before,
-  ::after {
-    box-sizing: border-box;
-  }
-  *:focus {
-    box-shadow: 0 0 0 2px ${theme.focus};
-    outline: 0;
-    border-radius: 0px;
-
-    &:focus:not(:focus-visible) {
-      box-shadow: none;
-      outline: none;
-    }
-  }
-  ul {
-    margin: 0;
-  }
-  a {
-    background-color: transparent;
-  }
-  button {
-    overflow: visible;
-    text-transform: none;
-  }
-  button,
-  input,
-  select {
-    margin: 0;
-  }
-  button,
-  [type='button'],
-  [type='reset'],
-  [type='submit'] {
-    -webkit-appearance: button;
-  }
-  input {
-    overflow: visible;
   }
 `;
 

@@ -89,6 +89,10 @@ export default function (env: envType, { mode }: argvType): Configuration {
             },
           ],
         },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader', 'postcss-loader'],
+        },
       ],
     },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },

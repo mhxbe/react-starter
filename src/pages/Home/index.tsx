@@ -35,7 +35,6 @@ const Home: React.FC = () => {
         css={css`
           ${list};
           margin-bottom: 1rem;
-          padding-left: 1.25rem;
         `}
       >
         <li>
