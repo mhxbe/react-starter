@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ErrorBoundary } from 'react-error-boundary';
 import { jsx, ThemeProvider } from '@emotion/react';
 import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
@@ -8,18 +9,13 @@ import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import useWindowWidth from './hooks/useWindowWidth';
+
 import { BREAKPOINT_DESKTOP } from './constants';
 import { darkTheme, lightTheme } from './themes';
 
-const Home = React.lazy(
-  () => import(/* webpackChunkName: 'home' */ './pages/Home')
-);
-const About = React.lazy(
-  () => import(/* webpackChunkName: 'about' */ './pages/About')
-);
-const PageNotFound = React.lazy(
-  () => import(/* webpackChunkName: '404' */ './pages/404')
-);
+const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const PageNotFound = React.lazy(() => import('./pages/404'));
 
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
@@ -28,6 +24,9 @@ const App: React.FC = () => {
     window.matchMedia('(prefers-color-scheme: dark)').matches
   );
   const windowWidth = useWindowWidth();
+  const { i18n } = useTranslation();
+
+  console.log('laaang', i18n);
 
   React.useEffect(() => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -95,7 +94,7 @@ const App: React.FC = () => {
                   )}
                 />
                 <Route
-                  path="/about"
+                  path={`/:lang/about`}
                   render={() => (
                     <ErrorBoundary
                       key="about"
@@ -106,8 +105,9 @@ const App: React.FC = () => {
                     </ErrorBoundary>
                   )}
                 />
-                <Route path="/404" component={PageNotFound} />
-                <Redirect to="/404" />
+                <Route path={`/:lang/404`} component={PageNotFound} />
+                <Redirect to={`/${i18n.language}/404`} />
+                <Redirect from={'/'} to={`/${i18n.language}`} />
               </Switch>
             </React.Suspense>
           </main>

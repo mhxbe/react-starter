@@ -108,7 +108,7 @@ export default function (env: envType, { mode }: argvType): Configuration {
       open: true,
       useLocalIp: true,
       host: '0.0.0.0',
-      publicPath: '/',
+      publicPath: '/:lang',
       historyApiFallback: true,
     },
   };
