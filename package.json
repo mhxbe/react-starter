@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "build": "NODE_ENV=production webpack --mode production",
     "lint": "eslint \"src/**\" && stylelint \"src/**\""
   },
   "keywords": [
