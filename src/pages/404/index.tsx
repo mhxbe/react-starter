@@ -21,8 +21,7 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
       <p css={paragraph}>{t('404.description')}</p>
       <ul
         css={css`
-          ${list};
-          padding-left: 1.25rem;
+          ${list}
         `}
       >
         <li>

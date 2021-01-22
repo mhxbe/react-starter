@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
               padding: 0 12px;
             `}
           >
-            <h3 id="sidebar-header" css={sidebarHeader}>
+            <h3 id="sidebar-header" css={sidebarHeader} className="font-bold">
               {t('sidebar.navigation')}
             </h3>
           </div>
@@ -92,6 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
               tabIndex={-1}
               id="sidebar-language-switcher"
               css={sidebarHeader}
+              className="font-bold"
             >
               {t('sidebar.switch_language')}
             </h3>

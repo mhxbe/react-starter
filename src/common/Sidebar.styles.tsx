@@ -79,6 +79,7 @@ export const sidebarMenuItem = (theme: Theme): SerializedStyles => css`
     height: 100%;
     line-height: 48px;
     padding: 0 12px;
+    overflow: hidden;
     text-decoration: none;
     width: 100%;
 
