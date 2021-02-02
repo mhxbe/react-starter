@@ -2,22 +2,6 @@ import * as React from 'react';
 import { css, Global, Theme, SerializedStyles } from '@emotion/react';
 import { BREAKPOINT_DESKTOP } from './constants';
 
-export const title = (theme: Theme): SerializedStyles => css`
-  color: ${theme.title.color};
-  font-size: 1.25rem;
-  font-weight: bold;
-  line-height: 1;
-  border-bottom: 2px solid ${theme.title.border};
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-
-  @media (min-width: 440px) {
-    font-size: 2rem;
-    padding-bottom: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-`;
-
 export const subTitle = (theme: Theme): SerializedStyles => css`
   color: ${theme.title.color};
   font-size: 1rem;
@@ -70,20 +54,6 @@ export const main = css`
   }
 `;
 
-export const paragraph = css`
-  line-height: 1.5;
-  margin: 0 0 1.25rem 0;
-
-  @media (min-width: 440px) {
-    font-size: 1.25rem;
-    line-height: 1.75;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
 export const link = (theme: Theme): SerializedStyles => css`
   display: inline-block;
   &:link {
@@ -108,23 +78,6 @@ export const list = css`
   }
 `;
 
-export const button = (theme: Theme): SerializedStyles => css`
-  -webkit-appearance: none;
-  -webkit-border-radius: none;
-  background-color: ${theme.button.background};
-  border-radius: 0;
-  border: 1px solid ${theme.button.border};
-  color: ${theme.button.color};
-  font-size: 1rem;
-  height: 48px;
-  margin: 0 0 12px 0;
-  overflow: hidden;
-  padding: 0 12px;
-
-  &.full-width {
-    width: 100%;
-  }
-`;
 export const backButton = (theme: Theme): SerializedStyles => css`
   background: transparent;
   border: 0;

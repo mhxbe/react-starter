@@ -4,14 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 import { css, jsx } from '@emotion/react';
-import {
-  paragraph,
-  title,
-  subTitle,
-  link,
-  button,
-  list,
-} from '../../App.styles';
+import { subTitle, link, list } from '../../App.styles';
 
 const Home: React.FC = () => {
   const handleError = useErrorHandler();
@@ -23,13 +16,22 @@ const Home: React.FC = () => {
         <title>{t('home.title')}</title>
         <meta name="description" content={t('home.description')} />
       </Helmet>
-      <h1 id="page-heading" css={title}>
+      <h1
+        id="page-heading"
+        className="color-text text-xl sm:text-3xl font-bold leading-none border-b-2 border-cyan mb-4 pb-4 sm:mb-5 sm:pb-5"
+      >
         {t('home.title')}
       </h1>
       <div>
-        <p css={paragraph}>{t('home.description')}</p>
-        <p css={paragraph}>{t('home.workbox.text')} </p>
-        <p css={paragraph}>{t('home.github.text')} </p>
+        <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
+          {t('home.description')}
+        </p>
+        <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
+          {t('home.workbox.text')}
+        </p>
+        <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
+          {t('home.github.text')}
+        </p>
       </div>
       <ul
         css={css`
@@ -57,11 +59,13 @@ const Home: React.FC = () => {
         </li>
       </ul>
       <h2 css={subTitle}>Error Boundary</h2>
-      <p css={paragraph}>{t('home.error_boundary.description')}</p>
+      <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
+        {t('home.error_boundary.description')}
+      </p>
       <button
-        css={button}
         data-testid="button-error-boundary"
         onClick={() => handleError(new Error('Example error'))}
+        className="bg-lightCyan border-lightGray color-text border p-3"
       >
         {t('home.error_boundary.button')}
       </button>
