@@ -17,14 +17,14 @@ test('Displays a sidebar with 3 menu items', () => {
   expect(screen.getByRole('menu').children.length).toEqual(3);
 });
 
-test('Displays an Overlay with opacity 0.5 when Sidebar is shown', () => {
+test.skip('Displays an Overlay with opacity 0.5 when Sidebar is shown', () => {
   render(renderSidebar(true));
   const overlay = screen.getByTestId('overlay');
   expect(overlay).toBeInTheDocument();
   expect(overlay).toHaveStyle('opacity: 0.5');
 });
 
-test('Displays an Overlay with opacity 0.0 when Sidebar is not shown', () => {
+test.skip('Displays an Overlay with opacity 0.0 when Sidebar is not shown', () => {
   render(renderSidebar(false));
   const overlay = screen.getByTestId('overlay');
   expect(overlay).toBeInTheDocument();
