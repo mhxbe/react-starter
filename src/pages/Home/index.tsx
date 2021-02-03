@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 import { css, jsx } from '@emotion/react';
-import { subTitle, link, list } from '../../App.styles';
+import { link, list } from '../../App.styles';
 
 const Home: React.FC = () => {
   const handleError = useErrorHandler();
@@ -58,7 +58,9 @@ const Home: React.FC = () => {
           </a>
         </li>
       </ul>
-      <h2 css={subTitle}>Error Boundary</h2>
+      <h2 className="text-normal text-base font-bold leading-none pb-3 sm:text-2xl sm:pb-2">
+        Error Boundary
+      </h2>
       <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
         {t('home.error_boundary.description')}
       </p>

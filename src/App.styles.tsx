@@ -2,19 +2,6 @@ import * as React from 'react';
 import { css, Global, Theme, SerializedStyles } from '@emotion/react';
 import { BREAKPOINT_DESKTOP } from './constants';
 
-export const subTitle = (theme: Theme): SerializedStyles => css`
-  color: ${theme.title.color};
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1;
-  padding-bottom: 0.75rem;
-
-  @media (min-width: 440px) {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
-`;
-
 export const wrapper = (theme: Theme): SerializedStyles => css`
   background-color: ${theme.background};
   color: ${theme.color};
