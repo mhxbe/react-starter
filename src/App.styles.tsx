@@ -80,31 +80,6 @@ export const backButton = (theme: Theme): SerializedStyles => css`
   }
 `;
 
-export const footer = (theme: Theme): SerializedStyles => css`
-  align-items: center;
-  background-color: ${theme.footer.background};
-  color: ${theme.color};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: auto;
-
-  .wrapper {
-    align-items: center;
-    display: inherit;
-    flex-direction: column;
-    max-width: 1100px;
-    padding: 12px 24px;
-    width: 100%;
-
-    @media (min-width: 960px) {
-      align-items: unset;
-      flex-direction: row;
-      justify-content: center;
-    }
-  }
-`;
-
 const reset = (theme: Theme): SerializedStyles => css`
   @font-face {
     font-family: 'Open Sans';

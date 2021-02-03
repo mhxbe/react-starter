@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { jsx, ThemeProvider } from '@emotion/react';
-import { ResetCss, wrapper, mainWrapper, main, footer } from './App.styles';
+import { ResetCss, wrapper, mainWrapper, main } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
@@ -113,8 +113,8 @@ const App: React.FC = () => {
           </main>
         </div>
       </div>
-      <footer css={footer}>
-        <div className="wrapper">
+      <footer className="bg-white flex flex-col justify-center items-center overflow-auto text-normal">
+        <div className="items-center flex flex-col py-3 px-4 w-full lg:flex-row lg:justify-center lg:max-w-1100">
           <div>&copy; 2020 mhxbe</div>
         </div>
       </footer>
