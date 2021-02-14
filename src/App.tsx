@@ -58,6 +58,8 @@ const App: React.FC = () => {
     setShowSidebar(mustShowSidebar);
   }
 
+  const languageRegex = `:lang(${i18n.languages.join('|')})`;
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <ResetCss />
@@ -82,7 +84,7 @@ const App: React.FC = () => {
               <Switch>
                 <Route
                   exact
-                  path="/:lang([A-Za-z]{2})/"
+                  path={`/${languageRegex}/`}
                   render={() => (
                     <ErrorBoundary
                       key="home"
@@ -94,7 +96,7 @@ const App: React.FC = () => {
                   )}
                 />
                 <Route
-                  path={`/:lang/about`}
+                  path={`/${languageRegex}/about`}
                   render={() => (
                     <ErrorBoundary
                       key="about"
@@ -105,9 +107,12 @@ const App: React.FC = () => {
                     </ErrorBoundary>
                   )}
                 />
-                <Route path={`/:lang/404`} component={PageNotFound} />
+                <Route
+                  path={`/${languageRegex}/404`}
+                  component={PageNotFound}
+                />
+                <Redirect exact from={'/'} to={`/${i18n.language}`} />
                 <Redirect to={`/${i18n.language}/404`} />
-                <Redirect from={'/'} to={`/${i18n.language}`} />
               </Switch>
             </React.Suspense>
           </main>
