@@ -82,7 +82,7 @@ const App: React.FC = () => {
               <Switch>
                 <Route
                   exact
-                  path="/:lang/"
+                  path="/:lang([A-Za-z]{2})/"
                   render={() => (
                     <ErrorBoundary
                       key="home"
@@ -106,8 +106,8 @@ const App: React.FC = () => {
                   )}
                 />
                 <Route path={`/:lang/404`} component={PageNotFound} />
-                <Redirect from={'/'} to={`/${i18n.language}`} />
                 <Redirect to={`/${i18n.language}/404`} />
+                <Redirect from={'/'} to={`/${i18n.language}`} />
               </Switch>
             </React.Suspense>
           </main>
