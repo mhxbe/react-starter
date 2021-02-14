@@ -12,6 +12,6 @@ export default i18n
     interpolation: { escapeValue: true },
     backend: { loadPath: '/locales/{{lng}}/translations.json' },
     detection: {
-      order: ['path', 'navigator'],
+      order: ['path', 'localStorage', 'navigator'],
     },
   });
