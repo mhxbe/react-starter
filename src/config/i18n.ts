@@ -9,6 +9,7 @@ export default i18n
   .use(initReactI18next)
   .init({
     supportedLngs: ['en', 'nl'],
+    fallbackLng: ['en', 'nl'],
     interpolation: { escapeValue: true },
     backend: { loadPath: '/locales/{{lng}}/translations.json' },
     detection: {
