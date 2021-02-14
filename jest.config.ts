@@ -9,6 +9,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     'react-i18next': '<rootDir>/__mocks__/react-i18next.tsx',
     i18next: '<rootDir>/__mocks__/i18next.ts',
+    '\\.css$': 'identity-obj-proxy',
   },
 };
 

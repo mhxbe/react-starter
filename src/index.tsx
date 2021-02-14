@@ -7,6 +7,7 @@ import App from './App';
 
 import './config/i18n';
 import 'focus-visible';
+import 'tailwindcss/tailwind.css';
 
 i18next.on('languageChanged', (language: string) => {
   window.document.documentElement.lang = language;

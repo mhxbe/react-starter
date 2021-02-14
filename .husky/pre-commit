@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Disable hook in CI
+[ -n "$CI" ] && exit 0
+
+npm run lint
+npx tsc
+npm test
+npx pretty-quick --staged
