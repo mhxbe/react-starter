@@ -11,12 +11,7 @@ import 'tailwindcss/tailwind.css';
 
 i18next.on('languageChanged', (language: string) => {
   window.document.documentElement.lang = language;
-  let newUrl;
-  if (window.location.pathname.length === 3) {
-    newUrl = `/${language}`;
-  } else {
-    newUrl = window.location.pathname.replace(/(?<=\/).+?(?=\/)/, language);
-  }
+  const newUrl = window.location.pathname.replace(/\/[a-z]{2}/, `/${language}`);
   window.history.replaceState(null, '', newUrl);
 });
 
