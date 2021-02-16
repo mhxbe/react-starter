@@ -26,8 +26,6 @@ const App: React.FC = () => {
   const windowWidth = useWindowWidth();
   const { i18n } = useTranslation();
 
-  console.log('laaang', i18n);
-
   React.useEffect(() => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (event: MediaQueryListEvent): void => {
