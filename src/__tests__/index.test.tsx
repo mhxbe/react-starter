@@ -34,6 +34,11 @@ describe('i18next', () => {
         init: (): any => ({
           t: (k: any) => k,
         }),
+        use: () => ({
+          init: (): any => ({
+            t: (k: any) => k,
+          }),
+        }),
       }),
     }),
     on: jest.fn((event, callback) => {
@@ -58,6 +63,7 @@ describe('Workbox ServiceWorker', () => {
   Object.defineProperty(window, 'location', {
     value: {
       reload: mockWindowLocationReload,
+      pathname: '/en/some/url'
     },
   });
   const mockServiceWorkerRegister = jest.fn();

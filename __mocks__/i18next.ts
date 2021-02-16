@@ -7,6 +7,9 @@ module.exports = {
     init,
     use: () => ({
       init,
+      use: () => ({
+        init,
+      }),
     }),
   }),
   on: () => ({}),
