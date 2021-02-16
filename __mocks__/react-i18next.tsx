@@ -5,6 +5,8 @@ module.exports = {
     t: (key) => key,
     i18n: {
       changeLanguage: (lang) => lang,
+      languages: ['en'],
+      language: 'en',
     },
   }),
   initReactI18next: {},
