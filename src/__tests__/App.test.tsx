@@ -62,7 +62,7 @@ describe('Rendering components through routing', () => {
   });
 
   test('Navigate to /about renders a Loading component and afterwards the About component when loading is succesful', async () => {
-    history.push('/about');
+    history.push('/en/about');
     render(renderAppComponent());
 
     expect(screen.getByTestId('page-loading')).toBeInTheDocument();
@@ -72,7 +72,7 @@ describe('Rendering components through routing', () => {
   });
 
   test('Navigating back to /home after should immediately show Home component without loading', () => {
-    history.push('/about');
+    history.push('/en/about');
     history.push('/');
     render(renderAppComponent());
 
