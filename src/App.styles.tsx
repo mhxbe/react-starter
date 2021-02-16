@@ -87,7 +87,7 @@ const reset = (theme: Theme): SerializedStyles => css`
     font-weight: 400;
     font-display: swap;
     src: local('Open Sans Regular'), local('OpenSans-Regular'),
-      url(./fonts/OpenSans-Regular.woff2) format('woff2');
+      url(/fonts/OpenSans-Regular.woff2) format('woff2');
   }
 
   @font-face {
@@ -96,7 +96,7 @@ const reset = (theme: Theme): SerializedStyles => css`
     font-weight: 800;
     font-display: swap;
     src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
-      url(./fonts/OpenSans-ExtraBold.woff2) format('woff2');
+      url(/fonts/OpenSans-ExtraBold.woff2) format('woff2');
   }
 
   html {

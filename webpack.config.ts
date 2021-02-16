@@ -73,7 +73,7 @@ interface Configuration extends webpack.Configuration {
 
 export default function (env: envType, { mode }: argvType): Configuration {
   const isDevelopment = mode === 'development';
-  const ouputPath = __dirname + '/dist/';
+  const outputPath = __dirname + '/dist/';
   return {
     entry: './src/index.tsx',
     module: {
@@ -98,15 +98,15 @@ export default function (env: envType, { mode }: argvType): Configuration {
     resolve: { extensions: ['.js', '.ts', '.tsx'] },
     target: isDevelopment ? 'web' : 'browserslist', // @todo: remove this 'web' value when https://github.com/webpack/webpack-dev-server/issues/2758#issuecomment-704457483 is fixed.
     output: {
-      path: ouputPath,
+      path: outputPath,
       filename: '[name]-[contenthash].js',
-      publicPath: '',
+      publicPath: '/',
     },
     optimization: { splitChunks: { chunks: 'all' } },
     plugins: getPlugins(mode),
     devtool: isDevelopment ? 'inline-source-map' : 'source-map',
     devServer: {
-      contentBase: ouputPath,
+      contentBase: outputPath,
       compress: true,
       hot: true,
       open: true,

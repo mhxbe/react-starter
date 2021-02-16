@@ -5,6 +5,7 @@
     "strict": true,
     "module": "CommonJS",
     "target": "ESNext",
+    "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "sourceMap": true,
     "resolveJsonModule": true,

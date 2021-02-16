@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
           >
             <li className="flex items-center h-12 leading-none border-b border-lightGray first:border-t">
               <Link
-                to="/"
+                to={`/${i18n.language}`}
                 data-testid="link-home"
                 role="menuitem"
                 onClick={() => onToggleSidebar()}
@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
             </li>
             <li className="flex items-center h-12 leading-none border-b border-lightGray first:border-t">
               <Link
-                to="/about"
+                to={`/${i18n.language}/about`}
                 data-testid="link-about"
                 role="menuitem"
                 onClick={() => onToggleSidebar()}
@@ -62,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar, showSidebar }) => {
             </li>
             <li className="flex items-center h-12 leading-none border-b border-lightGray first:border-t">
               <Link
-                to="/404"
+                to={`/${i18n.language}/404`}
                 data-testid="link-404"
                 role="menuitem"
                 onClick={() => onToggleSidebar()}

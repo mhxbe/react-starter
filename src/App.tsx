@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ErrorBoundary } from 'react-error-boundary';
 import { jsx, ThemeProvider } from '@emotion/react';
 import { ResetCss, wrapper, mainWrapper, main } from './App.styles';
@@ -8,18 +9,13 @@ import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import useWindowWidth from './hooks/useWindowWidth';
+
 import { BREAKPOINT_DESKTOP } from './constants';
 import { darkTheme, lightTheme } from './themes';
 
-const Home = React.lazy(
-  () => import(/* webpackChunkName: 'home' */ './pages/Home')
-);
-const About = React.lazy(
-  () => import(/* webpackChunkName: 'about' */ './pages/About')
-);
-const PageNotFound = React.lazy(
-  () => import(/* webpackChunkName: '404' */ './pages/404')
-);
+const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const PageNotFound = React.lazy(() => import('./pages/404'));
 
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
@@ -28,6 +24,7 @@ const App: React.FC = () => {
     window.matchMedia('(prefers-color-scheme: dark)').matches
   );
   const windowWidth = useWindowWidth();
+  const { i18n } = useTranslation();
 
   React.useEffect(() => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -59,6 +56,8 @@ const App: React.FC = () => {
     setShowSidebar(mustShowSidebar);
   }
 
+  const languageRegex = `:lang(${i18n.languages.join('|')})`;
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <ResetCss />
@@ -83,7 +82,7 @@ const App: React.FC = () => {
               <Switch>
                 <Route
                   exact
-                  path="/"
+                  path={`/${languageRegex}/`}
                   render={() => (
                     <ErrorBoundary
                       key="home"
@@ -95,7 +94,7 @@ const App: React.FC = () => {
                   )}
                 />
                 <Route
-                  path="/about"
+                  path={`/${languageRegex}/about`}
                   render={() => (
                     <ErrorBoundary
                       key="about"
@@ -106,8 +105,12 @@ const App: React.FC = () => {
                     </ErrorBoundary>
                   )}
                 />
-                <Route path="/404" component={PageNotFound} />
-                <Redirect to="/404" />
+                <Route
+                  path={`/${languageRegex}/404`}
+                  component={PageNotFound}
+                />
+                <Redirect exact from={'/'} to={`/${i18n.language}`} />
+                <Redirect to={`/${i18n.language}/404`} />
               </Switch>
             </React.Suspense>
           </main>
