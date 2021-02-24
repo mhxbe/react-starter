@@ -13,9 +13,15 @@ import useWindowWidth from './hooks/useWindowWidth';
 import { BREAKPOINT_DESKTOP } from './constants';
 import { darkTheme, lightTheme } from './themes';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const About = React.lazy(() => import('./pages/About'));
-const PageNotFound = React.lazy(() => import('./pages/404'));
+const Home = React.lazy(
+  () => import(/* webpackChunkName: 'Home' */ './pages/Home')
+);
+const About = React.lazy(
+  () => import(/* webpackChunkName: 'About' */ './pages/About')
+);
+const PageNotFound = React.lazy(
+  () => import(/* webpackChunkName: 'PageNotFound' */ './pages/404')
+);
 
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
