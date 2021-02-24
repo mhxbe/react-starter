@@ -10,6 +10,7 @@ const About: React.FC = () => {
       <Helmet>
         <title>{t('about.title')}</title>
         <meta name="description" content="About..." />
+        <link rel="canonical" href={location.origin + location.pathname} />
       </Helmet>
       <h1
         id="page-heading"

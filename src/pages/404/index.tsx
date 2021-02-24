@@ -9,11 +9,13 @@ import { backButton, link, list } from '../../App.styles';
 const PageNotFound: React.FC<RouteComponentProps> = (props) => {
   const { history } = props;
   const { t } = useTranslation();
+
   return (
     <div data-testid="page-404">
       <Helmet>
         <title>{t('404.title')}</title>
         <meta name="description" content={t('404.description')} />
+        <link rel="canonical" href={location.origin + location.pathname} />
       </Helmet>
       <h1
         id="page-heading"

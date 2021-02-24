@@ -15,6 +15,7 @@ const Home: React.FC = () => {
       <Helmet>
         <title>{t('home.title')}</title>
         <meta name="description" content={t('home.description')} />
+        <link rel="canonical" href={location.origin + location.pathname} />
       </Helmet>
       <h1
         id="page-heading"
