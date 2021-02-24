@@ -2,7 +2,7 @@
   "lang": "en",
   "dir": "ltr",
   "name": "mhxbe's React Starterkit",
-  "short_name": "React Starterkit",
+  "short_name": "React Kit",
   "start_url": ".",
   "scope": ".",
   "description": "An opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.",
