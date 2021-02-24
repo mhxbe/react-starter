@@ -25,7 +25,7 @@ ReactDOM.render(
 );
 
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-  const wb = new Workbox('./sw.js');
+  const wb = new Workbox('/sw.js');
 
   wb.addEventListener('installed', (event) => {
     if (event.isUpdate) {
