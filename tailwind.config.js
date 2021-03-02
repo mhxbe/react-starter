@@ -14,19 +14,23 @@ module.exports = {
       lightGray: '#d9d9d9',
       darkGray: '#333333',
     },
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
+    // fontFamily: {
+    //   sans: ['Open Sans', 'ui-sans-serif', 'system-ui'],
+    //   serif: ['ui-serif', 'Georgia'],
+    //   mono: ['ui-monospace', 'SFMono-Regular'],
+    // },
     extend: {
       lineHeight: {
         12: '3rem',
       },
       width: {
         300: '300px',
+        960: '960px',
       },
       maxWidth: {
+        800: '800px',
         1100: '1100px',
+        1260: '1260px',
       },
     },
   },

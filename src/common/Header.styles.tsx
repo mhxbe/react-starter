@@ -14,7 +14,6 @@ export const header = (theme: Theme): SerializedStyles => css`
   right: 0;
   text-align: center;
   top: 0;
-  z-index: 3;
 `;
 
 export const headerTitle = (theme: Theme): SerializedStyles => css`
@@ -84,6 +83,5 @@ export const skipLink = (theme: Theme): SerializedStyles => css`
     text-decoration: none;
     top: 2px;
     width: auto;
-    z-index: 4;
   }
 `;

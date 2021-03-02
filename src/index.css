@@ -1,0 +1,41 @@
+/* :focus-visible polyfill: https://github.com/WICG/focus-visible */
+.js-focus-visible :focus:not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+main:focus-visible::before {
+  content: '';
+  display: block;
+  height: 72px;
+  margin-top: -72px;
+}
+
+html {
+  background-color: #00d8ff;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+/*
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url('/public/fonts/OpenSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+    url('/public/fonts/OpenSans-ExtraBold.woff2') format('woff2');
+}
+*/
