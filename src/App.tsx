@@ -4,7 +4,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ErrorBoundary } from 'react-error-boundary';
 import { jsx, ThemeProvider } from '@emotion/react';
-import { ResetCss, wrapper, mainWrapper, main } from './App.styles';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
@@ -60,21 +59,19 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <ResetCss />
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
-      <div css={wrapper}>
+      <div className="bg-white text-normal flex flex-1 flex-wrap justify-center xl:my-0 xl:mx-auto xl:max-w-1260">
         <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
         <div
           aria-hidden={!showContent}
           data-testid="main-wrapper"
-          css={mainWrapper}
+          className="my-0 mx-auto z-10 flex w-full p-4 sm:p-6 sm:max-w-800 xl:w-960"
         >
           <main
             tabIndex={-1}
             id="main-content"
             role="main"
             aria-labelledby="page-heading"
-            css={main}
           >
             <React.Suspense
               fallback={<div data-testid="page-loading">Loading...</div>}
