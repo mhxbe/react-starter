@@ -13,11 +13,15 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onToggleSidebar, showSidebar }) => {
   const { t } = useTranslation();
   return (
-    <header data-testid="header" css={header}>
-      <a href="#main-content" css={skipLink}>
+    <header data-testid="header" css={header} className="z-30">
+      <a href="#main-content" css={skipLink} className="focus:z-40">
         {t('navigation.skipLinks.main')}
       </a>
-      <a href="#sidebar-language-switcher" css={skipLink}>
+      <a
+        href="#sidebar-language-switcher"
+        css={skipLink}
+        className="focus:z-40"
+      >
         {t('navigation.skipLinks.language')}
       </a>
       <MenuIconToggle
