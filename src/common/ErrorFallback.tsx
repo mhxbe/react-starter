@@ -20,6 +20,7 @@ const ErrorFallback = ({
       </p>
       <pre>{error?.message}</pre>
       <button
+        type="button"
         onClick={resetErrorBoundary}
         className="bg-lightCyan border-lightGray color-text border p-3"
       >

@@ -16,6 +16,7 @@ const MenuIconToggle: React.FC<MentuIconToggleProps> = ({
 }) => {
   return (
     <button
+      type="button"
       data-testid="toggle-sidebar"
       aria-expanded={showSidebar}
       aria-label={`${showSidebar ? 'Hide' : 'Show'} sidebar navigation`}

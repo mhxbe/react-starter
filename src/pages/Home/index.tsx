@@ -66,6 +66,7 @@ const Home: React.FC = () => {
         {t('home.error_boundary.description')}
       </p>
       <button
+        type="button"
         data-testid="button-error-boundary"
         onClick={() => handleError(new Error('Example error'))}
         className="bg-lightCyan border-lightGray color-text border p-3"
