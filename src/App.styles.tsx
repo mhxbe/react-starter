@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { css, Global, Theme, SerializedStyles } from '@emotion/react';
+import { css, Theme, SerializedStyles } from '@emotion/react';
 
 export const link = (theme: Theme): SerializedStyles => css`
   display: inline-block;
