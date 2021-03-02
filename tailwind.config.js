@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/**/*.tsx'],
+  purge: ['./src/**/*.tsx', './public/index.html'],
   darkMode: false,
   theme: {
     colors: {
