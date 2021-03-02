@@ -4,6 +4,7 @@ public/
 src/**/__tests__
 
 *.html
+*.css
 *.md
 *.webmanifest
 *.txt
