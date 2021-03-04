@@ -9,6 +9,24 @@
   RewriteRule . /index.html [L]
 </IfModule>
 
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options nosniff
+  Header unset Expires
+  Header unset Host
+  Header unset P3P
+  Header unset Pragma
+  Header unset Public-Key-Pins
+  Header unset Public-Key-Pins-Report-Only
+  Header unset Via
+  Header unset X-AspNet-Version
+  Header unset X-AspNetMvc-version
+  Header unset X-Frame-Options
+  Header unset X-Powered-By
+  Header unset X-Runtime
+  Header unset X-Version
+</IfModule>
+
 # MIME TYPES
 <IfModule mod_mime.c>
   AddCharset utf-8 .html .css .js .json .webmanifest
@@ -37,8 +55,8 @@
   ExpiresByType application/json "access plus 0 seconds"
   ExpiresByType application/manifest+json "access plus 0 seconds"
 
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
