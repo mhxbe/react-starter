@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "webpack serve --mode development",
     "build": "NODE_ENV=production webpack --mode production",
-    "lint": "eslint \"src/**\" && stylelint \"src/**\"",
+    "lint": "eslint \"src/**\"",
     "postinstall": "is-ci || husky install"
   },
   "keywords": [
@@ -114,9 +114,6 @@
     "pretty-quick": "3.1.0",
     "react-refresh": "0.9.0",
     "style-loader": "2.0.0",
-    "stylelint": "13.11.0",
-    "stylelint-config-prettier": "8.0.2",
-    "stylelint-config-recommended": "3.0.0",
     "ts-node": "9.1.1",
     "typescript": "4.2.2",
     "webpack": "5.24.1",

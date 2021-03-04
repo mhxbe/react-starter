@@ -111,8 +111,6 @@ It uses translation-files in json format which can be found in [public/locales](
 
 [EditorConfig](https://editorconfig.org/) helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. It is configured in [.editorconfig](.editorconfig).
 
-[stylelint](https://stylelint.io/) is a tool that reports bad code in your CSS files. It helps to enforce the consistent code and prevents you from making errors in your stylesheets. It is configured in [.stylelintrc.json](.stylelintrc.json). Specific files & folders can be ignored by adding them to [.stylelintignore](.stylelintignore).
-
 [Browserslist](https://github.com/browserslist/browserslist) shares target browsers versions between different front-end tools.
 Currently it's used in combination with [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) which will give linting errors/warnings when non-compatible code is written.
 
