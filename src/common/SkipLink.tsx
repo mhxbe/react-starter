@@ -5,16 +5,18 @@ interface SkipLinkProps {
   text: string;
 }
 
-const Header: React.FC<SkipLinkProps> = ({ href, text }) => {
+const SkipLink: React.FC<SkipLinkProps> = ({ href, text }) => {
   return (
     <a
       data-testid={`skip-link-${href}`}
       href={href}
-      className="custom-skip-link overflow-hidden absolute whitespace-nowrap focus:items-center focus:bg-darkGray focus:text-white focus:flex focus:overflow-auto focus:no-underline focus:py-0 focus:px-2 focus:leading-10 focus:border-2 focus:border-white focus:z-40"
+      className={`custom-skip-link overflow-hidden absolute whitespace-nowrap focus:items-center
+      focus:bg-darkGray focus:text-white focus:flex focus:overflow-auto focus:no-underline
+      focus:py-0 focus:px-2 focus:leading-10 focus:border-2 focus:border-white focus:z-40`}
     >
       {text}
     </a>
   );
 };
 
-export default Header;
+export default SkipLink;
