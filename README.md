@@ -87,11 +87,11 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 ### TypeScript ([tsconfig.json](tsconfig.json))
 
-[TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is a typed superset of JavaScript that compiles to a backwards compatible version of JavaScript in current and older browsers or environments.It's configured in [tsconfig.json](tsconfig.json)
+[TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) is a typed superset of JavaScript that compiles to a backwards compatible version of JavaScript in current and older browsers or environments. It's configured in [tsconfig.json](tsconfig.json)
 
 ### Styling
 
-[Emotion](https://emotion.sh/) is a CSS-in-JS library designed for writing css styles with JavaScript. It allows you to style apps quickly with string or object styles.
+[Tailwind CSS](https://tailwindcss.com/) is a utility-first CSS framework for rapidly building custom user interfaces. It's configured in [tailwind.config.js](tailwind.config.js) & [.postcssrc.json](.postcssrc.json).
 
 ### Multilinguality
 
