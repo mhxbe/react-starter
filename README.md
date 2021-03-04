@@ -118,7 +118,7 @@ Currently it's used in combination with [eslint-plugin-compat](https://github.co
 
 ### Pre-commit hooks
 
-[Husky](https://github.com/typicode/husky) makes it easy to set up Git hooks. It's configured in [.huskyrc.json](.huskyrc.json).
+[Husky](https://github.com/typicode/husky) makes it easy to set up Git hooks. It's configured in [.husky/pre-commit](.husky/pre-commit).
 
 [Prettier](https://prettier.io/) is an opinionated code formatter which is configured in [.prettierrc.json](.prettierrc.json). Specific files & folders can be ignored by adding them to [.prettierignore](.prettierignore).
 
