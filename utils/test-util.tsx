@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { render, RenderResult, RenderOptions } from '@testing-library/react';
-import { ThemeProvider } from '@emotion/react';
-import { lightTheme } from '../src/themes';
 
 const AllTheProviders: React.FC = (props) => {
-  return <ThemeProvider theme={lightTheme}>{props.children}</ThemeProvider>;
+  return <div>{props.children}</div>;
 };
 
 const customRender = (
