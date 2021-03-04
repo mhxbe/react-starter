@@ -19,34 +19,6 @@ const renderAppComponent = () => (
   </Router>
 );
 
-test('viewing the app in darkMode & change preference', () => {
-  const isDarkMode = true;
-  const events: any = {};
-  Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    configurable: true,
-    value: jest.fn().mockImplementation((query) => {
-      return {
-        matches: isDarkMode,
-        media: query,
-        onchange: null,
-        addEventListener: jest.fn((event, callback) => {
-          events[event] = callback;
-        }),
-        removeEventListener: jest.fn(),
-        dispatchEvent: jest.fn(),
-      };
-    }),
-  });
-
-  render(renderAppComponent());
-
-  // simulate change event
-  act(() => {
-    events.change({ matches: !isDarkMode });
-  });
-});
-
 test('Should render a header, main & sidebar elements', () => {
   render(renderAppComponent());
 
