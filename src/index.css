@@ -20,6 +20,18 @@ body {
   height: 100%;
 }
 
+a.custom-skip-link {
+  height: 1px;
+  width: 1px;
+}
+a.custom-skip-link:focus {
+  height: 44px;
+  left: 2px;
+  max-height: 48px;
+  top: 2px;
+  width: auto;
+}
+
 /*
 @font-face {
   font-family: 'Open Sans';

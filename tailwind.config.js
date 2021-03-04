@@ -37,8 +37,10 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ['focus-visible'],
-      borderWidth: ['first'],
-      margin: ['last'],
+      borderWidth: ['first', 'focus'],
+      margin: ['last', 'focus'],
+      padding: ['focus'],
+      lineHeight: ['focus'],
       textColor: ['visited', 'focus-visible'],
     },
   },

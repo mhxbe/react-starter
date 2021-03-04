@@ -1,7 +1,4 @@
-/** @jsx jsx */
 import * as React from 'react';
-import { jsx } from '@emotion/react';
-import { menuIconWrapper } from './Header.styles';
 
 interface MentuIconToggleProps {
   id: string;
@@ -22,12 +19,27 @@ const MenuIconToggle: React.FC<MentuIconToggleProps> = ({
       aria-label={`${showSidebar ? 'Hide' : 'Show'} sidebar navigation`}
       onClick={onToggleSidebar}
       id={id}
-      css={menuIconWrapper}
+      className="bg-transparent border-0 cursor-pointer h-12 w-12 m-0 min-h-12 min-w-12 overflow-hidden absolute top-0 left-1 xl:hidden"
     >
-      <svg viewBox="0 0 48 48">
-        <polyline points="12,16 36,16" stroke="black" strokeWidth="3" />
-        <polyline points="12,24 36,24" stroke="black" strokeWidth="3" />
-        <polyline points="12,32 35,32" stroke="black" strokeWidth="3" />
+      <svg className="h-12 w-12 inline" viewBox="0 0 48 48">
+        <polyline
+          className="text-normal"
+          points="12,16 36,16"
+          stroke="black"
+          strokeWidth="3"
+        />
+        <polyline
+          className="text-normal"
+          points="12,24 36,24"
+          stroke="black"
+          strokeWidth="3"
+        />
+        <polyline
+          className="text-normal"
+          points="12,32 35,32"
+          stroke="black"
+          strokeWidth="3"
+        />
       </svg>
     </button>
   );
