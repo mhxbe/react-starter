@@ -1,10 +1,7 @@
-/** @jsx jsx */
 import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
-import { css, jsx } from '@emotion/react';
-import { backButton, link, list } from '../../App.styles';
 
 const PageNotFound: React.FC<RouteComponentProps> = (props) => {
   const { history } = props;
@@ -26,19 +23,19 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
       <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
         {t('404.description')}
       </p>
-      <ul
-        css={css`
-          ${list}
-        `}
-      >
-        <li>
+      <ul className="p-0 text-base xl:text-xl">
+        <li className="leading-12">
           <Trans i18nKey="404.navigate_home">
-            <Link to="/" css={link} />
+            <Link to="/" className="inline-block text-teal hover:text-navy" />
           </Trans>
         </li>
-        <li>
+        <li className="leading-12">
           <Trans i18nKey="404.go_back">
-            <button type="button" onClick={history.goBack} css={backButton} />
+            <button
+              type="button"
+              onClick={history.goBack}
+              className="bg-transparent border-0 text-teal cursor-pointer m-0 p-0 no-underline hover:text-navy"
+            />
           </Trans>
         </li>
       </ul>

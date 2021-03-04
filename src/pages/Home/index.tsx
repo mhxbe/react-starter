@@ -1,10 +1,7 @@
-/** @jsx jsx */
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useErrorHandler } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
-import { css, jsx } from '@emotion/react';
-import { link, list } from '../../App.styles';
 
 const Home: React.FC = () => {
   const handleError = useErrorHandler();
@@ -34,26 +31,21 @@ const Home: React.FC = () => {
           {t('home.github.text')}
         </p>
       </div>
-      <ul
-        css={css`
-          ${list};
-          margin-bottom: 1rem;
-        `}
-      >
-        <li>
+      <ul className="p-0 text-base mb-4 xl:text-xl">
+        <li className="leading-12">
           <a
             href="https://developers.google.com/web/tools/workbox"
             title={t('home.workbox.description')}
-            css={link}
+            className="inline-block text-teal hover:text-navy"
           >
             Google Workbox
           </a>
         </li>
-        <li>
+        <li className="leading-12">
           <a
             href="https://github.com/mhxbe/react-starter"
             title={t('home.github.description')}
-            css={link}
+            className="inline-block text-teal hover:text-navy"
           >
             Github react-starter
           </a>

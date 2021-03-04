@@ -2,14 +2,12 @@ import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ErrorBoundary } from 'react-error-boundary';
-import { ThemeProvider } from '@emotion/react';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 import useWindowWidth from './hooks/useWindowWidth';
 
 import { BREAKPOINT_DESKTOP } from './constants';
-import { darkTheme, lightTheme } from './themes';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: 'Home' */ './pages/Home')
@@ -24,23 +22,8 @@ const PageNotFound = React.lazy(
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [showContent, setShowContent] = React.useState(true);
-  const [darkMode, setDarkMode] = React.useState(
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  );
   const windowWidth = useWindowWidth();
   const { i18n } = useTranslation();
-
-  React.useEffect(() => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (event: MediaQueryListEvent): void => {
-      setDarkMode(event.matches);
-    };
-    prefersDarkMode.addEventListener('change', handleChange);
-
-    return function () {
-      prefersDarkMode.removeEventListener('change', handleChange);
-    };
-  }, []);
 
   React.useEffect(() => {
     setShowContent(true);
@@ -63,7 +46,7 @@ const App: React.FC = () => {
   const languageRegex = `:lang(${i18n.languages.join('|')})`;
 
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    <>
       <Header showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
       <div className="bg-white text-normal flex flex-1 flex-wrap justify-center xl:my-0 xl:mx-auto xl:max-w-1260">
         <Sidebar showSidebar={showSidebar} onToggleSidebar={toggleSidebar} />
@@ -123,7 +106,7 @@ const App: React.FC = () => {
           <div>&copy; 2020 mhxbe</div>
         </div>
       </footer>
-    </ThemeProvider>
+    </>
   );
 };
 
