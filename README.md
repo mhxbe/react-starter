@@ -93,7 +93,7 @@ Check out the `exclude`-field in `InjectManifest()` which can be found in [webpa
 
 [Tailwind CSS](https://tailwindcss.com/) is a utility-first CSS framework for rapidly building custom user interfaces. It's configured in [tailwind.config.js](tailwind.config.js) & [.postcssrc.json](.postcssrc.json).
 
-### Multilinguality
+### Multilinguality (i18n)
 
 [react-i18next](https://react.i18next.com/) is a powerful internationalization framework for React / React Native which is based on [i18next](https://www.i18next.com/).
 
