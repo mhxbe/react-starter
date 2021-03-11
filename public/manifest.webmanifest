@@ -10,18 +10,12 @@
   "orientation": "portrait",
   "background_color": "#00d8ff",
   "theme_color": "#00d8ff",
-  "categories": ["web development"],
+  "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "./images/icon-192x192.png",
+      "src": "./images/icon.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./images/icon-256x256.png",
-      "type": "image/png",
-      "sizes": "256x256",
+      "sizes": "180x180",
       "purpose": "any maskable"
     },
     {
