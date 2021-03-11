@@ -18,7 +18,7 @@ const ErrorFallback = ({
       <p className="text-base sm:text-xl leading-normal color-text mb-5 sm:leading-relaxed last:mb-0">
         {t('errorBoundary.errorDescription')}
       </p>
-      <pre>{error?.message}</pre>
+      <pre className="font-mono mb-4 text-xl">{error?.message}</pre>
       <button
         type="button"
         onClick={resetErrorBoundary}
