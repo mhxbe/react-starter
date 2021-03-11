@@ -29,7 +29,6 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
           to: 'images',
           globOptions: { dot: true, ignore: ['.DS_Store'] },
         },
-        { from: './public/fonts', to: 'fonts' },
         { from: './public/locales', to: 'locales' },
         { from: './public/manifest.webmanifest' },
         { from: './public/robots.txt' },
@@ -92,6 +91,10 @@ export default function (env: envType, { mode }: argvType): Configuration {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader', 'postcss-loader'],
+        },
+        {
+          test: /\.woff2/,
+          type: 'asset/resource',
         },
       ],
     },

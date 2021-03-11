@@ -60,6 +60,7 @@ const App: React.FC = () => {
             id="main-content"
             role="main"
             aria-labelledby="page-heading"
+            className="w-full"
           >
             <React.Suspense
               fallback={<div data-testid="page-loading">Loading...</div>}

@@ -32,7 +32,7 @@ const Home: React.FC = () => {
         </p>
       </div>
       <ul className="p-0 text-base mb-4 xl:text-xl">
-        <li className="leading-12">
+        <li className="leading-12 text-xl">
           <a
             href="https://developers.google.com/web/tools/workbox"
             title={t('home.workbox.description')}
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
             Google Workbox
           </a>
         </li>
-        <li className="leading-12">
+        <li className="leading-12 text-xl">
           <a
             href="https://github.com/mhxbe/react-starter"
             title={t('home.github.description')}

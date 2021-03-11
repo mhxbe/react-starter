@@ -32,7 +32,6 @@ a.custom-skip-link:focus {
   width: auto;
 }
 
-/*
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -50,4 +49,3 @@ a.custom-skip-link:focus {
   src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
     url('/public/fonts/OpenSans-ExtraBold.woff2') format('woff2');
 }
-*/

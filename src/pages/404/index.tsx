@@ -24,12 +24,12 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
         {t('404.description')}
       </p>
       <ul className="p-0 text-base xl:text-xl">
-        <li className="leading-12">
+        <li className="leading-12 text-xl">
           <Trans i18nKey="404.navigate_home">
             <Link to="/" className="inline-block text-teal hover:text-navy" />
           </Trans>
         </li>
-        <li className="leading-12">
+        <li className="leading-12 text-xl">
           <Trans i18nKey="404.go_back">
             <button
               type="button"
