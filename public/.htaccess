@@ -23,6 +23,7 @@
   Header unset X-AspNetMvc-version
   Header unset X-Frame-Options
   Header unset X-Powered-By
+  Header unset x-powered-by
   Header unset X-Runtime
   Header unset X-Version
 </IfModule>
