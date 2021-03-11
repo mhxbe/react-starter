@@ -14,11 +14,11 @@ module.exports = {
       lightGray: '#d9d9d9',
       darkGray: '#333333',
     },
-    // fontFamily: {
-    //   sans: ['Open Sans', 'ui-sans-serif', 'system-ui'],
-    //   serif: ['ui-serif', 'Georgia'],
-    //   mono: ['ui-monospace', 'SFMono-Regular'],
-    // },
+    fontFamily: {
+      sans: ['Open Sans', 'ui-sans-serif', 'system-ui'],
+      serif: ['ui-serif', 'Georgia'],
+      mono: ['ui-monospace', 'monospace'],
+    },
     extend: {
       lineHeight: {
         12: '3rem',
