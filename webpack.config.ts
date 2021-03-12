@@ -1,6 +1,7 @@
 import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
+import * as WebpackPwaManifest from 'webpack-pwa-manifest';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { InjectManifest } from 'workbox-webpack-plugin';
@@ -9,12 +10,48 @@ import * as ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin
 
 type WebpackPlugins = webpack.WebpackPluginInstance[];
 
-function getPlugins(mode: WebpackMode): WebpackPlugins {
-  let plugins: WebpackPlugins = [];
+function getPlugins(mode: string): WebpackPlugins {
+  let plugins: (webpack.WebpackPluginInstance | WebpackPwaManifest)[] = [];
 
   plugins = plugins.concat([
     new HtmlWebpackPlugin({
       template: './public/index.html',
+    }),
+    new WebpackPwaManifest({
+      lang: 'en',
+      dir: 'ltr',
+      name: "mhxbe's React Starterkit",
+      short_name: 'React Kit',
+      start_url: '.',
+      scope: '.',
+      description:
+        'An opinionated starter kit for quickly bootstrapping client-side React projects written in TypeScript.',
+      display: 'standalone',
+      orientation: 'portrait',
+      background_color: '#00d8ff',
+      theme_color: '#00d8ff',
+      // categories: ['productivity', 'utilities'],
+      // screenshots: [],
+      inject: true,
+      ios: {
+        'apple-mobile-web-app-status-bar-style': 'black',
+      },
+      icons: [
+        {
+          src: 'public/images/icons/icon.png',
+          size: 180,
+          purpose: 'any maskable',
+          destination: 'images/icons',
+          ios: true,
+        },
+        {
+          src: 'public/images/icons/icon-512x512.png',
+          size: 512,
+          purpose: 'any maskable',
+          destination: 'images/icons',
+          ios: 'startup',
+        },
+      ],
     }),
     new CopyWebpackPlugin({
       patterns: [
