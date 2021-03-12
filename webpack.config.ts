@@ -125,6 +125,9 @@ export default function (env: envType, { mode }: argvType): Configuration {
         {
           test: /\.woff2/,
           type: 'asset/resource',
+          generator: {
+            filename: 'fonts/[hash][ext][query]',
+          },
         },
       ],
     },
