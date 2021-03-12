@@ -30,7 +30,6 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
           globOptions: { dot: true, ignore: ['.DS_Store'] },
         },
         { from: './public/locales', to: 'locales' },
-        { from: './public/manifest.webmanifest' },
         { from: './public/robots.txt' },
         { from: './public/.htaccess' },
       ],
