@@ -32,6 +32,7 @@ function getPlugins(mode: string): WebpackPlugins {
       theme_color: '#00d8ff',
       // categories: ['productivity', 'utilities'],
       // screenshots: [],
+      filename: 'manifest.[hash].webmanifest',
       inject: true,
       ios: {
         'apple-mobile-web-app-status-bar-style': 'black',
