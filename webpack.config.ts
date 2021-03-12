@@ -7,13 +7,7 @@ import { InjectManifest } from 'workbox-webpack-plugin';
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import * as ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
-enum WebpackMode {
-  development = 'development',
-  production = 'production',
-  none = 'none',
-}
-
-type WebpackPlugins = Array<webpack.WebpackPluginInstance>;
+type WebpackPlugins = webpack.WebpackPluginInstance[];
 
 function getPlugins(mode: WebpackMode): WebpackPlugins {
   let plugins: WebpackPlugins = [];
@@ -27,7 +21,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
         {
           from: './public/images',
           to: 'images',
-          globOptions: { dot: true, ignore: ['.DS_Store'] },
+          globOptions: { dot: true, ignore: ['**/.DS_Store', '**/icons/**'] },
         },
         { from: './public/locales', to: 'locales' },
         { from: './public/robots.txt' },
@@ -59,11 +53,11 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
     ]);
   }
 
-  return plugins;
+  return plugins as WebpackPlugins;
 }
 
 type envType = string | undefined;
-type argvType = { mode: WebpackMode };
+type argvType = { mode: string };
 
 interface Configuration extends webpack.Configuration {
   devServer?: WebpackDevServerConfiguration;
