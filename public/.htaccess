@@ -7,6 +7,7 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
+  RewriteRule ^robots.txt - [L]
 </IfModule>
 
 <IfModule mod_headers.c>
