@@ -1,6 +1,7 @@
 {
   "extends": ["config:base"],
   "schedule": "every weekend",
+  "masterIssue": true,
   "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
@@ -8,6 +9,5 @@
       "rangeStrategy": "bump",
       "groupName": "dependencies (non-major)"
     }
-  ],
-  "ignoreDeps": ["html-webpack-plugin"]
+  ]
 }
