@@ -63,6 +63,7 @@ function getPlugins(mode: string): WebpackPlugins {
         },
         { from: './public/locales', to: 'locales' },
         { from: './public/robots.txt' },
+        { from: './public/favicon.ico' },
         { from: './public/.htaccess' },
       ],
     }),
