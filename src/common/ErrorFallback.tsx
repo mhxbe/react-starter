@@ -31,7 +31,7 @@ const ErrorFallback = ({
 };
 
 export const errorHandler = (error: Error): Error => {
-  console.debug('Do something with following error:', error.message);
+  console.warn('Do something with following error:', error.message);
   return error;
 };
 
