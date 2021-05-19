@@ -6,7 +6,6 @@
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "rangeStrategy": "bump",
       "groupName": "dependencies (non-major)"
     }
   ]
