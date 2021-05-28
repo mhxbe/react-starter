@@ -1,13 +1,4 @@
 User-agent: *
-# JS, Images, Fonts
-Allow: /*.js
-Allow: /images/*.gif
-Allow: /images/*.jpg
-Allow: /images/*.jpeg
-Allow: /images/*.png
-Allow: /images/*.svg
-Allow: /fonts/*.woff2
 
 # Disallow Files
 Disallow: /report.html
-Disallow: /*.map
