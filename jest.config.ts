@@ -2,6 +2,7 @@ import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   roots: ['<rootDir>/src/'],
+  testEnvironment: 'jsdom',
   testResultsProcessor: 'jest-sonar-reporter',
   collectCoverage: false,
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
