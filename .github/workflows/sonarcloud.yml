@@ -19,8 +19,10 @@ jobs:
 
       - name: Generate test-report.xml
         run: |
-          npm install --no-save jest-sonar-reporter
-          npx jest --coverage
+          npm ci
+          npm run lint
+          tsc
+          npm test -- --coverage
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
