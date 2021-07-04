@@ -132,7 +132,7 @@ The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits 
 
 [SonarCloud](https://sonarcloud.io) is an open source cloud platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities. It is configured in [sonar-project.properties](sonar-project.properties).
 
-A Github Action is used to generate a `test-report.xml` in [Sonar's Generic Test Data](https://docs.sonarqube.org/latest/analysis/generic-test) and upload it to SonarCloud. It is configured in [.github/workflows/sonarcloud.yml](.github/workflows/sonarcloud.yml).
+A Github Action is used to generate a `test-report.xml` in [Sonar's Generic Test Data](https://docs.sonarqube.org/latest/analysis/generic-test) and upload it to SonarCloud. It is configured in [.github/workflows/sonar.yml](.github/workflows/sonar.yml).
 
 For this project, the **Sonar way recommended** Quality Profile is used.
 
