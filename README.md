@@ -101,7 +101,7 @@ It uses translation-files in json format which can be found in [public/locales](
 
 ### Testing
 
-[Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.json](jest.config.json).
+[Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.ts](jest.config.ts).
 
 [React Testing Library](https://testing-library.com/react) is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
 
