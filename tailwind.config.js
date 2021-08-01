@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./src/**/*.tsx', './public/index.html'],
   darkMode: false,
   theme: {
@@ -32,16 +33,6 @@ module.exports = {
         1100: '1100px',
         1260: '1260px',
       },
-    },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ['focus-visible'],
-      borderWidth: ['first', 'focus'],
-      margin: ['last', 'focus'],
-      padding: ['focus'],
-      lineHeight: ['focus'],
-      textColor: ['visited', 'focus-visible'],
     },
   },
   plugins: [],
