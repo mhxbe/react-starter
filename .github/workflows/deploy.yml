@@ -46,5 +46,5 @@ jobs:
           key: ${{ secrets.KEY }}
           source: 'dist/*'
           target: ${{ secrets.TARGET }}
-          rm: true
+          # rm: true
           strip_components: 1
