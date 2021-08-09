@@ -114,9 +114,9 @@ It uses translation-files in json format which can be found in [public/locales](
 #### Browserslist
 
 [Browserslist](https://github.com/browserslist/browserslist) shares target browsers versions between different front-end tools.
-Currently it's used in combination with [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) which will give linting errors/warnings when non-compatible code is written.
+Currently it's used in combination with [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) which will give linting errors/warnings when non-compatible code is written. It is configured in [.browserslistrc](.browserslistrc).
 
-Remember to regularly run the following command. This will make sure the definition of "last 2 browsers" stays up to date.
+Remember to regularly run the following command to make sure definitions like "last 2 versions" stay up to date.
 
 ```bash
 npx browserslist@latest --update-db
