@@ -111,8 +111,18 @@ It uses translation-files in json format which can be found in [public/locales](
 
 [EditorConfig](https://editorconfig.org/) helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. It is configured in [.editorconfig](.editorconfig).
 
+#### Browserslist
+
 [Browserslist](https://github.com/browserslist/browserslist) shares target browsers versions between different front-end tools.
 Currently it's used in combination with [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) which will give linting errors/warnings when non-compatible code is written.
+
+Remember to regularly run the following command. This will make sure the definition of "last 2 browsers" stays up to date.
+
+```bash
+npx browserslist@latest --update-db
+```
+
+More info about this can be found on [Browserlist: Browsers Data Updating](https://github.com/browserslist/browserslist#browsers-data-updating)
 
 ### Pre-commit hooks
 
