@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { render, RenderResult, RenderOptions } from '@testing-library/react';
 
-const AllTheProviders: React.FC = (props) => {
-  return <div>{props.children}</div>;
+const AllTheProviders: React.FC = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 const customRender = (
