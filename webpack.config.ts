@@ -144,14 +144,16 @@ export default function (env: envType, { mode }: argvType): Configuration {
     plugins: getPlugins(mode),
     devtool: isDevelopment ? 'inline-source-map' : 'source-map',
     devServer: {
-      contentBase: outputPath,
-      compress: true,
       hot: true,
       open: true,
-      useLocalIp: true,
       host: '0.0.0.0',
-      publicPath: '/',
       historyApiFallback: true,
+      devMiddleware: {
+        publicPath: '/',
+      },
+      static: {
+        directory: outputPath,
+      },
     },
   };
 }
