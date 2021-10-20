@@ -36,7 +36,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:compat/recommended",
     "plugin:sonarjs/recommended",
-    "plugin:testing-library/react",
+    // "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
     "plugin:jsx-a11y/recommended",
     "eslint:recommended",
@@ -47,7 +47,7 @@
     "react",
     "react-hooks",
     "sonarjs",
-    "testing-library",
+    // "testing-library",
     "jest-dom",
     "prettier",
     "jsx-a11y"
