@@ -124,15 +124,32 @@ npx browserslist@latest --update-db
 
 More info about this can be found on [Browserlist: Browsers Data Updating](https://github.com/browserslist/browserslist#browsers-data-updating)
 
-### Pre-commit hooks
+### Git hooks
 
-[Husky](https://github.com/typicode/husky) makes it easy to set up Git hooks. It's configured in [.husky/pre-commit](.husky/pre-commit).
+[Husky](https://github.com/typicode/husky) makes it easy to set up Git hooks.
+
+Currently 2 hooks are used:
+
+- [.husky/pre-commit](.husky/pre-commit)
+- [.husky/commit-msg](.husky/commit-msg)
 
 [Prettier](https://prettier.io/) is an opinionated code formatter which is configured in [.prettierrc.json](.prettierrc.json). Specific files & folders can be ignored by adding them to [.prettierignore](.prettierignore).
 
 [Pretty Quick](https://github.com/azz/pretty-quick) runs Prettier on your changed files when Git's `pre-commit` hook is triggered.
 
 The combination of `husky`, `prettier` & `pretty-quick` makes sure that commits are clean so our code-base stays consistent.
+
+### Conventional Commits
+
+[Conventional Commits](https://www.conventionalcommits.org/) are enforced and automated with [commitizen](https://github.com/commitizen/cz-cli) & [commitlint](https://github.com/conventional-changelog/commitlint). On each commit, [.husky/commit-msg](.husky/commit-msg)'s Git-hook will lint the commit message to check if it follows [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)'s rules and conventions.
+
+Their configurations can be found in [.czrc](.czrc) & [.commitlintrc.json](.commitlintrc.json).
+
+A handy npm-script is also present to automatically commit conventional with a cli prompt:
+
+```bash
+npm run commit
+```
 
 ### Sonar
 
