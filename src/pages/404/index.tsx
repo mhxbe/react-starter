@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
 
-const PageNotFound: React.FC<RouteComponentProps> = (props) => {
-  const { history } = props;
-  const { t } = useTranslation();
+const PageNotFound: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <div data-testid="page-404">
@@ -26,14 +26,17 @@ const PageNotFound: React.FC<RouteComponentProps> = (props) => {
       <ul className="p-0 text-base xl:text-xl">
         <li className="leading-12 text-xl">
           <Trans i18nKey="404.navigate_home">
-            <Link to="/" className="inline-block text-teal hover:text-navy" />
+            <Link
+              to={`/${i18n.language}`}
+              className="inline-block text-teal hover:text-navy"
+            />
           </Trans>
         </li>
         <li className="leading-12 text-xl">
           <Trans i18nKey="404.go_back">
             <button
               type="button"
-              onClick={history.goBack}
+              onClick={() => navigate(-1)}
               className="bg-transparent border-0 text-teal cursor-pointer m-0 p-0 no-underline hover:text-navy"
             />
           </Trans>
