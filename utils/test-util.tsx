@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { render, RenderResult, RenderOptions } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 const AllTheProviders: React.FC = ({ children }) => {
-  return <div>{children}</div>;
+  return <BrowserRouter>{children}</BrowserRouter>;
 };
 
 const customRender = (

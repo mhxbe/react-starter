@@ -36,6 +36,7 @@ const PageNotFound: React.FC = () => {
           <Trans i18nKey="404.go_back">
             <button
               type="button"
+              data-testid="go-back"
               onClick={() => navigate(-1)}
               className="bg-transparent border-0 text-teal cursor-pointer m-0 p-0 no-underline hover:text-navy"
             />

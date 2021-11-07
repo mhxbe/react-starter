@@ -63,7 +63,7 @@ describe('Workbox ServiceWorker', () => {
   Object.defineProperty(window, 'location', {
     value: {
       reload: mockWindowLocationReload,
-      pathname: '/en/some/url'
+      pathname: '/en/some/url',
     },
   });
   const mockServiceWorkerRegister = jest.fn();
