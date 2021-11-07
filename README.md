@@ -166,6 +166,14 @@ For this project, the **Sonar way recommended** Quality Profile is used.
 
 [.gitignore](.gitignore) file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.
 
+[.gitattributes](.gitattributes) file is a simple text file that gives attributes to pathnames. We use this especially for enforcing LF line endings.
+
+- [**text**](https://git-scm.com/docs/gitattributes#_text)
+  The text attribute enables and controls end-of-line normalization. When a text file is normalized, its line endings are converted to LF in the repository.
+
+- [**eol**](https://git-scm.com/docs/gitattributes#_eol)
+  This attribute sets a specific line-ending style to be used in the working directory. It enables end-of-line conversion without any content checks, effectively setting the text attribute.
+
 ## Dependency management
 
 [Renovate](https://renovate.whitesourcesoftware.com/) facilitates automated dependency updates. Make sure to [configure renovate for your project](https://github.com/apps/renovate) if you want to use it. The local project configuration can be found in [.renovaterc.json](.renovaterc.json).
