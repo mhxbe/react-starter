@@ -54,7 +54,6 @@ This folder contains all of the app's dependencies which are defined in [package
 [React Router](https://github.com/ReactTraining/react-router) is a collection of navigational components that compose declaratively with your application. This enables us to use routing in our SPA.
 
 We're using a [public/.htaccess](public/.htaccess) file to implement a "Catch All" approach so we can use nice URLs. If you're not using apache but nginx for example, make sure to add rewrites in your config.
-If you don't want to use these kind of configurations in your app, you're free to use React Router's [HashRouter](https://reactrouter.com/web/api/HashRouter).
 
 ## SEO (react-helmet)
 

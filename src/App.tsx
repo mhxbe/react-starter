@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
@@ -23,7 +22,6 @@ const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [showContent, setShowContent] = React.useState(true);
   const windowWidth = useWindowWidth();
-  const { i18n } = useTranslation();
 
   React.useEffect(() => {
     setShowContent(true);
@@ -42,8 +40,6 @@ const App: React.FC = () => {
     setShowContent(mustShowContent);
     setShowSidebar(mustShowSidebar);
   }
-
-  const languageRegex = `:lang(${i18n.languages.join('|')})`;
 
   return (
     <>
@@ -65,11 +61,10 @@ const App: React.FC = () => {
             <React.Suspense
               fallback={<div data-testid="page-loading">Loading...</div>}
             >
-              <Switch>
+              <Routes>
                 <Route
-                  exact
-                  path={`/${languageRegex}/`}
-                  render={() => (
+                  path="/"
+                  element={
                     <ErrorBoundary
                       key="home"
                       FallbackComponent={ErrorFallback}
@@ -77,27 +72,23 @@ const App: React.FC = () => {
                     >
                       <Home />
                     </ErrorBoundary>
-                  )}
+                  }
                 />
                 <Route
-                  path={`/${languageRegex}/about`}
-                  render={() => (
+                  path="/:lang"
+                  element={
                     <ErrorBoundary
-                      key="about"
+                      key="home"
                       FallbackComponent={ErrorFallback}
                       onError={errorHandler}
                     >
-                      <About />
+                      <Home />
                     </ErrorBoundary>
-                  )}
+                  }
                 />
-                <Route
-                  path={`/${languageRegex}/404`}
-                  component={PageNotFound}
-                />
-                <Redirect exact from={'/'} to={`/${i18n.language}`} />
-                <Redirect to={`/${i18n.language}/404`} />
-              </Switch>
+                <Route path="/:lang/about" element={<About />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
             </React.Suspense>
           </main>
         </div>

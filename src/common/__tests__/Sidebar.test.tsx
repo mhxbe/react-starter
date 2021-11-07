@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import { render } from '../../../utils/test-util';
 import Sidebar from '../Sidebar';
 
 const toggleSidebarMock = jest.fn();
 const renderSidebar = (visible: boolean) => (
-  <BrowserRouter>
-    <Sidebar onToggleSidebar={toggleSidebarMock} showSidebar={visible} />
-  </BrowserRouter>
+  <Sidebar onToggleSidebar={toggleSidebarMock} showSidebar={visible} />
 );
 
 test('Displays a sidebar with 3 menu items', () => {
