@@ -16,3 +16,5 @@ test('Displays a title', () => {
   );
   expect(screen.getByText('404.title')).toBeInTheDocument();
 });
+
+test.todo('Write test for clicking on "go back"-button');

@@ -57,3 +57,7 @@ test(`viewing the app with a resolution >= ${BREAKPOINT_DESKTOP}`, async () => {
   expect(mainWrapper).toHaveAttribute('aria-hidden', 'false');
   expect(sidebar).toHaveAttribute('aria-hidden', 'false');
 });
+
+test.todo('test about page');
+
+test.todo('test 404 not found page');
