@@ -1,7 +1,6 @@
 # React Starter
 
-![David](https://img.shields.io/david/mhxbe/react-starter)
-![David](https://img.shields.io/david/dev/mhxbe/react-starter)
+![Renovate](https://img.shields.io/badge/dependencies-Renovate-brightgreen)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=alert_status)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mhxbe_react-starter&metric=coverage)](https://sonarcloud.io/dashboard?id=mhxbe_react-starter)
 [![GitHub](https://img.shields.io/github/license/mhxbe/react-starter)](https://github.com/mhxbe/react-starter/blob/master/LICENSE)
