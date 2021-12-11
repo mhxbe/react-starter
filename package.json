@@ -47,7 +47,7 @@
     "react-error-boundary": "3.1.4",
     "react-helmet": "6.1.0",
     "react-i18next": "11.15.0",
-    "react-router-dom": "6.1.0",
+    "react-router-dom": "6.1.1",
     "tailwindcss": "2.2.19",
     "workbox-core": "6.4.2",
     "workbox-precaching": "6.4.2",
