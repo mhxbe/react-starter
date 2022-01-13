@@ -1,7 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.tsx', './public/index.html'],
-  darkMode: false,
+  content: ['./src/**/*.tsx', './public/index.html'],
   theme: {
     colors: {
       normal: '#282a37',
