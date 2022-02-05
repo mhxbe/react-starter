@@ -107,7 +107,7 @@
     "jest": "27.5.0",
     "jest-sonar-reporter": "2.0.0",
     "postcss": "8.4.6",
-    "postcss-focus-visible": "6.0.3",
+    "postcss-focus-visible": "6.0.4",
     "postcss-loader": "6.2.1",
     "prettier": "2.5.1",
     "pretty-quick": "3.1.3",
