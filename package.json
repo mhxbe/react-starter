@@ -34,8 +34,8 @@
     "doc": "README.md"
   },
   "engines": {
-    "node": ">=14.17.0",
-    "npm": "~8.10.0"
+    "node": ">=16.15.0",
+    "npm": "~8.5.5"
   },
   "dependencies": {
     "focus-visible": "5.2.0",
