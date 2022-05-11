@@ -8,5 +8,12 @@
       "automerge": true,
       "groupName": "dependencies (non-major)"
     }
+  ],
+  "ignoreDeps": [
+    "react",
+    "react-dom",
+    "@types/react",
+    "@types/react-dom",
+    "@testing-library/react"
   ]
 }
