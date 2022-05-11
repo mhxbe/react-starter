@@ -101,6 +101,8 @@ It uses translation-files in json format which can be found in [public/locales](
 
 [Jest](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity. It's configured in [jest.config.ts](jest.config.ts).
 
+`babel-jest` is automatically installed when installing Jest and will automatically transform files because a [babel configuration](babel.config.json) exists in this project.
+
 [React Testing Library](https://testing-library.com/react) is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
 
 ### Linting
