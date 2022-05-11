@@ -67,7 +67,7 @@
     "@commitlint/cz-commitlint": "16.2.4",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/react": "12.1.5",
+    "@testing-library/react": "13.2.0",
     "@testing-library/user-event": "14.1.1",
     "@types/html-webpack-plugin": "3.2.6",
     "@types/jest": "27.5.0",
