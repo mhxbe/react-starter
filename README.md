@@ -179,6 +179,16 @@ For this project, the **Sonar way recommended** Quality Profile is used.
 
 [Renovate](https://renovate.whitesourcesoftware.com/) facilitates automated dependency updates. Make sure to [configure renovate for your project](https://github.com/apps/renovate) if you want to use it. The local project configuration can be found in [.renovaterc.json](.renovaterc.json).
 
+### Prevent specific dependency updates
+
+You can use `ignoreDeps` in [.renovaterc.json](.renovaterc.json) to prevent Renovate from updating specific dependencies.
+
+```json
+{
+  "ignoreDeps": ["eslint", "eslint-config-base"]
+}
+```
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
