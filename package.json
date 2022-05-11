@@ -9,7 +9,7 @@
     "build": "NODE_ENV=production webpack --mode production",
     "lint": "eslint \"src/**\"",
     "prepare": "is-ci || husky install",
-    "commit": "git-cz"
+    "commit": "cz"
   },
   "keywords": [
     "react",
