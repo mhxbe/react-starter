@@ -9,7 +9,7 @@
     "build": "NODE_ENV=production webpack --mode production",
     "lint": "eslint \"src/**\"",
     "prepare": "is-ci || husky install",
-    "commit": "git-cz"
+    "commit": "cz"
   },
   "keywords": [
     "react",
@@ -68,7 +68,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.5",
-    "@testing-library/user-event": "13.5.0",
+    "@testing-library/user-event": "14.1.1",
     "@types/html-webpack-plugin": "3.2.6",
     "@types/jest": "27.5.0",
     "@types/react": "17.0.45",
@@ -99,7 +99,7 @@
     "eslint-plugin-sonarjs": "0.13.0",
     "eslint-plugin-testing-library": "5.4.0",
     "html-webpack-plugin": "5.5.0",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "identity-obj-proxy": "3.0.0",
     "is-ci": "3.0.1",
     "jest": "28.1.0",
