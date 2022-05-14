@@ -1,9 +1,13 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-jest.mock('react-dom', () => ({ render: jest.fn() }));
+const mockCreateRootRender = jest.fn();
+jest.mock('react-dom/client', () => ({
+  createRoot: () => ({
+    render: mockCreateRootRender,
+  }),
+}));
 
 describe('Application root', () => {
   it('should render without crashing', () => {
@@ -11,13 +15,12 @@ describe('Application root', () => {
     div.id = 'root';
     document.body.appendChild(div);
     require('../index.tsx');
-    expect(ReactDOM.render).toHaveBeenCalledWith(
+    expect(mockCreateRootRender).toHaveBeenCalledWith(
       <BrowserRouter basename="/">
         <React.Suspense fallback="Loading...">
           <App />
         </React.Suspense>
-      </BrowserRouter>,
-      div
+      </BrowserRouter>
     );
   });
 });

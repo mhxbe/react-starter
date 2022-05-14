@@ -1,18 +1,23 @@
 import * as React from 'react';
-import { render, RenderResult, RenderOptions } from '@testing-library/react';
+import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
-const AllTheProviders: React.FC = ({ children }) => {
+interface AllProvidersProps {
+  children: React.ReactNode;
+}
+const AllTheProviders: React.FC<AllProvidersProps> = ({ children }) => {
   return <BrowserRouter>{children}</BrowserRouter>;
 };
 
 const customRender = (
   ui: React.ReactElement,
-  options?: RenderOptions
+  options?: Omit<RenderOptions, 'wrapper'>
 ): RenderResult => {
   return render(ui, { wrapper: AllTheProviders, ...options });
 };
 
-export * from '@testing-library/react';
+// eslint-disable-next-line import/export
+export * from '@testing-library/react'; // re-export everything
 
-export { customRender as render };
+// eslint-disable-next-line import/export
+export { customRender as render }; // override render method
