@@ -16,17 +16,9 @@ i18next.on('languageChanged', (language: string) => {
   window.history.replaceState(null, '', newUrl);
 });
 
-// ReactDOM.render(
-//   <BrowserRouter basename="/">
-//     <React.Suspense fallback="Loading...">
-//       <App />
-//     </React.Suspense>
-//   </BrowserRouter>,
-//   document.querySelector('#root')
-// );
-
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = createRoot(document.querySelector('#root')!);
+
 root.render(
   <BrowserRouter basename="/">
     <React.Suspense fallback="Loading...">
