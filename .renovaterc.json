@@ -9,5 +9,5 @@
       "groupName": "dependencies (non-major)"
     }
   ],
-  "ignoreDeps": []
+  "ignoreDeps": ["@testing-library/user-event"]
 }
