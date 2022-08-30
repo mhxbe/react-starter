@@ -75,7 +75,6 @@
     "@types/react-dom": "18.0.6",
     "@types/react-helmet": "6.1.5",
     "@types/webpack-bundle-analyzer": "4.4.2",
-    "@types/webpack-dev-server": "4.7.2",
     "@types/webpack-env": "1.18.0",
     "@types/workbox-webpack-plugin": "5.1.8",
     "@types/workbox-window": "4.3.4",
