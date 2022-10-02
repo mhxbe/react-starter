@@ -96,7 +96,7 @@
     "eslint-plugin-react": "7.31.8",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-sonarjs": "0.15.0",
-    "eslint-plugin-testing-library": "5.7.0",
+    "eslint-plugin-testing-library": "5.7.2",
     "html-webpack-plugin": "5.5.0",
     "husky": "8.0.1",
     "identity-obj-proxy": "3.0.0",
